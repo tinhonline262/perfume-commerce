@@ -9,7 +9,7 @@ RUN npm run build
 
 FROM nginx:alpine
 # Copy custom nginx config if we need one to route SPA requests correctly
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
