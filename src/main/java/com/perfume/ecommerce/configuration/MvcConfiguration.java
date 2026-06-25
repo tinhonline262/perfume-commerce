@@ -29,7 +29,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOriginPatterns("*") // Allow any origin pattern to bypass strict exact matching
+                .allowedOrigins("*") // Allow any origin pattern to bypass strict exact matching
                 .allowedMethods("HEAD", "OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE")
                 .exposedHeaders("page-total-count", "page-total-elements", "Authorization")
                 .allowedHeaders("*")
