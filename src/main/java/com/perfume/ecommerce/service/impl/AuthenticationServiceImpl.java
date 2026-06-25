@@ -15,6 +15,8 @@ import com.perfume.ecommerce.service.AuthenticationService;
 import com.perfume.ecommerce.service.captcha.CaptchaValidator;
 import com.perfume.ecommerce.service.email.MailSender;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -32,7 +34,6 @@ import java.util.UUID;
 import static com.perfume.ecommerce.constants.ErrorMessage.*;
 
 @Service
-@RequiredArgsConstructor
 public class AuthenticationServiceImpl implements AuthenticationService {
 
     private final AuthenticationManager authenticationManager;
@@ -42,6 +43,17 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final UserRepository userRepository;
     private final FrontendProperties frontendProperties;
     private final CaptchaValidator captchaValidator;
+
+    @Autowired
+    public AuthenticationServiceImpl(@Lazy AuthenticationManager authenticationManager, JwtProvider jwtProvider, MailSender mailSender, PasswordEncoder passwordEncoder, UserRepository userRepository, FrontendProperties frontendProperties, CaptchaValidator captchaValidator) {
+        this.authenticationManager = authenticationManager;
+        this.jwtProvider = jwtProvider;
+        this.mailSender = mailSender;
+        this.passwordEncoder = passwordEncoder;
+        this.userRepository = userRepository;
+        this.frontendProperties = frontendProperties;
+        this.captchaValidator = captchaValidator;
+    }
 
     @Override
     public Map<String, Object> login(String email, String password) {

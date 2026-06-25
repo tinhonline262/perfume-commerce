@@ -4,8 +4,10 @@ import com.perfume.ecommerce.security.oauth2.CustomOAuth2UserService;
 import com.perfume.ecommerce.security.JwtConfigurer;
 import com.perfume.ecommerce.security.oauth2.OAuth2SuccessHandler;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,7 +16,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 
 @Configuration
-@RequiredArgsConstructor
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -22,6 +23,13 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     private final JwtConfigurer jwtConfigurer;
     private final OAuth2SuccessHandler oauthSuccessHandler;
     private final CustomOAuth2UserService oAuth2UserService;
+
+    @Autowired
+    public WebSecurityConfiguration(JwtConfigurer jwtConfigurer, OAuth2SuccessHandler oauthSuccessHandler, @Lazy CustomOAuth2UserService oAuth2UserService) {
+        this.jwtConfigurer = jwtConfigurer;
+        this.oauthSuccessHandler = oauthSuccessHandler;
+        this.oAuth2UserService = oAuth2UserService;
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
