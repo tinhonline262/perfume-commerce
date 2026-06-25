@@ -18,6 +18,8 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 @Component
 @RequiredArgsConstructor
@@ -35,11 +37,12 @@ public class GraphQLProvider {
 
     @PostConstruct
     public void loadSchema() throws IOException {
-        File fileSchema = resource.getFile();
-        TypeDefinitionRegistry typeRegistry = new SchemaParser().parse(fileSchema);
-        RuntimeWiring wiring = buildRuntimeWiring();
-        GraphQLSchema schema = new SchemaGenerator().makeExecutableSchema(typeRegistry, wiring);
-        graphQL = GraphQL.newGraphQL(schema).build();
+        try (InputStream is = resource.getInputStream()) {
+            TypeDefinitionRegistry typeRegistry = new SchemaParser().parse(new InputStreamReader(is));
+            RuntimeWiring wiring = buildRuntimeWiring();
+            GraphQLSchema schema = new SchemaGenerator().makeExecutableSchema(typeRegistry, wiring);
+            graphQL = GraphQL.newGraphQL(schema).build();
+        }
     }
 
     private RuntimeWiring buildRuntimeWiring() {
