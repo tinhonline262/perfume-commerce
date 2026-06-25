@@ -28,11 +28,11 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/v1/**")
-                .allowedOrigins(frontendProperties.getBaseUrl())
+        registry.addMapping("/**")
+                .allowedOriginPatterns("*") // Allow any origin pattern to bypass strict exact matching
                 .allowedMethods("HEAD", "OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE")
-                .exposedHeaders("page-total-count")
-                .exposedHeaders("page-total-elements")
-                .allowedHeaders("*");
+                .exposedHeaders("page-total-count", "page-total-elements", "Authorization")
+                .allowedHeaders("*")
+                .allowCredentials(true);
     }
 }
