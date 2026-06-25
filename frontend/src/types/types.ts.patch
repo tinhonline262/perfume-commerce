@@ -1,0 +1,10 @@
+--- frontend/src/types/types.ts
++++ frontend/src/types/types.ts
+@@ -87,6 +87,8 @@
+     email?: string;
+     phoneNumber?: string;
+     postIndex?: string;
++    paymentMethod?: string;
+ }
+ 
+ export interface BaseUserResponse {

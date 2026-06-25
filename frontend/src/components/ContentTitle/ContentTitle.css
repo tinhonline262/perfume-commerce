@@ -1,0 +1,15 @@
+.title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.title-icon {
+    margin-bottom: 24px;
+}
+
+.title-icon svg {
+    color: var(--color-primary);
+    width: 24px;
+    height: 24px;
+}

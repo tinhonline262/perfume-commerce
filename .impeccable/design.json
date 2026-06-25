@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-24T10:15:22Z",
+  "title": "Design System: Essence Perfume Ecommerce",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Counter Brown",
+        "canonical": "#6b4f4f",
+        "tonalRamp": ["#241717", "#3f3030", "#5f4545", "#6b4f4f", "#8a6c6c", "#b59c98", "#d9c7c0", "#f2ebe7"]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Deep Counter Brown",
+        "canonical": "#5f4545",
+        "tonalRamp": ["#211515", "#332424", "#4b3636", "#5f4545", "#806262", "#aa8f8b", "#d5c2bc", "#f0e8e3"]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Aged Brass Taupe",
+        "canonical": "#a68a64",
+        "tonalRamp": ["#2a2117", "#493824", "#735737", "#a68a64", "#c2aa88", "#dcc9ad", "#eee2d1", "#faf4eb"]
+      },
+      "accent": {
+        "role": "tertiary",
+        "displayName": "Veiled Blush Stone",
+        "canonical": "#e8ddd4",
+        "tonalRamp": ["#30251f", "#5a4940", "#897268", "#b8a295", "#d5c6bb", "#e8ddd4", "#f3ece7", "#fbf7f4"]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Storefront Ground",
+        "canonical": "#faf7f2",
+        "tonalRamp": ["#2a2723", "#554e46", "#83786d", "#b3a89b", "#d8d0c5", "#eee8de", "#faf7f2", "#fffdf9"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Porcelain Surface",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#1f1f1f", "#444444", "#6f6f6f", "#999999", "#c2c2c2", "#e8e8e8", "#f7f7f7", "#ffffff"]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Reading Ink",
+        "canonical": "#2a2a2a",
+        "tonalRamp": ["#0e0e0e", "#1a1a1a", "#2a2a2a", "#444444", "#6a6a6a", "#999999", "#d0d0d0", "#f2f2f2"]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Soft Data Ink",
+        "canonical": "#6f6f6f",
+        "tonalRamp": ["#161616", "#303030", "#505050", "#6f6f6f", "#929292", "#b8b8b8", "#dedede", "#f5f5f5"]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Warm Divider",
+        "canonical": "#ddd3c9",
+        "tonalRamp": ["#2d2925", "#5c544d", "#8b7f74", "#b9ab9f", "#d1c4b9", "#ddd3c9", "#eee8e2", "#faf7f4"]
+      },
+      "footer": {
+        "role": "neutral",
+        "displayName": "Footer Oxblood",
+        "canonical": "#3f3030",
+        "tonalRamp": ["#171010", "#2b2020", "#3f3030", "#5f4848", "#876c68", "#b49b95", "#dacbc5", "#f3ebe7"]
+      },
+      "success-bg": {
+        "role": "state",
+        "displayName": "Quiet Success Wash",
+        "canonical": "#edf3ec",
+        "tonalRamp": ["#172416", "#2f442d", "#4b6b48", "#71906c", "#a6c1a1", "#d2e1cf", "#edf3ec", "#f8fbf7"]
+      },
+      "success-text": {
+        "role": "state",
+        "displayName": "Herbal Success Ink",
+        "canonical": "#346538",
+        "tonalRamp": ["#0e1f10", "#1d3c20", "#346538", "#528657", "#7eaa82", "#adcfb0", "#d9ebdb", "#f1f8f2"]
+      },
+      "window-dot": {
+        "role": "neutral",
+        "displayName": "Window Dot Neutral",
+        "canonical": "#d8cec5",
+        "tonalRamp": ["#2a2521", "#514941", "#7d7066", "#aa9b8e", "#c9bdb2", "#d8cec5", "#eee8e3", "#faf7f4"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headlines and major storefront storytelling only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page and section headings across storefront, product, catalog, and account wrappers."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel headings, prices, and meaningful subsection labels."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions, help copy, form copy, account text, and checkout text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, navigation, stock pills, and concise metadata."
+      },
+      "mono": {
+        "displayName": "Mono Label",
+        "purpose": "Compact product-card metadata and note-like data."
+      }
+    },
+    "shadows": [
+      {
+        "name": "legacy-ambient-panel",
+        "value": "0 8px 24px rgba(0, 0, 0, 0.04)",
+        "purpose": "Existing card, wrapper, hero visual, image frame, and review surfaces. Maintenance only; do not introduce on new bordered cards."
+      },
+      {
+        "name": "interactive-skim",
+        "value": "0 2px 8px rgba(0, 0, 0, 0.04)",
+        "purpose": "Small hover or feedback lift on interactive product and brand surfaces."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "200ms ease",
+        "purpose": "Default color, border, transform, and hover response timing."
+      },
+      {
+        "name": "reveal-transition",
+        "value": "600ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Existing reveal-on-scroll entrance timing for storefront content groups."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "575px"
+      },
+      {
+        "name": "tablet",
+        "value": "767px"
+      },
+      {
+        "name": "wide-tablet",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary task action for add to cart, checkout, submit, save, and selected intent.",
+      "html": "<button class=\"ds-btn-primary\">Add to cart</button>",
+      "css": ".ds-btn-primary { background: var(--color-primary); border: 1px solid var(--color-primary); border-radius: var(--radius-md); color: #fff; min-height: 52px; padding: 12px 28px; font-family: var(--font-body); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease; } .ds-btn-primary:hover { background: #5f4545; border-color: #5f4545; } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; } .ds-btn-primary:active { transform: scale(0.98); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary storefront action when the primary action must remain singular.",
+      "html": "<button class=\"ds-btn-secondary\">Discover more</button>",
+      "css": ".ds-btn-secondary { background: transparent; border: 1px solid var(--color-primary); border-radius: var(--radius-md); color: var(--color-primary); min-height: 52px; padding: 16px 32px; font-family: var(--font-body); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; transition: background-color 200ms ease, color 200ms ease, transform 200ms ease; } .ds-btn-secondary:hover { background: rgba(232, 221, 212, 0.42); color: var(--color-primary); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; } .ds-btn-secondary:active { transform: scale(0.98); }"
+    },
+    {
+      "name": "Perfume Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Catalog product card with tonal image shelf, compact metadata, clear title, price, and action row.",
+      "html": "<article class=\"ds-perfume-card\"><div class=\"ds-perfume-card-image\"><span>Bottle image</span></div><div class=\"ds-perfume-card-body\"><div class=\"ds-perfume-card-meta\"><span>100 ml</span><span>24 reviews</span></div><h3>Maison Sample</h3><p>Quiet Amber Eau de Parfum</p><strong>$120.00</strong></div></article>",
+      "css": ".ds-perfume-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); color: var(--color-text); overflow: hidden; transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease; } .ds-perfume-card:hover { border-color: var(--color-secondary); box-shadow: 0 2px 8px rgba(0,0,0,0.04); transform: translateY(-2px); } .ds-perfume-card-image { align-items: center; background: var(--color-accent); border-bottom: 1px solid var(--color-border); display: flex; height: 190px; justify-content: center; color: var(--color-primary); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; } .ds-perfume-card-body { padding: 22px 24px 18px; } .ds-perfume-card-meta { color: var(--color-text-secondary); display: flex; font-family: var(--font-mono); font-size: 11px; justify-content: space-between; letter-spacing: 0.06em; margin-bottom: 14px; text-transform: uppercase; } .ds-perfume-card h3 { font-family: var(--font-body); font-size: 14px; font-weight: 800; letter-spacing: 0.08em; margin: 0 0 3px; text-transform: uppercase; } .ds-perfume-card p { color: var(--color-text-secondary); margin: 0; } .ds-perfume-card strong { display: block; font-weight: 700; margin-top: 12px; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Ant Design-aligned field vocabulary for search, auth, checkout, and admin forms.",
+      "html": "<label class=\"ds-field\"><span>Search perfumes</span><input placeholder=\"Search...\" /></label>",
+      "css": ".ds-field { display: grid; gap: 8px; font-family: var(--font-body); color: var(--color-text); } .ds-field span { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; } .ds-field input { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); color: var(--color-text); min-height: 40px; padding: 8px 12px; font: inherit; } .ds-field input::placeholder { color: #555; } .ds-field input:focus { border-color: var(--color-primary); outline: 2px solid rgba(107,79,79,0.18); outline-offset: 1px; }"
+    },
+    {
+      "name": "Navigation Shell",
+      "kind": "nav",
+      "refersTo": "nav-shell",
+      "description": "Storefront navigation with announcement bar, serif brand mark, uppercase links, and warm translucent shell.",
+      "html": "<div class=\"ds-nav\"><div class=\"ds-nav-announcement\">Free shipping on orders over $100</div><nav class=\"ds-nav-shell\"><a class=\"ds-nav-brand\">Essence</a><div class=\"ds-nav-links\"><a>Home</a><a>Perfumes</a><a>Bag</a></div></nav></div>",
+      "css": ".ds-nav-announcement { background: var(--color-primary); color: #fff; font-family: var(--font-body); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; padding: 8px 20px; text-align: center; text-transform: uppercase; } .ds-nav-shell { align-items: center; background: rgba(250,247,242,0.94); border-bottom: 1px solid var(--color-border); display: flex; gap: 32px; justify-content: space-between; padding: 18px 24px; } .ds-nav-brand { color: var(--color-text); font-family: var(--font-heading); font-size: 31px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; } .ds-nav-links { display: flex; flex-wrap: wrap; gap: 24px; } .ds-nav-links a { color: var(--color-text); font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; } .ds-nav-links a:hover { color: var(--color-primary); }"
+    },
+    {
+      "name": "Product Image Frame",
+      "kind": "custom",
+      "refersTo": "card-surface",
+      "description": "Framed fragrance image motif used on hero and product detail surfaces.",
+      "html": "<figure class=\"ds-product-frame\"><div class=\"ds-product-frame-bar\"><span></span><span></span><span></span></div><div class=\"ds-product-frame-body\">Fragrance bottle</div></figure>",
+      "css": ".ds-product-frame { background: var(--color-accent); border: 1px solid var(--color-border); border-radius: var(--radius-lg); color: var(--color-primary); margin: 0; overflow: hidden; width: min(100%, 420px); } .ds-product-frame-bar { align-items: center; background: rgba(255,255,255,0.88); border-bottom: 1px solid var(--color-border); display: flex; gap: 8px; height: 40px; padding: 0 18px; } .ds-product-frame-bar span { background: #d8cec5; border-radius: 50%; height: 9px; width: 9px; } .ds-product-frame-body { align-items: center; display: flex; font-family: var(--font-mono); font-size: 11px; height: 280px; justify-content: center; letter-spacing: 0.06em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Status Pill",
+      "kind": "chip",
+      "refersTo": "card-surface",
+      "description": "Compact stock or status indicator with tonal fill plus readable text.",
+      "html": "<span class=\"ds-status-pill\">In stock</span>",
+      "css": ".ds-status-pill { background: #edf3ec; border-radius: 9999px; color: #346538; display: inline-block; font-family: var(--font-body); font-size: 11px; font-weight: 800; letter-spacing: 0.08em; padding: 5px 10px; text-transform: uppercase; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Counter",
+    "overview": "Essence should feel like standing at a refined fragrance counter: calm enough to compare products carefully, tactile enough to trust checkout, and restrained enough that account and admin tasks still feel efficient. The system uses warm neutral surfaces, low-contrast tonal layering, dark ink, and a muted brown primary to support quiet-luxury commerce without turning every screen into a campaign. This is a product-register system first. The home page and product detail screens may carry editorial fragrance atmosphere, but catalog filtering, cart, checkout, account, and admin workflows must use familiar Ant Design affordances and clear state language. PRODUCT.md explicitly rejects flashy beauty-campaign effects, generic SaaS/admin UI, cluttered marketplace density, loud discount-driven retail patterns, and decorative motion that competes with shopping tasks.",
+    "keyCharacteristics": [
+      "Warm boutique surfaces with strong readable ink and restrained brown action color.",
+      "Serif display type for storefront storytelling, sans and mono stacks for product data, forms, labels, and admin work.",
+      "Tonal lift through borders, surface shifts, and very low shadows rather than dramatic depth.",
+      "Consistent Ant Design-based controls across storefront, account, and admin surfaces.",
+      "Motion that confirms state or reveals product groups without slowing the shopping task."
+    ],
+    "rules": [
+      {
+        "name": "The Ten Percent Accent Rule",
+        "body": "Counter Brown is strongest when rare. Use it for primary actions, selected state, badges, and critical anchors, not for decorative fills across whole screens.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Before Atmosphere Rule",
+        "body": "Aged Brass Taupe and Soft Data Ink must never carry required instructions, prices, form labels, or errors unless the exact foreground/background pair passes WCAG AA.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serif Boundary Rule",
+        "body": "Playfair belongs to storytelling headings, not inputs, table labels, admin controls, data rows, or button text.",
+        "section": "typography"
+      },
+      {
+        "name": "The Uppercase Rationing Rule",
+        "body": "Uppercase labels are part of the boutique voice, but they must be short, readable, and purposeful. Never use tracked uppercase for paragraphs or error recovery copy.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tonal Lift Rule",
+        "body": "Resting surfaces use a border or a tonal background. Shadows are feedback, not decoration.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No Ghost Card Rule",
+        "body": "Do not add a 1px border and a wide decorative shadow to the same new card. Pick the border at rest, then add only Interactive Skim on hover if feedback is needed.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Counter Brown for the one primary action per local task: add to cart, checkout, submit, save, or selected navigation state.",
+      "Do keep storefront copy sensory but concise; product, cart, account, and admin screens must prioritize task clarity.",
+      "Do preserve readable body contrast with Reading Ink on Storefront Ground or Porcelain Surface.",
+      "Do keep admin and account controls in the same component vocabulary as the storefront, even when the layout becomes denser.",
+      "Do provide reduced-motion alternatives and keep reveal animations from gating content visibility."
+    ],
+    "donts": [
+      "Don't use flashy beauty-campaign effects, generic SaaS/admin UI, cluttered marketplace density, loud discount-driven retail patterns, or decorative motion that competes with shopping tasks.",
+      "Don't use gradient text, side-stripe card accents, glassmorphism as decoration, or repeating stripe backgrounds.",
+      "Don't add a new bordered card with box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) or any wide decorative shadow; use border at rest and Interactive Skim on hover.",
+      "Don't use Playfair for form labels, tables, buttons, stock state, prices, or admin data.",
+      "Don't use Aged Brass Taupe or Soft Data Ink for required small text unless the exact contrast pair passes WCAG AA.",
+      "Don't exceed the existing large radius token (20px) on cards, panels, inputs, or sections. Pill radius is only for true pills and status chips."
+    ]
+  }
+}

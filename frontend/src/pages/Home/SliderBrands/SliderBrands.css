@@ -1,0 +1,58 @@
+.brands-carousel {
+    margin: 0 auto;
+    max-width: 1240px;
+    padding: 0 24px 34px;
+}
+
+.brands-wrapper {
+    margin-top: 0;
+    padding-top: 88px;
+}
+
+.brands-wrapper-heading {
+    margin: 0 auto 28px;
+    max-width: 720px;
+    text-align: center;
+}
+
+.brands-wrapper-heading span {
+    color: var(--color-secondary);
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.brands-wrapper-title {
+    text-align: center;
+}
+
+.brands-wrapper-title.ant-typography {
+    margin-bottom: 0;
+}
+
+.brands-wrapper .ant-carousel .slick-dots li button {
+    background: var(--color-primary);
+    opacity: 0.24;
+}
+
+.brands-wrapper .ant-carousel .slick-dots li.slick-active button {
+    opacity: 1;
+    background: var(--color-primary);
+}
+
+.brands-wrapper .ant-carousel .slick-dots-bottom {
+    bottom: 0;
+}
+
+@media (max-width: 575px) {
+    .brands-wrapper {
+        padding-top: 64px;
+    }
+
+    .brands-carousel {
+        padding: 0 18px 24px;
+    }
+}

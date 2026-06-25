@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: ${TEST_DATASOURCE_URL:jdbc:postgresql://localhost:5432/perfumetest}
+    username: ${TEST_DATASOURCE_USERNAME:postgres}
+    password: ${TEST_DATASOURCE_PASSWORD:}
+  jpa:
+    generate-ddl: false
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+
+app:
+  frontend:
+    host: ${APP_FRONTEND_HOST:localhost:3000}
+    base-url: ${APP_FRONTEND_BASE_URL:http://localhost:3000}
+
+recaptcha:
+  secret: ${RECAPTCHA_SECRET:test-recaptcha-secret}
+  url: ${RECAPTCHA_URL:https://www.google.com/recaptcha/api/siteverify?secret=%s&response=%s}
+
+jwt:
+  header: ${JWT_HEADER:Authorization}
+  secret: ${JWT_SECRET:test-jwt-secret}
+  expiration: ${JWT_EXPIRATION:604800}
+
+logging:
+  level:
+    com.perfume.ecommerce.controller: debug

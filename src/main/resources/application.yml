@@ -1,0 +1,93 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/perfume}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:perfume_root_123}
+  jpa:
+    generate-ddl: false
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    locations: classpath:db/migration
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 5MB
+      max-request-size: 10MB
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    username: ${MAIL_USERNAME:mentorbookingnotification@gmail.com}
+    password: ${MAIL_PASSWORD:idejizktdncupvmd}
+    port: ${MAIL_PORT:465}
+    protocol: ${MAIL_PROTOCOL:smtps}
+    properties:
+      mail:
+        smtp:
+          auth: ${MAIL_SMTP_AUTH:true}
+          starttls:
+            enable: ${MAIL_SMTP_STARTTLS_ENABLE:true}
+        debug: ${MAIL_DEBUG:false}
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID:local-google-client-id}
+            client-secret: ${GOOGLE_CLIENT_SECRET:local-google-client-secret}
+            scope:
+              - email
+              - profile
+          facebook:
+            client-id: ${FACEBOOK_CLIENT_ID:local-facebook-client-id}
+            client-secret: ${FACEBOOK_CLIENT_SECRET:local-facebook-client-secret}
+            scope:
+              - email
+              - public_profile
+          github:
+            client-id: ${GITHUB_CLIENT_ID:local-github-client-id}
+            client-secret: ${GITHUB_CLIENT_SECRET:local-github-client-secret}
+            scope:
+              - user:email
+              - read:user
+        provider:
+          facebook:
+            authorization-uri: https://www.facebook.com/v10.0/dialog/oauth
+            user-info-uri: https://graph.facebook.com/v10.0/me?fields=email,first_name,last_name,name
+
+app:
+  frontend:
+    host: ${APP_FRONTEND_HOST:localhost:3000}
+    base-url: ${APP_FRONTEND_BASE_URL:http://localhost:3000}
+
+storage:
+  s3:
+    endpoint: ${STORAGE_S3_ENDPOINT:http://localhost:9000}
+    public-url: ${STORAGE_S3_PUBLIC_URL:http://localhost:9000}
+    access-key: ${STORAGE_S3_ACCESS_KEY:minioadmin}
+    secret-key: ${STORAGE_S3_SECRET_KEY:minioadmin}
+    region: ${STORAGE_S3_REGION:us-east-1}
+    bucket-name: ${STORAGE_S3_BUCKET_NAME:perfumes}
+    path-style-access: ${STORAGE_S3_PATH_STYLE_ACCESS:true}
+
+recaptcha:
+  secret: ${RECAPTCHA_SECRET:}
+  url: ${RECAPTCHA_URL:https://www.google.com/recaptcha/api/siteverify?secret=%s&response=%s}
+
+jwt:
+  header: ${JWT_HEADER:Authorization}
+  secret: ${JWT_SECRET:change-me-for-local-dev}
+  expiration: ${JWT_EXPIRATION:604800}
+
+logging:
+  level:
+    com.perfume.ecommerce.controller: debug
+
+payment:
+  vnpay:
+    url: ${VNPAY_URL:https://sandbox.vnpayment.vn/paymentv2/vpcpay.html}
+    return-url: ${VNPAY_RETURN_URL:http://localhost:8080/api/v1/payment/vnpay-callback}
+    tmn-code: ${VNPAY_TMN_CODE:FA87KP9D}
+    hash-secret: ${VNPAY_HASH_SECRET:AVC7G2BVRDWI3IQ25EEZ7BR1QPC8PFMI}
+    api-url: ${VNPAY_API_URL:https://sandbox.vnpayment.vn/merchant_webapi/api/transaction}

@@ -1,0 +1,100 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.perfume:perfume-ecommerce >--------------------
+[INFO] Building perfume-ecommerce 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:2.3.6.RELEASE:run (default-cli) > test-compile @ perfume-ecommerce >>>
+[WARNING] The artifact org.hibernate:hibernate-validator:jar:6.1.6.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.6.Final
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.4:prepare-agent (default) @ perfume-ecommerce ---
+[INFO] argLine set to -javaagent:/home/tinhhuynh/.m2/repository/org/jacoco/org.jacoco.agent/0.8.4/org.jacoco.agent-0.8.4-runtime.jar=destfile=/home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ perfume-ecommerce ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ perfume-ecommerce ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ perfume-ecommerce ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ perfume-ecommerce ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:2.3.6.RELEASE:run (default-cli) < test-compile @ perfume-ecommerce <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.3.6.RELEASE:run (default-cli) @ perfume-ecommerce ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+[32m :: Spring Boot :: [39m      [2m (v2.3.6.RELEASE)[0;39m
+
+[2m2026-06-23 23:26:01.214[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.p.ecommerce.EcommerceApplication      [0;39m [2m:[0;39m Starting EcommerceApplication on TINHHT7518 with PID 20947 (/home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/target/classes started by tinhhuynh in /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs)
+[2m2026-06-23 23:26:01.216[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.p.ecommerce.EcommerceApplication      [0;39m [2m:[0;39m No active profile set, falling back to default profiles: default
+[2m2026-06-23 23:26:01.254[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.devtools.restart.ChangeableUrls   [0;39m [2m:[0;39m The Class-Path manifest attribute in /home/tinhhuynh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/home/tinhhuynh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+[2m2026-06-23 23:26:01.254[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.devtools.restart.ChangeableUrls   [0;39m [2m:[0;39m The Class-Path manifest attribute in /home/tinhhuynh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/home/tinhhuynh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+[2m2026-06-23 23:26:01.254[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2m2026-06-23 23:26:01.254[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2m2026-06-23 23:26:01.802[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+[2m2026-06-23 23:26:01.847[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 42ms. Found 5 JPA repository interfaces.
+[2m2026-06-23 23:26:02.138[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mtrationDelegate$BeanPostProcessorChecker[0;39m [2m:[0;39m Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@639271f0' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2m2026-06-23 23:26:02.144[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mtrationDelegate$BeanPostProcessorChecker[0;39m [2m:[0;39m Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2m2026-06-23 23:26:02.317[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 8080 (http)
+[2m2026-06-23 23:26:02.324[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
+[2m2026-06-23 23:26:02.324[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.39]
+[2m2026-06-23 23:26:02.384[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2026-06-23 23:26:02.384[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 1130 ms
+[2m2026-06-23 23:26:02.520[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.f.c.internal.license.VersionPrinter   [0;39m [2m:[0;39m Flyway Community Edition 5.2.4 by Boxfuse
+[2m2026-06-23 23:26:02.525[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Starting...
+[2m2026-06-23 23:26:02.619[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Start completed.
+[2m2026-06-23 23:26:02.630[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.f.c.internal.database.DatabaseFactory [0;39m [2m:[0;39m Database: jdbc:postgresql://localhost:5432/perfume (PostgreSQL 15.18)
+[2m2026-06-23 23:26:02.635[0;39m [33m WARN[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.f.c.internal.database.base.Database   [0;39m [2m:[0;39m Flyway upgrade recommended: PostgreSQL 15.18 is newer than this version of Flyway and support has not been tested.
+[2m2026-06-23 23:26:02.683[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.f.core.internal.command.DbValidate    [0;39m [2m:[0;39m Successfully validated 4 migrations (execution time 00:00.031s)
+[2m2026-06-23 23:26:02.696[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.f.core.internal.command.DbMigrate     [0;39m [2m:[0;39m Current version of schema "public": 4
+[2m2026-06-23 23:26:02.698[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.f.core.internal.command.DbMigrate     [0;39m [2m:[0;39m Schema "public" is up to date. No migration necessary.
+[2m2026-06-23 23:26:02.768[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+[2m2026-06-23 23:26:02.794[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36morg.hibernate.Version                   [0;39m [2m:[0;39m HHH000412: Hibernate ORM core version 5.4.23.Final
+[2m2026-06-23 23:26:02.862[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.hibernate.annotations.common.Version  [0;39m [2m:[0;39m HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2m2026-06-23 23:26:02.924[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36morg.hibernate.dialect.Dialect           [0;39m [2m:[0;39m HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2m2026-06-23 23:26:03.334[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2m2026-06-23 23:26:03.340[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2m2026-06-23 23:26:03.356[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2026-06-23 23:26:03.476[0;39m [33m WARN[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2m2026-06-23 23:26:04.111[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [2m:[0;39m Initializing ExecutorService 'clientInboundChannelExecutor'
+[2m2026-06-23 23:26:04.118[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [2m:[0;39m Initializing ExecutorService 'clientOutboundChannelExecutor'
+[2m2026-06-23 23:26:04.355[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mpertySourcedRequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2m2026-06-23 23:26:04.440[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.s.c.ThreadPoolTaskScheduler         [0;39m [2m:[0;39m Initializing ExecutorService 'messageBrokerTaskScheduler'
+[2m2026-06-23 23:26:04.512[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.s.web.DefaultSecurityFilterChain    [0;39m [2m:[0;39m Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23dca8a0, org.springframework.security.web.context.SecurityContextPersistenceFilter@4188695e, org.springframework.security.web.header.HeaderWriterFilter@594c2abc, org.springframework.web.filter.CorsFilter@6bf6d462, org.springframework.security.web.authentication.logout.LogoutFilter@6656bae7, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@35a395c0, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@79d78068, com.perfume.ecommerce.security.JwtFilter@34cf0dfb, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4d2e2d8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2e67cdb4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f3624e4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@43e03b7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7102769a, org.springframework.security.web.session.SessionManagementFilter@7c3cf6f5, org.springframework.security.web.access.ExceptionTranslationFilter@2605f81a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@429f71e2]
+[2m2026-06-23 23:26:04.518[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [2m:[0;39m Initializing ExecutorService 'brokerChannelExecutor'
+[2m2026-06-23 23:26:04.678[0;39m [33m WARN[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mion$DefaultTemplateResolverConfiguration[0;39m [2m:[0;39m Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+[2m2026-06-23 23:26:04.718[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 8080 (http) with context path ''
+[2m2026-06-23 23:26:04.719[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36md.s.w.p.DocumentationPluginsBootstrapper[0;39m [2m:[0;39m Context refreshed
+[2m2026-06-23 23:26:04.726[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36md.s.w.p.DocumentationPluginsBootstrapper[0;39m [2m:[0;39m Found 1 custom documentation plugin(s)
+[2m2026-06-23 23:26:04.746[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36ms.d.s.w.s.ApiListingReferenceScanner    [0;39m [2m:[0;39m Scanning for api listing references
+[2m2026-06-23 23:26:04.920[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.m.s.b.SimpleBrokerMessageHandler    [0;39m [2m:[0;39m Starting...
+[2m2026-06-23 23:26:04.920[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.m.s.b.SimpleBrokerMessageHandler    [0;39m [2m:[0;39m BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+[2m2026-06-23 23:26:04.921[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.m.s.b.SimpleBrokerMessageHandler    [0;39m [2m:[0;39m Started.
+[2m2026-06-23 23:26:04.921[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mDeferredRepositoryInitializationListener[0;39m [2m:[0;39m Triggering deferred initialization of Spring Data repositories…
+[2m2026-06-23 23:26:05.255[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mDeferredRepositoryInitializationListener[0;39m [2m:[0;39m Spring Data repositories initialized!
+[2m2026-06-23 23:26:05.260[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.p.ecommerce.EcommerceApplication      [0;39m [2m:[0;39m Started EcommerceApplication in 4.238 seconds (JVM running for 4.493)
+[2m2026-06-23 23:27:04.518[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[MessageBroker-1][0;39m [36mo.s.w.s.c.WebSocketMessageBrokerStats   [0;39m [2m:[0;39m WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+[2m2026-06-23 23:27:58.904[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[extShutdownHook][0;39m [36mo.s.m.s.b.SimpleBrokerMessageHandler    [0;39m [2m:[0;39m Stopping...
+[2m2026-06-23 23:27:58.905[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[extShutdownHook][0;39m [36mo.s.m.s.b.SimpleBrokerMessageHandler    [0;39m [2m:[0;39m BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+[2m2026-06-23 23:27:58.905[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[extShutdownHook][0;39m [36mo.s.m.s.b.SimpleBrokerMessageHandler    [0;39m [2m:[0;39m Stopped.
+[2m2026-06-23 23:27:58.963[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[extShutdownHook][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [2m:[0;39m Shutting down ExecutorService 'brokerChannelExecutor'
+[2m2026-06-23 23:27:58.963[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[extShutdownHook][0;39m [36mo.s.s.c.ThreadPoolTaskScheduler         [0;39m [2m:[0;39m Shutting down ExecutorService 'messageBrokerTaskScheduler'
+[2m2026-06-23 23:27:58.965[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[extShutdownHook][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [2m:[0;39m Shutting down ExecutorService 'clientOutboundChannelExecutor'
+[2m2026-06-23 23:27:58.965[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[extShutdownHook][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [2m:[0;39m Shutting down ExecutorService 'clientInboundChannelExecutor'
+[2m2026-06-23 23:27:58.966[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[extShutdownHook][0;39m [36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+[2m2026-06-23 23:27:58.967[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[extShutdownHook][0;39m [36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown initiated...
+[2m2026-06-23 23:27:58.970[0;39m [32m INFO[0;39m [35m20947[0;39m [2m---[0;39m [2m[extShutdownHook][0;39m [36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown completed.

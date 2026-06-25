@@ -1,0 +1,22 @@
+.product-reviews-title {
+    text-align: center; 
+    margin: 56px auto 20px;
+}
+
+.product-reviews-title h3.ant-typography {
+    margin-bottom: 0;
+}
+
+.product-reviews-wrapper {
+    margin-top: 16px;
+}
+
+.product-reviews-wrapper + .product-reviews-wrapper {
+    margin-top: 24px;
+}
+
+.product-review-form-card.ant-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: none;
+}

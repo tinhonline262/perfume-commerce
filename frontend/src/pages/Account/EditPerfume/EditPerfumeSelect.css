@@ -1,0 +1,18 @@
+.form-item {
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+.form-item-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+@media (min-width: 576px) {
+    .form-item-label {
+        margin-bottom: 0;
+        justify-content: flex-end;
+        padding-right: 8px;
+    }
+}

@@ -1,0 +1,697 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.perfume:perfume-ecommerce >--------------------
+[INFO] Building perfume-ecommerce 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact org.hibernate:hibernate-validator:jar:6.1.6.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.1.6.Final
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ perfume-ecommerce ---
+[INFO] Deleting /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.4:prepare-agent (default) @ perfume-ecommerce ---
+[INFO] argLine set to -javaagent:/home/tinhhuynh/.m2/repository/org/jacoco/org.jacoco.agent/0.8.4/org.jacoco.agent-0.8.4-runtime.jar=destfile=/home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ perfume-ecommerce ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ perfume-ecommerce ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 98 source files to /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/ReviewServiceImpl.java:[29,23] cannot find symbol
+  symbol:   method getReviews()
+  location: variable perfume of type com.perfume.ecommerce.domain.Perfume
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/ReviewServiceImpl.java:[37,39] cannot find symbol
+  symbol:   method getReviews()
+  location: variable perfume of type com.perfume.ecommerce.domain.Perfume
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/ReviewServiceImpl.java:[40,54] invalid method reference
+  cannot find symbol
+    symbol:   method getRating(T)
+    location: class com.perfume.ecommerce.domain.Review
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/ReviewServiceImpl.java:[41,16] cannot find symbol
+  symbol:   method setPerfumeRating(double)
+  location: variable perfume of type com.perfume.ecommerce.domain.Perfume
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/UserController.java:[32,61] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.perfume.ecommerce.security.UserPrincipal
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/UserController.java:[39,64] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.perfume.ecommerce.security.UserPrincipal
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/UserController.java:[49,49] cannot find symbol
+  symbol:   method getGraphQL()
+  location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/UserController.java:[49,78] cannot find symbol
+  symbol:   method getQuery()
+  location: variable request of type com.perfume.ecommerce.dto.GraphQLRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserPrincipal.java:[25,31] cannot find symbol
+  symbol:   method getRoles()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserPrincipal.java:[27,69] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserPrincipal.java:[27,52] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserPrincipal.java:[27,38] cannot find symbol
+  symbol:   method getId()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserPrincipal.java:[32,22] cannot find symbol
+  symbol:   method setAttributes(java.util.Map<java.lang.String,java.lang.Object>)
+  location: variable userPrincipal of type com.perfume.ecommerce.security.UserPrincipal
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/CommonMapper.java:[39,16] constructor HeaderResponse in class com.perfume.ecommerce.dto.HeaderResponse<T> cannot be applied to given types;
+  required: no arguments
+  found:    java.util.List<S>,org.springframework.http.HttpHeaders
+  reason: actual and formal argument lists differ in length
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/JwtFilter.java:[39,64] cannot find symbol
+  symbol:   method getHttpStatus()
+  location: variable e of type com.perfume.ecommerce.security.JwtAuthenticationException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/RegistrationController.java:[24,72] cannot find symbol
+  symbol:   method getCaptcha()
+  location: variable user of type com.perfume.ecommerce.dto.RegistrationRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[25,78] cannot find symbol
+  symbol:   method getEmail()
+  location: variable request of type com.perfume.ecommerce.dto.auth.AuthenticationRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[25,98] cannot find symbol
+  symbol:   method getPassword()
+  location: variable request of type com.perfume.ecommerce.dto.auth.AuthenticationRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[27,17] cannot find symbol
+  symbol:   method setUser(com.perfume.ecommerce.dto.user.UserResponse)
+  location: variable response of type com.perfume.ecommerce.dto.auth.AuthenticationResponse
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[28,17] cannot find symbol
+  symbol:   method setToken(java.lang.String)
+  location: variable response of type com.perfume.ecommerce.dto.auth.AuthenticationResponse
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[41,85] cannot find symbol
+  symbol:   method getPassword2()
+  location: variable registrationRequest of type com.perfume.ecommerce.dto.RegistrationRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[53,72] cannot find symbol
+  symbol:   method getPassword()
+  location: variable passwordReset of type com.perfume.ecommerce.dto.PasswordResetRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[53,101] cannot find symbol
+  symbol:   method getPassword2()
+  location: variable passwordReset of type com.perfume.ecommerce.dto.PasswordResetRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[60,76] cannot find symbol
+  symbol:   method getPassword()
+  location: variable passwordReset of type com.perfume.ecommerce.dto.PasswordResetRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[60,105] cannot find symbol
+  symbol:   method getPassword2()
+  location: variable passwordReset of type com.perfume.ecommerce.dto.PasswordResetRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserDetailsServiceImpl.java:[24,17] cannot find symbol
+  symbol:   method getActivationCode()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[52,35] cannot find symbol
+  symbol:   method getRoles()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[68,17] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[68,48] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[72,44] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[75,13] cannot find symbol
+  symbol:   method setActive(boolean)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[76,13] cannot find symbol
+  symbol:   method setRoles(java.util.Set<com.perfume.ecommerce.enums.Role>)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[77,13] cannot find symbol
+  symbol:   method setProvider(com.perfume.ecommerce.enums.AuthProvider)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[78,13] cannot find symbol
+  symbol:   method setActivationCode(java.lang.String)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[79,53] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[82,107] cannot find symbol
+  symbol:   method getActivationCode()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[90,13] cannot find symbol
+  symbol:   method setEmail(java.lang.String)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[91,13] cannot find symbol
+  symbol:   method setFirstName(java.lang.String)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[92,13] cannot find symbol
+  symbol:   method setLastName(java.lang.String)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[93,13] cannot find symbol
+  symbol:   method setActive(boolean)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[94,13] cannot find symbol
+  symbol:   method setRoles(java.util.Set<com.perfume.ecommerce.enums.Role>)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[95,13] cannot find symbol
+  symbol:   method setProvider(com.perfume.ecommerce.enums.AuthProvider)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[102,13] cannot find symbol
+  symbol:   method setFirstName(java.lang.String)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[103,13] cannot find symbol
+  symbol:   method setLastName(java.lang.String)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[104,13] cannot find symbol
+  symbol:   method setProvider(com.perfume.ecommerce.enums.AuthProvider)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[119,13] cannot find symbol
+  symbol:   method setPasswordResetCode(java.lang.String)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[122,98] cannot find symbol
+  symbol:   method getPasswordResetCode()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[137,13] cannot find symbol
+  symbol:   method setPassword(java.lang.String)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[138,13] cannot find symbol
+  symbol:   method setPasswordResetCode(<nulltype>)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[148,13] cannot find symbol
+  symbol:   method setActivationCode(<nulltype>)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[149,13] cannot find symbol
+  symbol:   method setActive(boolean)
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[156,41] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[158,40] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/OrderMapper.java:[52,115] cannot find symbol
+  symbol:   method getPerfumesId()
+  location: variable orderRequest of type com.perfume.ecommerce.dto.order.OrderRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[14,47] cannot find symbol
+  symbol:   method getStatus()
+  location: variable exception of type com.perfume.ecommerce.exception.ApiRequestException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[19,92] cannot find symbol
+  symbol:   method getPassword2Error()
+  location: variable exception of type com.perfume.ecommerce.exception.PasswordConfirmationException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[24,80] cannot find symbol
+  symbol:   method getPasswordError()
+  location: variable exception of type com.perfume.ecommerce.exception.PasswordException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[29,77] cannot find symbol
+  symbol:   method getEmailError()
+  location: variable exception of type com.perfume.ecommerce.exception.EmailException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[34,79] cannot find symbol
+  symbol:   method getCaptchaError()
+  location: variable exception of type com.perfume.ecommerce.exception.CaptchaException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[39,84] cannot find symbol
+  symbol:   method getBindingResult()
+  location: variable exception of type com.perfume.ecommerce.exception.InputFieldException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[40,68] cannot find symbol
+  symbol:   method getErrorsMap()
+  location: variable inputFieldException of type com.perfume.ecommerce.exception.InputFieldException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AuthenticationController.java:[42,82] cannot find symbol
+  symbol:   method getEmail()
+  location: variable passwordReset of type com.perfume.ecommerce.dto.PasswordResetRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AuthenticationController.java:[49,73] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.perfume.ecommerce.security.UserPrincipal
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[56,37] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[57,36] cannot find symbol
+  symbol:   method getLastName()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[58,32] cannot find symbol
+  symbol:   method getCity()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[59,35] cannot find symbol
+  symbol:   method getAddress()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[60,39] cannot find symbol
+  symbol:   method getPhoneNumber()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[61,37] cannot find symbol
+  symbol:   method getPostIndex()
+  location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[47,21] cannot find symbol
+  symbol:   method getOrderItems()
+  location: variable order of type com.perfume.ecommerce.domain.Order
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[68,22] cannot find symbol
+  symbol:   method setPerfume(com.perfume.ecommerce.domain.Perfume)
+  location: variable orderItem of type com.perfume.ecommerce.domain.OrderItem
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[69,41] cannot find symbol
+  symbol:   method getPrice()
+  location: variable perfume of type com.perfume.ecommerce.domain.Perfume
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[70,22] cannot find symbol
+  symbol:   method setQuantity(java.lang.Long)
+  location: variable orderItem of type com.perfume.ecommerce.domain.OrderItem
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[74,14] cannot find symbol
+  symbol:   method getOrderItems()
+  location: variable order of type com.perfume.ecommerce.domain.Order
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[77,43] cannot find symbol
+  symbol:   method getId()
+  location: variable order of type com.perfume.ecommerce.domain.Order
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[81,41] cannot find symbol
+  symbol:   method getEmail()
+  location: variable order of type com.perfume.ecommerce.domain.Order
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/OrderController.java:[46,80] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.perfume.ecommerce.security.UserPrincipal
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/OrderController.java:[47,52] cannot find symbol
+  symbol:   method getHeaders()
+  location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/OrderController.java:[47,80] cannot find symbol
+  symbol:   method getItems()
+  location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/OrderController.java:[57,49] cannot find symbol
+  symbol:   method getGraphQL()
+  location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/OrderController.java:[57,78] cannot find symbol
+  symbol:   method getQuery()
+  location: variable request of type com.perfume.ecommerce.dto.GraphQLRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[51,23] cannot find symbol
+  symbol:   method getPerfumers()
+  location: variable filter of type com.perfume.ecommerce.dto.perfume.PerfumeSearchRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[52,23] cannot find symbol
+  symbol:   method getGenders()
+  location: variable filter of type com.perfume.ecommerce.dto.perfume.PerfumeSearchRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[53,23] cannot find symbol
+  symbol:   method getPrices()
+  location: variable filter of type com.perfume.ecommerce.dto.perfume.PerfumeSearchRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[54,23] cannot find symbol
+  symbol:   method getPrices()
+  location: variable filter of type com.perfume.ecommerce.dto.perfume.PerfumeSearchRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[55,23] cannot find symbol
+  symbol:   method getSortByPrice()
+  location: variable filter of type com.perfume.ecommerce.dto.perfume.PerfumeSearchRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[83,16] cannot find symbol
+  symbol:   method setFilename(java.lang.String)
+  location: variable perfume of type com.perfume.ecommerce.domain.Perfume
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[63,52] cannot find symbol
+  symbol:   method getHeaders()
+  location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[63,80] cannot find symbol
+  symbol:   method getItems()
+  location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[70,52] cannot find symbol
+  symbol:   method getHeaders()
+  location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[70,80] cannot find symbol
+  symbol:   method getItems()
+  location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[86,52] cannot find symbol
+  symbol:   method getHeaders()
+  location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.user.BaseUserResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[86,80] cannot find symbol
+  symbol:   method getItems()
+  location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.user.BaseUserResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[91,49] cannot find symbol
+  symbol:   method getGraphQL()
+  location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[91,78] cannot find symbol
+  symbol:   method getQuery()
+  location: variable request of type com.perfume.ecommerce.dto.GraphQLRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[96,49] cannot find symbol
+  symbol:   method getGraphQL()
+  location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[96,78] cannot find symbol
+  symbol:   method getQuery()
+  location: variable request of type com.perfume.ecommerce.dto.GraphQLRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[101,49] cannot find symbol
+  symbol:   method getGraphQL()
+  location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[101,78] cannot find symbol
+  symbol:   method getQuery()
+  location: variable request of type com.perfume.ecommerce.dto.GraphQLRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[106,49] cannot find symbol
+  symbol:   method getGraphQL()
+  location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.909 s
+[INFO] Finished at: 2026-06-23T23:14:21+07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project perfume-ecommerce: Compilation failure: Compilation failure: 
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/ReviewServiceImpl.java:[29,23] cannot find symbol
+[ERROR]   symbol:   method getReviews()
+[ERROR]   location: variable perfume of type com.perfume.ecommerce.domain.Perfume
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/ReviewServiceImpl.java:[37,39] cannot find symbol
+[ERROR]   symbol:   method getReviews()
+[ERROR]   location: variable perfume of type com.perfume.ecommerce.domain.Perfume
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/ReviewServiceImpl.java:[40,54] invalid method reference
+[ERROR]   cannot find symbol
+[ERROR]     symbol:   method getRating(T)
+[ERROR]     location: class com.perfume.ecommerce.domain.Review
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/ReviewServiceImpl.java:[41,16] cannot find symbol
+[ERROR]   symbol:   method setPerfumeRating(double)
+[ERROR]   location: variable perfume of type com.perfume.ecommerce.domain.Perfume
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/UserController.java:[32,61] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.perfume.ecommerce.security.UserPrincipal
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/UserController.java:[39,64] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.perfume.ecommerce.security.UserPrincipal
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/UserController.java:[49,49] cannot find symbol
+[ERROR]   symbol:   method getGraphQL()
+[ERROR]   location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/UserController.java:[49,78] cannot find symbol
+[ERROR]   symbol:   method getQuery()
+[ERROR]   location: variable request of type com.perfume.ecommerce.dto.GraphQLRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserPrincipal.java:[25,31] cannot find symbol
+[ERROR]   symbol:   method getRoles()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserPrincipal.java:[27,69] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserPrincipal.java:[27,52] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserPrincipal.java:[27,38] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserPrincipal.java:[32,22] cannot find symbol
+[ERROR]   symbol:   method setAttributes(java.util.Map<java.lang.String,java.lang.Object>)
+[ERROR]   location: variable userPrincipal of type com.perfume.ecommerce.security.UserPrincipal
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/CommonMapper.java:[39,16] constructor HeaderResponse in class com.perfume.ecommerce.dto.HeaderResponse<T> cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.util.List<S>,org.springframework.http.HttpHeaders
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/JwtFilter.java:[39,64] cannot find symbol
+[ERROR]   symbol:   method getHttpStatus()
+[ERROR]   location: variable e of type com.perfume.ecommerce.security.JwtAuthenticationException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/RegistrationController.java:[24,72] cannot find symbol
+[ERROR]   symbol:   method getCaptcha()
+[ERROR]   location: variable user of type com.perfume.ecommerce.dto.RegistrationRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[25,78] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable request of type com.perfume.ecommerce.dto.auth.AuthenticationRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[25,98] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable request of type com.perfume.ecommerce.dto.auth.AuthenticationRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[27,17] cannot find symbol
+[ERROR]   symbol:   method setUser(com.perfume.ecommerce.dto.user.UserResponse)
+[ERROR]   location: variable response of type com.perfume.ecommerce.dto.auth.AuthenticationResponse
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[28,17] cannot find symbol
+[ERROR]   symbol:   method setToken(java.lang.String)
+[ERROR]   location: variable response of type com.perfume.ecommerce.dto.auth.AuthenticationResponse
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[41,85] cannot find symbol
+[ERROR]   symbol:   method getPassword2()
+[ERROR]   location: variable registrationRequest of type com.perfume.ecommerce.dto.RegistrationRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[53,72] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable passwordReset of type com.perfume.ecommerce.dto.PasswordResetRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[53,101] cannot find symbol
+[ERROR]   symbol:   method getPassword2()
+[ERROR]   location: variable passwordReset of type com.perfume.ecommerce.dto.PasswordResetRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[60,76] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable passwordReset of type com.perfume.ecommerce.dto.PasswordResetRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/AuthenticationMapper.java:[60,105] cannot find symbol
+[ERROR]   symbol:   method getPassword2()
+[ERROR]   location: variable passwordReset of type com.perfume.ecommerce.dto.PasswordResetRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/security/UserDetailsServiceImpl.java:[24,17] cannot find symbol
+[ERROR]   symbol:   method getActivationCode()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[52,35] cannot find symbol
+[ERROR]   symbol:   method getRoles()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[68,17] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[68,48] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[72,44] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[75,13] cannot find symbol
+[ERROR]   symbol:   method setActive(boolean)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[76,13] cannot find symbol
+[ERROR]   symbol:   method setRoles(java.util.Set<com.perfume.ecommerce.enums.Role>)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[77,13] cannot find symbol
+[ERROR]   symbol:   method setProvider(com.perfume.ecommerce.enums.AuthProvider)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[78,13] cannot find symbol
+[ERROR]   symbol:   method setActivationCode(java.lang.String)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[79,53] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[82,107] cannot find symbol
+[ERROR]   symbol:   method getActivationCode()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[90,13] cannot find symbol
+[ERROR]   symbol:   method setEmail(java.lang.String)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[91,13] cannot find symbol
+[ERROR]   symbol:   method setFirstName(java.lang.String)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[92,13] cannot find symbol
+[ERROR]   symbol:   method setLastName(java.lang.String)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[93,13] cannot find symbol
+[ERROR]   symbol:   method setActive(boolean)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[94,13] cannot find symbol
+[ERROR]   symbol:   method setRoles(java.util.Set<com.perfume.ecommerce.enums.Role>)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[95,13] cannot find symbol
+[ERROR]   symbol:   method setProvider(com.perfume.ecommerce.enums.AuthProvider)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[102,13] cannot find symbol
+[ERROR]   symbol:   method setFirstName(java.lang.String)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[103,13] cannot find symbol
+[ERROR]   symbol:   method setLastName(java.lang.String)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[104,13] cannot find symbol
+[ERROR]   symbol:   method setProvider(com.perfume.ecommerce.enums.AuthProvider)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[119,13] cannot find symbol
+[ERROR]   symbol:   method setPasswordResetCode(java.lang.String)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[122,98] cannot find symbol
+[ERROR]   symbol:   method getPasswordResetCode()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[137,13] cannot find symbol
+[ERROR]   symbol:   method setPassword(java.lang.String)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[138,13] cannot find symbol
+[ERROR]   symbol:   method setPasswordResetCode(<nulltype>)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[148,13] cannot find symbol
+[ERROR]   symbol:   method setActivationCode(<nulltype>)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[149,13] cannot find symbol
+[ERROR]   symbol:   method setActive(boolean)
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[156,41] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/AuthenticationServiceImpl.java:[158,40] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/mapper/OrderMapper.java:[52,115] cannot find symbol
+[ERROR]   symbol:   method getPerfumesId()
+[ERROR]   location: variable orderRequest of type com.perfume.ecommerce.dto.order.OrderRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[14,47] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable exception of type com.perfume.ecommerce.exception.ApiRequestException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[19,92] cannot find symbol
+[ERROR]   symbol:   method getPassword2Error()
+[ERROR]   location: variable exception of type com.perfume.ecommerce.exception.PasswordConfirmationException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[24,80] cannot find symbol
+[ERROR]   symbol:   method getPasswordError()
+[ERROR]   location: variable exception of type com.perfume.ecommerce.exception.PasswordException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[29,77] cannot find symbol
+[ERROR]   symbol:   method getEmailError()
+[ERROR]   location: variable exception of type com.perfume.ecommerce.exception.EmailException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[34,79] cannot find symbol
+[ERROR]   symbol:   method getCaptchaError()
+[ERROR]   location: variable exception of type com.perfume.ecommerce.exception.CaptchaException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[39,84] cannot find symbol
+[ERROR]   symbol:   method getBindingResult()
+[ERROR]   location: variable exception of type com.perfume.ecommerce.exception.InputFieldException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/exception/ApiExceptionHandler.java:[40,68] cannot find symbol
+[ERROR]   symbol:   method getErrorsMap()
+[ERROR]   location: variable inputFieldException of type com.perfume.ecommerce.exception.InputFieldException
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AuthenticationController.java:[42,82] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable passwordReset of type com.perfume.ecommerce.dto.PasswordResetRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AuthenticationController.java:[49,73] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.perfume.ecommerce.security.UserPrincipal
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[56,37] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[57,36] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[58,32] cannot find symbol
+[ERROR]   symbol:   method getCity()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[59,35] cannot find symbol
+[ERROR]   symbol:   method getAddress()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[60,39] cannot find symbol
+[ERROR]   symbol:   method getPhoneNumber()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/UserServiceImpl.java:[61,37] cannot find symbol
+[ERROR]   symbol:   method getPostIndex()
+[ERROR]   location: variable user of type com.perfume.ecommerce.domain.User
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[47,21] cannot find symbol
+[ERROR]   symbol:   method getOrderItems()
+[ERROR]   location: variable order of type com.perfume.ecommerce.domain.Order
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[68,22] cannot find symbol
+[ERROR]   symbol:   method setPerfume(com.perfume.ecommerce.domain.Perfume)
+[ERROR]   location: variable orderItem of type com.perfume.ecommerce.domain.OrderItem
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[69,41] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable perfume of type com.perfume.ecommerce.domain.Perfume
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[70,22] cannot find symbol
+[ERROR]   symbol:   method setQuantity(java.lang.Long)
+[ERROR]   location: variable orderItem of type com.perfume.ecommerce.domain.OrderItem
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[74,14] cannot find symbol
+[ERROR]   symbol:   method getOrderItems()
+[ERROR]   location: variable order of type com.perfume.ecommerce.domain.Order
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[77,43] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable order of type com.perfume.ecommerce.domain.Order
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/OrderServiceImpl.java:[81,41] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable order of type com.perfume.ecommerce.domain.Order
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/OrderController.java:[46,80] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.perfume.ecommerce.security.UserPrincipal
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/OrderController.java:[47,52] cannot find symbol
+[ERROR]   symbol:   method getHeaders()
+[ERROR]   location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/OrderController.java:[47,80] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/OrderController.java:[57,49] cannot find symbol
+[ERROR]   symbol:   method getGraphQL()
+[ERROR]   location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/OrderController.java:[57,78] cannot find symbol
+[ERROR]   symbol:   method getQuery()
+[ERROR]   location: variable request of type com.perfume.ecommerce.dto.GraphQLRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[51,23] cannot find symbol
+[ERROR]   symbol:   method getPerfumers()
+[ERROR]   location: variable filter of type com.perfume.ecommerce.dto.perfume.PerfumeSearchRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[52,23] cannot find symbol
+[ERROR]   symbol:   method getGenders()
+[ERROR]   location: variable filter of type com.perfume.ecommerce.dto.perfume.PerfumeSearchRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[53,23] cannot find symbol
+[ERROR]   symbol:   method getPrices()
+[ERROR]   location: variable filter of type com.perfume.ecommerce.dto.perfume.PerfumeSearchRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[54,23] cannot find symbol
+[ERROR]   symbol:   method getPrices()
+[ERROR]   location: variable filter of type com.perfume.ecommerce.dto.perfume.PerfumeSearchRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[55,23] cannot find symbol
+[ERROR]   symbol:   method getSortByPrice()
+[ERROR]   location: variable filter of type com.perfume.ecommerce.dto.perfume.PerfumeSearchRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/service/impl/PerfumeServiceImpl.java:[83,16] cannot find symbol
+[ERROR]   symbol:   method setFilename(java.lang.String)
+[ERROR]   location: variable perfume of type com.perfume.ecommerce.domain.Perfume
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[63,52] cannot find symbol
+[ERROR]   symbol:   method getHeaders()
+[ERROR]   location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[63,80] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[70,52] cannot find symbol
+[ERROR]   symbol:   method getHeaders()
+[ERROR]   location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[70,80] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.order.OrderResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[86,52] cannot find symbol
+[ERROR]   symbol:   method getHeaders()
+[ERROR]   location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.user.BaseUserResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[86,80] cannot find symbol
+[ERROR]   symbol:   method getItems()
+[ERROR]   location: variable response of type com.perfume.ecommerce.dto.HeaderResponse<com.perfume.ecommerce.dto.user.BaseUserResponse>
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[91,49] cannot find symbol
+[ERROR]   symbol:   method getGraphQL()
+[ERROR]   location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[91,78] cannot find symbol
+[ERROR]   symbol:   method getQuery()
+[ERROR]   location: variable request of type com.perfume.ecommerce.dto.GraphQLRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[96,49] cannot find symbol
+[ERROR]   symbol:   method getGraphQL()
+[ERROR]   location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[96,78] cannot find symbol
+[ERROR]   symbol:   method getQuery()
+[ERROR]   location: variable request of type com.perfume.ecommerce.dto.GraphQLRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[101,49] cannot find symbol
+[ERROR]   symbol:   method getGraphQL()
+[ERROR]   location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[101,78] cannot find symbol
+[ERROR]   symbol:   method getQuery()
+[ERROR]   location: variable request of type com.perfume.ecommerce.dto.GraphQLRequest
+[ERROR] /home/tinhhuynh/Desktop/Code/ecommerce-spring-reactjs/src/main/java/com/perfume/ecommerce/controller/AdminController.java:[106,49] cannot find symbol
+[ERROR]   symbol:   method getGraphQL()
+[ERROR]   location: variable graphQLProvider of type com.perfume.ecommerce.service.graphql.GraphQLProvider
+[ERROR] -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project perfume-ecommerce: Compilation failure
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:215)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.apache.maven.wrapper.BootstrapMainStarter.start (BootstrapMainStarter.java:39)
+    at org.apache.maven.wrapper.WrapperExecutor.execute (WrapperExecutor.java:122)
+    at org.apache.maven.wrapper.MavenWrapperMain.main (MavenWrapperMain.java:61)
+Caused by: org.apache.maven.plugin.compiler.CompilationFailureException: Compilation failure
+    at org.apache.maven.plugin.compiler.AbstractCompilerMojo.execute (AbstractCompilerMojo.java:1220)
+    at org.apache.maven.plugin.compiler.CompilerMojo.execute (CompilerMojo.java:187)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.apache.maven.wrapper.BootstrapMainStarter.start (BootstrapMainStarter.java:39)
+    at org.apache.maven.wrapper.WrapperExecutor.execute (WrapperExecutor.java:122)
+    at org.apache.maven.wrapper.MavenWrapperMain.main (MavenWrapperMain.java:61)
+[ERROR] 
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,127 @@
+.product-info {
+    align-items: center;
+}
+
+.product-image-wrapper {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.product-image-frame {
+    background: var(--color-accent);
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: none;
+    overflow: hidden;
+    width: min(100%, 520px);
+}
+
+.product-window-bar {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.88);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    gap: 8px;
+    height: 40px;
+    padding: 0 18px;
+}
+
+.product-window-bar span {
+    background: #d8cec5;
+    border-radius: 50%;
+    display: block;
+    height: 9px;
+    width: 9px;
+}
+
+.product-image {
+    display: block;
+    height: 520px;
+    margin: 0 auto;
+    object-fit: contain;
+    padding: 44px;
+    width: 100%;
+}
+
+.product-header .ant-typography {
+    margin: 0 !important;
+}
+
+.product-header h2.ant-typography {
+    margin-bottom: 12px !important;
+}
+
+.product-header h4.ant-typography {
+    color: var(--color-text-secondary);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.product-eyebrow.ant-typography {
+    color: var(--color-secondary);
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    margin-bottom: 14px !important;
+    text-transform: uppercase;
+}
+
+.product-rate {
+    align-items: center;
+    color: var(--color-text-secondary);
+    display: flex;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.product-stock.ant-typography {
+    background: #edf3ec;
+    border-radius: 0;
+    color: #346538;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-top: 22px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+.product-purchase-row {
+    align-items: center;
+    margin-top: 28px;
+}
+
+.product-price.ant-typography {
+    color: var(--color-text);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.product-add-button.ant-btn {
+    min-height: 52px;
+    min-width: 180px;
+    padding: 12px 28px;
+}
+
+.product-info .ant-divider {
+    border-color: var(--color-border);
+    margin: 34px 0;
+}
+
+@media (max-width: 767px) {
+    .product-image {
+        height: 420px;
+        padding: 30px;
+    }
+
+    .product-add-button.ant-btn {
+        margin-top: 18px;
+        width: 100%;
+    }
+}

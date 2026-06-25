@@ -1,0 +1,24 @@
+.account-sidebar-link {
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    display: block;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    padding: 10px 16px;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+.account-sidebar-link:hover {
+    background: rgba(107, 79, 79, 0.04);
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.account-sidebar-link.is-active {
+    background: rgba(107, 79, 79, 0.08);
+    color: var(--color-primary);
+    font-weight: 800;
+    text-decoration: none;
+}

@@ -1,0 +1,23 @@
+.personal-data-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: 32px;
+}
+
+.personal-data-summary,
+.personal-data-edit {
+    min-width: 0;
+}
+
+.personal-data-edit .form-item-control {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .personal-data-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
