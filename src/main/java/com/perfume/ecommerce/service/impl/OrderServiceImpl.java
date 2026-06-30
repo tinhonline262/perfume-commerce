@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.perfume.ecommerce.constants.ErrorMessage.ORDER_NOT_FOUND;
+import static com.perfume.ecommerce.constants.ErrorMessage.PERFUME_NOT_FOUND;
 
 @Service
 @RequiredArgsConstructor
@@ -63,7 +64,8 @@ public class OrderServiceImpl implements OrderService {
         List<OrderItem> orderItemList = new ArrayList<>();
 
         for (Map.Entry<Long, Long> entry : perfumesId.entrySet()) {
-            Perfume perfume = perfumeRepository.findById(entry.getKey()).get();
+            Perfume perfume = perfumeRepository.findById(entry.getKey())
+                    .orElseThrow(() -> new ApiRequestException(PERFUME_NOT_FOUND, HttpStatus.NOT_FOUND));
             OrderItem orderItem = new OrderItem();
             orderItem.setPerfume(perfume);
             orderItem.setAmount((perfume.getPrice() * entry.getValue()));
