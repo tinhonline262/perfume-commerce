@@ -9,7 +9,7 @@ const CartTotalPrice: FC = (): ReactElement => {
     const { t } = useTranslation();
     const totalPrice = useSelector(selectTotalPrice);
 
-    return <Typography.Title level={3}>{t('cart.total')}: $ {totalPrice}</Typography.Title>;
+    return <Typography.Title level={3}>{t('cart.total')}: {totalPrice} VND</Typography.Title>;
 };
 
 export default CartTotalPrice;

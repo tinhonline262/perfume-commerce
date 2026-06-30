@@ -14,6 +14,7 @@ export const ORDER_SUCCESS = "/order/success";
 export const ORDER_FAILED = "/order/failed";
 export const OAUTH2_REDIRECT = "/oauth2/redirect";
 
+export const TRACKING = "/tracking";
 export const ACCOUNT = "/account";
 export const ACCOUNT_USER_INFO = "/account/user/info";
 export const ACCOUNT_USER_EDIT = "/account/user/edit";
@@ -21,5 +22,6 @@ export const ACCOUNT_USER_ORDERS = "/account/user/orders";
 
 export const ACCOUNT_ADMIN_ADD = "/account/admin/add";
 export const ACCOUNT_ADMIN_PERFUMES = "/account/admin/perfumes";
+export const ACCOUNT_ADMIN_DASHBOARD = "/account/admin/dashboard";
 export const ACCOUNT_ADMIN_ORDERS = "/account/admin/orders";
 export const ACCOUNT_ADMIN_USERS = "/account/admin/users";

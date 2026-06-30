@@ -7,6 +7,7 @@ export interface PerfumeResponse {
     filename: string;
     reviewsCount: number;
     volume: string;
+    inventory: number;
 }
 
 export interface FullPerfumeResponse extends PerfumeResponse {
@@ -45,6 +46,7 @@ export interface PerfumeErrors {
     countryError: string;
     typeError: string;
     volumeError: string;
+    inventoryError: string;
     perfumeGenderError: string;
     fragranceTopNotesError: string;
     fragranceMiddleNotesError: string;

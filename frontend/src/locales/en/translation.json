@@ -18,7 +18,7 @@
     "contact_us": "Contact Us",
     "faq": "FAQ",
     "shipping_returns": "Shipping & Returns",
-    "rights_reserved": "© 2026 Essence. All Rights Reserved."
+    "rights_reserved": "© 2026 The Aura Perfume. All Rights Reserved."
   },
   "cart": {
     "title": "Cart",
@@ -130,7 +130,7 @@
     "no_perfumes": "Perfumes not found"
   },
   "auth": {
-    "login": "Sign in to Essence",
+    "login": "Sign in to The Aura Perfume",
     "email": "E-Mail",
     "password": "Password",
     "forgot_password": "Forgot password?",
@@ -216,7 +216,7 @@
     "working_time": "Working time",
     "delivery": "Delivery",
     "delivery_desc": "Delivery of orders come through courier service.",
-    "time": "From 08:00 to 20:00 without breaks and weekends"
+    "time": "Từ 08:00 đến 20:00 \nKHÔNG NGHỈ TRƯA và cuối tuần"
   },
   "errors": {
     "Fill in the input field": "Fill in the input field",

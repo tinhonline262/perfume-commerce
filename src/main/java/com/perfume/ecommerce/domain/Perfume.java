@@ -62,6 +62,8 @@ public class Perfume {
     
     @Column(name = "perfume_rating")
     private Double perfumeRating;
+    @Column(name = "inventory")
+    private Integer inventory = 100;
 
     @OneToMany
     @ToString.Exclude

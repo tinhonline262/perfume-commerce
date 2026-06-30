@@ -18,7 +18,7 @@
     "contact_us": "Liên hệ",
     "faq": "Câu hỏi thường gặp",
     "shipping_returns": "Vận chuyển & Đổi trả",
-    "rights_reserved": "© 2026 Essence. Mọi quyền được bảo lưu."
+    "rights_reserved": "© 2026 The Aura Perfume. Mọi quyền được bảo lưu."
   },
   "cart": {
     "title": "Giỏ hàng",
@@ -130,7 +130,7 @@
     "no_perfumes": "Không tìm thấy nước hoa"
   },
   "auth": {
-    "login": "Đăng nhập vào Essence",
+    "login": "Đăng nhập vào The Aura Perfume",
     "email": "E-Mail",
     "password": "Mật khẩu",
     "forgot_password": "Quên mật khẩu?",
@@ -216,7 +216,7 @@
     "working_time": "Giờ làm việc",
     "delivery": "Giao hàng",
     "delivery_desc": "Giao hàng được thực hiện qua dịch vụ chuyển phát nhanh.",
-    "time": "Từ 08:00 đến 20:00 không nghỉ trưa và cuối tuần"
+    "time": "Từ 08:00 đến 20:00 \nKHÔNG NGHỈ TRƯA và cuối tuần"
   },
   "errors": {
     "Fill in the input field": "Vui lòng điền vào trường này",

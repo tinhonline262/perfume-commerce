@@ -15,6 +15,7 @@ import {
     ACCOUNT_ADMIN_ADD,
     ACCOUNT_ADMIN_ORDERS,
     ACCOUNT_ADMIN_PERFUMES,
+    ACCOUNT_ADMIN_DASHBOARD,
     ACCOUNT_ADMIN_USERS,
     ACCOUNT_USER_EDIT,
     ACCOUNT_USER_INFO,
@@ -26,6 +27,7 @@ import PersonalData from "./PersonalData/PersonalData";
 import AddPerfume from "./AddPerfume/AddPerfume";
 import PerfumeList from "./PerfumeList/PerfumeList";
 import EditPerfume from "./EditPerfume/EditPerfume";
+import AdminDashboard from "./AdminDashboard/AdminDashboard";
 import OrdersList from "./OrdersList/OrdersList";
 import ManageUserOrder from "./ManageUserOrder/ManageUserOrder";
 import UsersList from "./UsersList/UsersList";
@@ -60,6 +62,7 @@ const Account: FC = (): ReactElement => {
                     {isAdmin ? (
                         <>
                             <AccountLink link={ACCOUNT_ADMIN_ADD} title={t('account.admin.add_perfume')} />
+                            <AccountLink link={ACCOUNT_ADMIN_DASHBOARD} title={"Dashboard"} />
                             <AccountLink link={ACCOUNT_ADMIN_PERFUMES} title={t('account.admin.perfumes_list')} />
                             <AccountLink link={ACCOUNT_ADMIN_ORDERS} title={t('account.admin.orders_list')} />
                             <AccountLink link={ACCOUNT_ADMIN_USERS} title={t('account.admin.users_list')} />
@@ -80,6 +83,7 @@ const Account: FC = (): ReactElement => {
                     {isAdmin ? (
                         <>
                             <Route path={ACCOUNT_ADMIN_ADD} component={AddPerfume} />
+                            <Route exact path={ACCOUNT_ADMIN_DASHBOARD} component={AdminDashboard} />
                             <Route exact path={ACCOUNT_ADMIN_PERFUMES} component={PerfumeList} />
                             <Route exact path={`${ACCOUNT_ADMIN_PERFUMES}/:id`} component={EditPerfume} />
                             <Route exact path={ACCOUNT_ADMIN_ORDERS} component={OrdersList} />

@@ -55,4 +55,6 @@ public class PerfumeRequest {
     @NotBlank(message = FILL_IN_THE_INPUT_FIELD)
     @Length(max = 255)
     private String type;
+    @NotNull(message = FILL_IN_THE_INPUT_FIELD)
+    private Integer inventory;
 }

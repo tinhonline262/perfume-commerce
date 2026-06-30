@@ -26,6 +26,7 @@ export const getPerfumeByQuery = (id: string) => `
             filename
             price
             volume
+            inventory
             type
             perfumeRating
             reviews {

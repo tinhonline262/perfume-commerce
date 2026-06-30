@@ -1,13 +1,13 @@
-INSERT INTO orders (id, address, city, date, email, first_name, last_name, phone_number, post_index, total_price)
-    VALUES (1, 'Wall Street1', 'New York', '2021-04-07', 'test123@test.com', 'John', 'Doe', '1234567890', 1234567890, 840);
-INSERT INTO orders (id, address, city, date, email, first_name, last_name, phone_number, post_index, total_price)
-    VALUES (2, 'Wall Street1', 'New York', '2021-04-07', 'test123@test.com', 'John', 'Doe', '1234567890', 1234567890, 240);
-INSERT INTO orders (id, address, city, date, email, first_name, last_name, phone_number, post_index, total_price)
-    VALUES (3, 'Tverskaya street 1', 'Moscow', '2021-04-07', 'ivan123@test.com', 'Ivan', 'Ivanov', '1234567890', 1234567890, 163);
-INSERT INTO orders (id, address, city, date, email, first_name, last_name, phone_number, post_index, total_price)
-    VALUES (4, 'Tverskaya street 1', 'Moscow', '2021-04-07', 'ivan123@test.com', 'Ivan', 'Ivanov', '1234567890', 1234567890, 780);
-INSERT INTO orders (id, address, city, date, email, first_name, last_name, phone_number, post_index, total_price)
-    VALUES (5, 'Tverskaya street 1', 'Moscow', '2021-04-07', 'ivan123@test.com', 'Ivan', 'Ivanov', '1234567890', 1234567890, 196);
+INSERT INTO orders (id, address, city, date, email, first_name, last_name, phone_number, post_index, total_price, payment_method, payment_status)
+    VALUES (1, 'Wall Street1', 'New York', '2021-04-07', 'test123@test.com', 'John', 'Doe', '1234567890', 1234567890, 840, 'COD', 'PENDING');
+INSERT INTO orders (id, address, city, date, email, first_name, last_name, phone_number, post_index, total_price, payment_method, payment_status)
+    VALUES (2, 'Wall Street1', 'New York', '2021-04-07', 'test123@test.com', 'John', 'Doe', '1234567890', 1234567890, 240, 'COD', 'PENDING');
+INSERT INTO orders (id, address, city, date, email, first_name, last_name, phone_number, post_index, total_price, payment_method, payment_status)
+    VALUES (3, 'Tverskaya street 1', 'Moscow', '2021-04-07', 'ivan123@test.com', 'Ivan', 'Ivanov', '1234567890', 1234567890, 163, 'COD', 'PENDING');
+INSERT INTO orders (id, address, city, date, email, first_name, last_name, phone_number, post_index, total_price, payment_method, payment_status)
+    VALUES (4, 'Tverskaya street 1', 'Moscow', '2021-04-07', 'ivan123@test.com', 'Ivan', 'Ivanov', '1234567890', 1234567890, 780, 'COD', 'PENDING');
+INSERT INTO orders (id, address, city, date, email, first_name, last_name, phone_number, post_index, total_price, payment_method, payment_status)
+    VALUES (5, 'Tverskaya street 1', 'Moscow', '2021-04-07', 'ivan123@test.com', 'Ivan', 'Ivanov', '1234567890', 1234567890, 196, 'COD', 'PENDING');
 
 INSERT INTO order_item (id, amount, quantity, perfume_id) VALUES (1, 384, 2, 33);
 INSERT INTO order_item (id, amount, quantity, perfume_id) VALUES (2, 456, 3, 34);

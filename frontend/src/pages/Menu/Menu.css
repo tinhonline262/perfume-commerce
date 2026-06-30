@@ -9,8 +9,10 @@
 }
 
 .ant-checkbox-group-item {
-    display: block;
+    display: flex;
+    align-items: center;
     margin-right: 0;
+    margin-left: 0;
 }
 
 .menu-content > h2.ant-typography {
@@ -43,9 +45,34 @@
 
 .menu-sidebar-section .ant-checkbox-wrapper,
 .menu-sidebar-section .ant-radio-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    text-indent: 0 !important;
     font-size: 15px;
     color: var(--color-text-secondary);
     transition: color 200ms ease;
+}
+
+.menu-sidebar-section .ant-checkbox,
+.menu-sidebar-section .ant-radio {
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+}
+
+.menu-sidebar-section .ant-checkbox-wrapper > span,
+.menu-sidebar-section .ant-radio-wrapper > span {
+    display: flex;
+    align-items: center;
+}
+
+.menu-sidebar-section .ant-checkbox-wrapper > span:not(.ant-checkbox),
+.menu-sidebar-section .ant-radio-wrapper > span:not(.ant-radio) {
+    padding: 0 !important;
 }
 
 .menu-sidebar-section .ant-checkbox-wrapper:hover,

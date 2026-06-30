@@ -120,7 +120,7 @@ const ManageUser: FC = (): ReactElement => {
                                                         title: t('order.order_summary'),
                                                         dataIndex: "totalPrice",
                                                         key: "totalPrice",
-                                                        render: (_, order: OrderResponse) => `${order.totalPrice}.0 $`
+                                                        render: (_, order: OrderResponse) => `${order.totalPrice} VND`
                                                     },
                                                     {
                                                         title: t('account.actions'),

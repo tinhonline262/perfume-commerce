@@ -26,10 +26,14 @@ const Contacts: FC = (): ReactElement => {
                         <Typography.Text strong>{t('contacts.email') + ": "}</Typography.Text>
                         <Typography.Text>support@perfume.local</Typography.Text>
                     </div>
+                    <div>
+                        <Typography.Text strong>{t('order.address')}</Typography.Text>
+                        <Typography.Text>3/2, Ninh Kiều, Cần Thơ</Typography.Text>
+                    </div>
                     <div style={{ marginTop: 16 }}>
                         <Typography.Text strong>{t('contacts.working_time')}</Typography.Text>
                     </div>
-                    <div>
+                    <div style={{ whiteSpace: 'pre-wrap' }}>
                         <Typography.Text>
                             {t('contacts.time')}
                         </Typography.Text>

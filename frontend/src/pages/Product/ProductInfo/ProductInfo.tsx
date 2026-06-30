@@ -45,7 +45,7 @@ const ProductInfo: FC<PropsType> = ({ perfume, reviewsLength, addToCart }): Reac
                 <Row className="product-purchase-row">
                     <Col xs={24} sm={8}>
                         <Space align={"baseline"} className="product-price-wrapper">
-                            <Typography.Text className="product-price">${perfume?.price}.00</Typography.Text>
+                            <Typography.Text className="product-price">{perfume?.price} VND</Typography.Text>
                         </Space>
                     </Col>
                     <Col xs={24} sm={10}>

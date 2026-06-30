@@ -56,12 +56,13 @@ const PerfumeCard: FC<PropsType> = ({ perfume, colSpan, edit, onOpenDelete, full
                     <div className="perfume-card-meta-row">
                         <span>{perfume.volume} ml</span>
                         <span>{perfume.reviewsCount} {t('product.reviews', 'reviews').toLowerCase()}</span>
+                        <span style={{ marginLeft: 'auto' }}>Kho: {perfume.inventory}</span>
                     </div>
                     <Typography.Title level={4} className="perfume-card-title">
                         {perfume.perfumer}
                     </Typography.Title>
                     <Typography.Text className="perfume-card-description">{perfume.perfumeTitle}</Typography.Text>
-                    <Typography.Text className={"perfume-card-price"}>${perfume.price}.00</Typography.Text>
+                    <Typography.Text className={"perfume-card-price"}>{perfume.price} VND</Typography.Text>
                 </Card>
             </Link>
         </Col>

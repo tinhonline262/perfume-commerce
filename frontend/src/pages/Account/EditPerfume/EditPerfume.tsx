@@ -197,6 +197,15 @@ const EditPerfume: FC = (): ReactElement => {
                             disabled={isLoading}
                             placeholder={t('account.admin.price_placeholder')}
                         />
+                            <FormInput
+                                title={"Inventory"}
+                                titleSpan={8}
+                                wrapperSpan={16}
+                                name={"inventory"}
+                                error={errors.inventoryError}
+                                disabled={isLoading}
+                                placeholder={"Enter the inventory"}
+                            />
                     </Col>
                     <Col xs={24} md={12}>
                         <Upload name={"file"} onChange={handleUpload} beforeUpload={() => false} maxCount={1}>

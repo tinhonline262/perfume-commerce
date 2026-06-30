@@ -13,7 +13,7 @@ describe("ProductInfo", () => {
         expect(wrapper.text().includes(mockFullPerfumeResponse.type)).toBe(true);
         expect(wrapper.text().includes("11 reviews")).toBe(true);
         expect(wrapper.text().includes("In Stock")).toBe(true);
-        expect(wrapper.text().includes(`$${mockFullPerfumeResponse.price}.00`)).toBe(true);
+        expect(wrapper.text().includes(`${mockFullPerfumeResponse.price} VND`)).toBe(true);
         expect(wrapper.text().includes("Add to cart")).toBe(true);
         expect(wrapper.find(Description).at(7).text().includes(mockFullPerfumeResponse.perfumeGender)).toBe(true);
         expect(wrapper.find(Description).at(8).text().includes(mockFullPerfumeResponse.volume)).toBe(true);

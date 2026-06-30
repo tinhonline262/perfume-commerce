@@ -89,6 +89,7 @@ public class AdminControllerTest {
     @DisplayName("[400] POST /api/v1/admin/add - Should Input Fields Are Empty Add Perfume")
     public void addPerfume_ShouldInputFieldsAreEmpty() throws Exception {
         PerfumeRequest perfumeRequest = new PerfumeRequest();
+        perfumeRequest.setInventory(100);
         MockMultipartFile jsonFile = new MockMultipartFile("perfume", "", MediaType.APPLICATION_JSON_VALUE, mapper.writeValueAsString(perfumeRequest).getBytes());
         MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 
@@ -127,6 +128,7 @@ public class AdminControllerTest {
     @DisplayName("[400] POST /api/v1/admin/edit - Should Input Fields Are Empty Edit Perfume")
     public void editPerfume_ShouldInputFieldsAreEmpty() throws Exception {
         PerfumeRequest perfumeRequest = new PerfumeRequest();
+        perfumeRequest.setInventory(100);
         MockMultipartFile jsonFile = new MockMultipartFile("perfume", "", MediaType.APPLICATION_JSON_VALUE, mapper.writeValueAsString(perfumeRequest).getBytes());
         MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 

@@ -71,7 +71,7 @@ const ManageUserOrder: FC = (): ReactElement => {
                                         <AccountDataItem title={t('account.order_id')} text={id} />
                                         <AccountDataItem title={t('account.order_date')} text={date} />
                                         <AccountDataItem title={t('account.order_status')} text={paymentStatus || "N/A"} />
-                                        <ContentTitle title={`${t('order.order_summary')}: ${totalPrice}.0 $`} titleLevel={4} />
+                                        <ContentTitle title={`${t('order.order_summary')}: ${totalPrice} VND`} titleLevel={4} />
                                     </Col>
                                 </Row>
                                 <Row style={{ marginTop: 16 }}>
@@ -107,13 +107,13 @@ const ManageUserOrder: FC = (): ReactElement => {
                                                     title: t('menu.price'),
                                                     dataIndex: "price",
                                                     key: "price",
-                                                    render: (_, order: OrderItemResponse) => `${order.perfume.price}.0 $`
+                                                    render: (_, order: OrderItemResponse) => `${order.perfume.price} VND`
                                                 },
                                                 {
                                                     title: t('cart.total'),
                                                     dataIndex: "amount",
                                                     key: "amount",
-                                                    render: (_, order: OrderItemResponse) => `${order.amount}.0 $`
+                                                    render: (_, order: OrderItemResponse) => `${order.amount} VND`
                                                 }
                                             ]}
                                         />

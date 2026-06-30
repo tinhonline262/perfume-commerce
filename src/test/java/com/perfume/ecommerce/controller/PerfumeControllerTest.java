@@ -55,8 +55,8 @@ public class PerfumeControllerTest {
         List<String> genders = new ArrayList<>();
         perfumers.add(PERFUMER_CHANEL);
         genders.add(PERFUME_GENDER);
-        prices.add(1);
-        prices.add(1000);
+        prices.add(10000);
+        prices.add(10000000);
 
         filter = new PerfumeSearchRequest();
         filter.setPerfumers(perfumers);
@@ -130,8 +130,8 @@ public class PerfumeControllerTest {
         List<String> perfumers = new ArrayList<>();
         perfumers.add(PERFUMER_CHANEL);
         List<Integer> prices = new ArrayList<>();
-        prices.add(150);
-        prices.add(250);
+        prices.add(1500000);
+        prices.add(2500000);
 
         filter.setPerfumers(perfumers);
         filter.setGenders(new ArrayList<>());

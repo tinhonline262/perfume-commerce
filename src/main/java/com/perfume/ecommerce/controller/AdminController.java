@@ -11,6 +11,7 @@ import com.perfume.ecommerce.mapper.OrderMapper;
 import com.perfume.ecommerce.mapper.PerfumeMapper;
 import com.perfume.ecommerce.mapper.UserMapper;
 import com.perfume.ecommerce.service.graphql.GraphQLProvider;
+import com.perfume.ecommerce.service.DashboardService;
 import graphql.ExecutionResult;
 import lombok.RequiredArgsConstructor;
 
@@ -37,6 +38,7 @@ public class AdminController {
     private final PerfumeMapper perfumeMapper;
     private final OrderMapper orderMapper;
     private final GraphQLProvider graphQLProvider;
+    private final DashboardService dashboardService;
 
     @PostMapping(ADD)
     public ResponseEntity<FullPerfumeResponse> addPerfume(@RequestPart(name = "file", required = false) MultipartFile file,
@@ -102,6 +104,17 @@ public class AdminController {
     }
 
     @PostMapping(GRAPHQL_ORDER)
+    @GetMapping("/statistics")
+    public ResponseEntity<java.util.Map<String, Object>> getStatistics() {
+        return ResponseEntity.ok(dashboardService.getStatistics());
+    }
+
+    @PostMapping("/email/promotional")
+    public ResponseEntity<String> sendPromotionalEmail(@RequestBody java.util.Map<String, String> request) {
+        dashboardService.sendPromotionalEmail(request.get("subject"), request.get("message"));
+        return ResponseEntity.ok("Emails sent successfully");
+    }
+
     public ResponseEntity<ExecutionResult> getUserOrdersByEmailQuery(@RequestBody GraphQLRequest request) {
         return ResponseEntity.ok(graphQLProvider.getGraphQL().execute(request.getQuery()));
     }

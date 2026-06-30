@@ -171,7 +171,7 @@ const Order: FC = (): ReactElement => {
                                 <Row justify="space-between" align="middle" style={{ marginBottom: 24 }}>
                                     <Typography.Title level={3} style={{ margin: 0 }}>{t('order.to_pay')}</Typography.Title>
                                     <Typography.Title level={3} style={{ margin: 0, color: "var(--color-primary)" }}>
-                                        $ {totalPrice}.00
+                                        {totalPrice} VND
                                     </Typography.Title>
                                 </Row>
                                 <Button

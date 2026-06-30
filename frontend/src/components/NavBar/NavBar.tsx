@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { selectUserFromUserState } from "../../redux-toolkit/user/user-selector";
 import { selectCartItemsCount } from "../../redux-toolkit/cart/cart-selector";
 import { logoutSuccess } from "../../redux-toolkit/user/user-slice";
-import { ACCOUNT, BASE, CONTACTS, LOGIN, MENU, REGISTRATION } from "../../constants/routeConstants";
+import { ACCOUNT, BASE, CONTACTS, TRACKING, LOGIN, MENU, REGISTRATION } from "../../constants/routeConstants";
 import { CART } from "../../constants/urlConstants";
 import "./NavBar.scss";
 
@@ -37,12 +37,12 @@ const NavBar: FC = (): ReactElement => {
             <Affix>
                 <nav className={"navbar-wrapper"} aria-label="Main navigation">
                     <Row className="navbar-inner" align="middle">
-                        <Col xs={24} md={5}>
+                        <Col xs={24} md={6}>
                             <Link to={BASE} className="navbar-brand">
-                                Essence
+                                The Aura Perfume
                             </Link>
                         </Col>
-                        <Col xs={24} md={8}>
+                        <Col xs={24} md={7}>
                             <ul className="navbar-links">
                                 <Link to={BASE}>
                                     <li>{t('nav.home')}</li>
@@ -50,6 +50,9 @@ const NavBar: FC = (): ReactElement => {
                                 <li>
                                     <Link to={{ pathname: MENU, state: { id: "all" } }}>{t('nav.perfumes')}</Link>
                                 </li>
+                                <Link to={TRACKING}>
+                                    <li>{t("nav.tracking", "TRACKING")}</li>
+                                </Link>
                                 <Link to={CONTACTS}>
                                     <li>{t('nav.contacts')}</li>
                                 </Link>

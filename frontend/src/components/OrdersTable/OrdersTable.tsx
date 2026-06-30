@@ -65,12 +65,16 @@ const OrdersTable: FC<PropsType> = ({ orders, loading, fetchOrders }): ReactElem
                 {
                     title: t('account.order_status', 'Status'),
                     dataIndex: "paymentStatus",
-                    key: "paymentStatus",
+                                        key: "paymentStatus",
                     render: (status: string) => {
                         let color = "default";
                         if (status === "SUCCESS") color = "green";
                         if (status === "FAILED") color = "red";
                         if (status === "PENDING") color = "orange";
+                        if (status === "PREPARING") color = "geekblue";
+                        if (status === "PREPARED") color = "cyan";
+                        if (status === "DELIVERING") color = "purple";
+                        if (status === "DELIVERED") color = "green";
                         return <span style={{ color }}>{status || "N/A"}</span>;
                     }
                 },

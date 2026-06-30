@@ -10,7 +10,10 @@ const Footer: FC = (): ReactElement => {
         <div className={"footer-wrapper"}>
             <Row gutter={[32, 32]}>
                 <Col xs={24} md={10}>
-                    <Typography.Title level={3}>Essence</Typography.Title>
+                    <Typography.Title level={3}>The Aura Perfume</Typography.Title>
+                    <Typography.Text style={{ display: 'block', fontStyle: 'italic', marginBottom: '12px' }}>
+                        Your Aura, Your Legacy
+                    </Typography.Text>
                     <Typography.Text>
                         Curated fragrance, warm materials and quiet packaging for daily rituals.
                     </Typography.Text>

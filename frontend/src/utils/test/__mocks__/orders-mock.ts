@@ -14,7 +14,7 @@ export const mockOrderRequest: OrderRequest = {
 
 export const mockOrder: OrderResponse = {
     id: 1,
-    totalPrice: 840,
+    totalPrice: 21000000,
     date: "2021-04-07",
     firstName: "Mara",
     lastName: "Ellison",
@@ -28,13 +28,13 @@ export const mockOrder: OrderResponse = {
 export const mockOrderItems: Array<OrderItemResponse> = [
     {
         id: 1,
-        amount: 384,
+        amount: 9600000,
         quantity: 2,
         perfume: {
             id: 33,
             perfumeTitle: "Chanel N5",
             perfumer: "Chanel",
-            price: 192,
+            price: 4800000,
             perfumeRating: 0,
             filename: "4b51181b-5551-4321-b5e7-f7612584c9b2.Chanel N5.jpg",
             reviewsCount: 0,
@@ -43,13 +43,13 @@ export const mockOrderItems: Array<OrderItemResponse> = [
     },
     {
         id: 2,
-        amount: 456,
+        amount: 11400000,
         quantity: 3,
         perfume: {
             id: 34,
             perfumeTitle: "Aventus",
             perfumer: "Creed",
-            price: 152,
+            price: 3800000,
             perfumeRating: 0,
             filename: "bdb203a9-0725-4ed4-a71a-db7eeb915fae.Creed Aventus.jpg",
             reviewsCount: 0,
@@ -61,7 +61,7 @@ export const mockOrderItems: Array<OrderItemResponse> = [
 export const mockOrders: Array<OrderResponse> = [
     {
         id: 1,
-        totalPrice: 840,
+        totalPrice: 21000000,
         date: "2021-04-07",
         firstName: "Mara",
         lastName: "Ellison",
@@ -73,7 +73,7 @@ export const mockOrders: Array<OrderResponse> = [
     },
     {
         id: 2,
-        totalPrice: 240,
+        totalPrice: 6000000,
         date: "2021-04-07",
         firstName: "Celia",
         lastName: "Nguyen",
@@ -85,7 +85,7 @@ export const mockOrders: Array<OrderResponse> = [
     },
     {
         id: 3,
-        totalPrice: 163,
+        totalPrice: 4075000,
         date: "2021-04-07",
         firstName: "Ivan",
         lastName: "Ivanov",
@@ -97,7 +97,7 @@ export const mockOrders: Array<OrderResponse> = [
     },
     {
         id: 4,
-        totalPrice: 780,
+        totalPrice: 19500000,
         date: "2021-04-07",
         firstName: "Ivan",
         lastName: "Ivanov",
@@ -109,7 +109,7 @@ export const mockOrders: Array<OrderResponse> = [
     },
     {
         id: 5,
-        totalPrice: 196,
+        totalPrice: 4900000,
         date: "2021-04-07",
         firstName: "Ivan",
         lastName: "Ivanov",

@@ -29,7 +29,7 @@ const OrderItem: FC<PropsType> = ({ perfume, quantity }): ReactElement => {
                 </div>
                 <div className="order-item-actions">
                     <Typography.Title level={5} className="order-item-price" style={{ margin: 0, fontWeight: 700 }}>
-                        ${perfume.price * (quantity ?? 1)}.00
+                        {perfume.price * (quantity ?? 1)} VND
                     </Typography.Title>
                     <Typography.Text type="secondary" style={{ fontSize: 12 }}>
                         Qty: {quantity}

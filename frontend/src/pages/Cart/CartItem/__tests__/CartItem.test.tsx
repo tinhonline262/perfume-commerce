@@ -19,7 +19,7 @@ describe("CartItem", () => {
             />
         );
         expect(wrapper.find(InputNumber).at(0).prop("value")).toBe(mockPerfumeCount);
-        expect(wrapper.text().includes(`$${mockPerfume.price * mockPerfumeCount}`)).toBe(true);
+        expect(wrapper.text().includes(`${mockPerfume.price * mockPerfumeCount} VND`)).toBe(true);
     });
 
     it("should handle Perfumes Count", () => {

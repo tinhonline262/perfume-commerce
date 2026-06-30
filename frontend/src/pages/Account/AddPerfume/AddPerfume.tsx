@@ -131,6 +131,15 @@ const AddPerfume: FC = (): ReactElement => {
                             placeholder={t('account.admin.price_placeholder', 'Enter the price')}
                             disabled={ispPerfumeLoading}
                         />
+                            <FormInput
+                                title={"Inventory"}
+                                titleSpan={8}
+                                wrapperSpan={16}
+                                name={"inventory"}
+                                error={errors.inventoryError}
+                                disabled={isLoading}
+                                placeholder={"Enter the inventory"}
+                            />
                     </Col>
                     <Col xs={24} md={12}>
                         <AddFormInput

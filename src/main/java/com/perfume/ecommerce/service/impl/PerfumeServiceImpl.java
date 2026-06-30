@@ -47,12 +47,18 @@ public class PerfumeServiceImpl implements PerfumeService {
 
     @Override
     public Page<PerfumeProjection> findPerfumesByFilterParams(PerfumeSearchRequest filter, Pageable pageable) {
+        Integer priceStart = null;
+        Integer priceEnd = null;
+        if (filter.getPrices() != null && filter.getPrices().size() >= 2) {
+            priceStart = filter.getPrices().get(0);
+            priceEnd = filter.getPrices().get(1);
+        }
         return perfumeRepository.findPerfumesByFilterParams(
                 filter.getPerfumers(),
                 filter.getGenders(),
-                filter.getPrices().get(0),
-                filter.getPrices().get(1),
-                filter.getSortByPrice(),
+                priceStart,
+                priceEnd,
+                filter.getSortByPrice() != null ? filter.getSortByPrice() : false,
                 pageable);
     }
 

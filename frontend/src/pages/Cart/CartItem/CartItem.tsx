@@ -35,7 +35,7 @@ const CartItem: FC<PropsType> = ({
                 <CartItemInfo perfume={perfume} />
                 <div className="cart-item-actions">
                     <Typography.Title level={4} className="cart-item-price">
-                        ${perfume.price * perfumeCount}.00
+                        {perfume.price * perfumeCount} VND
                     </Typography.Title>
                     <div className="cart-item-controls">
                         <InputNumber

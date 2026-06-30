@@ -50,6 +50,7 @@ create table perfume
     volume                 varchar(255),
     year                   int4,
     perfume_rating         float8,
+    inventory              int4,
     primary key (id)
 );
 

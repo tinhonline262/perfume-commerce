@@ -26,6 +26,7 @@ type Perfume {
     filename: String
     price: Int
     volume: String
+    inventory: Int
     type: String
     perfumeRating: Float
     reviews: [Review]
