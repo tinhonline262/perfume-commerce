@@ -15,7 +15,7 @@ import { gePerfumesByIdsQuery, getAllPerfumesByQuery } from "../../utils/graphql
 export const fetchPerfumes = createAsyncThunk<HeaderResponse<PerfumeResponse>, number>(
     "perfumes/fetchPerfumes",
     async (page) => {
-        const response = await RequestService.get(`${PERFUMES}?page=${page}`);
+        const response = await RequestService.get(`${PERFUMES}?page=${page}&size=15`);
         return {
             items: response.data,
             pagesCount: parseInt(response.headers["page-total-count"]),
@@ -35,7 +35,7 @@ export const fetchPerfumesByIds = createAsyncThunk<Array<PerfumeResponse>, Array
 export const fetchPerfumesByFilterParams = createAsyncThunk<HeaderResponse<PerfumeResponse>, FilterParamsType>(
     "perfumes/fetchPerfumesByFilterParams",
     async (filter) => {
-        const response = await RequestService.post(`${PERFUMES_SEARCH}?page=${filter.currentPage}`, filter);
+        const response = await RequestService.post(`${PERFUMES_SEARCH}?page=${filter.currentPage}&size=15`, filter);
         return {
             items: response.data,
             pagesCount: parseInt(response.headers["page-total-count"]),
@@ -47,7 +47,7 @@ export const fetchPerfumesByFilterParams = createAsyncThunk<HeaderResponse<Perfu
 export const fetchPerfumesByInputText = createAsyncThunk<HeaderResponse<PerfumeResponse>, PerfumesSearchRequest>(
     "perfumes/fetchPerfumesByInputText",
     async (data) => {
-        const response = await RequestService.post(`${PERFUMES_SEARCH_TEXT}?page=${data.currentPage}`, data);
+        const response = await RequestService.post(`${PERFUMES_SEARCH_TEXT}?page=${data.currentPage}&size=15`, data);
         return {
             items: response.data,
             pagesCount: parseInt(response.headers["page-total-count"]),
