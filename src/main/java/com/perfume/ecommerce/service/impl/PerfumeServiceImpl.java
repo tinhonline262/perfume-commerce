@@ -74,6 +74,9 @@ public class PerfumeServiceImpl implements PerfumeService {
 
     @Override
     public Page<PerfumeProjection> findByInputText(SearchPerfume searchType, String text, Pageable pageable) {
+        if (searchType == null || text == null || text.trim().isEmpty()) {
+            return perfumeRepository.findAllByOrderByIdAsc(pageable);
+        }
         if (searchType.equals(SearchPerfume.BRAND)) {
             return perfumeRepository.findByPerfumer(text, pageable);
         } else if (searchType.equals(SearchPerfume.PERFUME_TITLE)) {
