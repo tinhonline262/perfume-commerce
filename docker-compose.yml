@@ -42,35 +42,35 @@ services:
       mc anonymous set download local/perfumes;
       "
 
-  # backend:
-  #   build: .
-  #   container_name: perfume-backend
-  #   depends_on:
-  #     db:
-  #       condition: service_healthy
-  #     minio-bucket:
-  #       condition: service_completed_successfully
-  #   environment:
-  #     SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/perfume
-  #     SPRING_DATASOURCE_USERNAME: postgres
-  #     SPRING_DATASOURCE_PASSWORD: perfume_root_123
-  #     STORAGE_S3_ENDPOINT: http://minio:9000
-  #     STORAGE_S3_PUBLIC_URL: http://localhost:9000
-  #     STORAGE_S3_ACCESS_KEY: minioadmin
-  #     STORAGE_S3_SECRET_KEY: minioadmin
-  #     STORAGE_S3_BUCKET_NAME: perfumes
-  #     APP_FRONTEND_BASE_URL: http://localhost
-  #     JWT_SECRET: change-me-for-local-compose
-  #   ports:
-  #     - "8080:8080"
+  backend:
+    build: .
+    container_name: perfume-backend
+    depends_on:
+      db:
+        condition: service_healthy
+      minio-bucket:
+        condition: service_completed_successfully
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/perfume
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: perfume_root_123
+      STORAGE_S3_ENDPOINT: http://minio:9000
+      STORAGE_S3_PUBLIC_URL: http://localhost:9000
+      STORAGE_S3_ACCESS_KEY: minioadmin
+      STORAGE_S3_SECRET_KEY: minioadmin
+      STORAGE_S3_BUCKET_NAME: perfumes
+      APP_FRONTEND_BASE_URL: http://localhost
+      JWT_SECRET: change-me-for-local-compose
+    ports:
+      - "8080:8080"
       
-  # frontend:
-  #   build: ./frontend
-  #   container_name: perfume-frontend
-  #   depends_on:
-  #     - backend
-  #   ports:
-  #     - "80:80"
+  frontend:
+    build: ./frontend
+    container_name: perfume-frontend
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
 
 volumes:
   postgres_data:
