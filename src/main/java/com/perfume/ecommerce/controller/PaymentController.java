@@ -4,7 +4,6 @@ import com.perfume.ecommerce.dto.payment.PaymentVerificationResult;
 import com.perfume.ecommerce.enums.PaymentMethod;
 import com.perfume.ecommerce.service.payment.PaymentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,7 +47,13 @@ public class PaymentController {
         PaymentVerificationResult result = paymentService.handleCallback(params);
 
         if (result.isSuccess()) {
-            response.sendRedirect("http://localhost:3000/order/success");
+            // Append the order ID so the frontend can retrieve it on success
+            Long orderId = result.getOrderId();
+            if (orderId != null) {
+                response.sendRedirect("http://localhost:3000/order/finalize?orderId=" + orderId);
+            } else {
+                response.sendRedirect("http://localhost:3000/order/finalize");
+            }
         } else {
             response.sendRedirect("http://localhost:3000/order/failed");
         }

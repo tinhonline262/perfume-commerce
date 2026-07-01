@@ -1,0 +1,115 @@
+.contacts-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.contacts-subtitle {
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    margin-top: 16px;
+    display: block;
+}
+
+.contact-info-card {
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    height: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-border);
+}
+
+.contact-info-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.contact-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info-icon {
+    font-size: 24px;
+    color: var(--color-primary);
+    margin-top: 4px;
+}
+
+.contact-info-content {
+    flex: 1;
+}
+
+.contact-info-title {
+    margin-bottom: 4px !important;
+}
+
+.contact-info-text {
+    color: var(--color-text-secondary);
+    white-space: pre-wrap;
+    display: block;
+}
+
+.contact-info-link {
+    color: var(--color-text);
+    transition: color 0.3s;
+}
+
+.contact-info-link:hover {
+    color: var(--color-primary);
+}
+
+.contact-form-card {
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-border);
+}
+
+.contact-form-title {
+    margin-bottom: 24px !important;
+}
+
+.contact-social-icons {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.contact-social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-bg-subtle);
+    color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.contact-social-icon:hover {
+    background: var(--color-primary);
+    color: var(--color-bg-elevated);
+    transform: translateY(-2px);
+}
+
+.contact-map-container {
+    margin-top: 48px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 400px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-map-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .contact-info-card, .contact-form-card {
+        padding: 24px;
+    }
+}

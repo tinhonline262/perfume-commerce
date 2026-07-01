@@ -58,7 +58,12 @@ const calculatePrice = (perfumes: Array<PerfumeResponse>): number => {
     const perfumesString = localStorage.getItem("perfumes");
     let total = 0;
     if (perfumesString) {
-        const perfumesFromLocalStorage: Map<number, number> = new Map(JSON.parse(perfumesString));
+        let perfumesFromLocalStorage: Map<number, number> = new Map();
+        try {
+            perfumesFromLocalStorage = new Map(JSON.parse(perfumesString));
+        } catch (e) {
+            console.error(e);
+        }
         perfumesFromLocalStorage.forEach((value, key) => {
             const perfume = perfumes.find((perfume) => perfume.id === key);
 

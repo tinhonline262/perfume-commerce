@@ -35,16 +35,80 @@
     "quantity": "Số lượng",
     "empty_title": "Giỏ hàng của bạn đang trống",
     "empty_description": "Bạn chưa có sản phẩm nào trong giỏ hàng. Hãy khám phá bộ sưu tập nước hoa của chúng tôi.",
-    "continueShopping": "Tiếp tục mua sắm"
+    "continueShopping": "Tiếp tục mua sắm",
+    "summary": "Tóm tắt",
+    "subtotal": "Tạm tính",
+    "estimated_shipping": "Phí vận chuyển dự kiến",
+    "free": "Miễn phí",
+    "proceed_to_checkout": "Tiến hành Thanh toán",
+    "free_shipping_notice": "Miễn phí vận chuyển cho mọi đơn hàng",
+    "remove": "Xóa",
+    "items": "sản phẩm",
+    "item": "sản phẩm"
   },
-  "order": {
+        "tracking": {
+            "title": "Theo dõi đơn hàng",
+            "subtitle": "Nhập mã đơn hàng để kiểm tra trạng thái giao hàng mới nhất.",
+            "searchPlaceholder": "Mã đơn hàng (VD: #1024)",
+            "searchButton": "Tra cứu đơn hàng",
+            "order": "Đơn hàng",
+            "orderNumber": "Đơn hàng #",
+            "customer": "Khách hàng",
+            "date": "Ngày",
+            "paymentMethod": "Phương thức thanh toán",
+            "paymentStatus": "Trạng thái thanh toán",
+            "items": "Sản phẩm trong đơn hàng",
+            "price": "Đơn giá",
+            "quantity": "Số lượng",
+            "subtotal": "Tạm tính",
+            "shipping": "Phí vận chuyển",
+            "discount": "Giảm giá",
+            "total": "Tổng thanh toán",
+            "free": "Miễn phí",
+            "notFound": "Không tìm thấy đơn hàng.",
+            "notFoundTitle": "Không tìm thấy đơn hàng",
+            "notFoundDesc": "Vui lòng kiểm tra mã đơn hàng và thử lại.",
+            "loading": "Đang tải...",
+            "trackAnother": "Theo dõi đơn hàng khác",
+            "orderCancelledDesc": "Đơn hàng này đã bị hủy.",
+            "status": {
+                "cancelled": "Đã hủy",
+                "delivered": "Đã giao",
+                "pending": "Chờ xác nhận",
+                "preparing": "Đang chuẩn bị",
+                "readyToShip": "Chuẩn bị giao",
+                "shipping": "Đang giao"
+            }
+        },
+        "order": {
+    "finalize": {
+      "title": "Đặt hàng thành công",
+      "subtitle": "Cảm ơn bạn đã mua sắm tại The Aura Perfume!",
+      "description": "Đơn hàng của bạn đã được ghi nhận thành công. Chúng tôi đã gửi email xác nhận đến hộp thư của bạn.",
+      "orderNumber": "Mã đơn hàng",
+      "confirmationEmail": "Email xác nhận",
+      "deliveryEstimate": "Thời gian giao dự kiến",
+      "deliveryTime": "3–5 ngày làm việc",
+      "summary": "Tóm tắt đơn hàng",
+      "subtotal": "Tạm tính",
+      "shipping": "Phí vận chuyển",
+      "discount": "Giảm giá",
+      "total": "Tổng thanh toán",
+      "trackOrder": "Theo dõi đơn hàng",
+      "continueShopping": "Tiếp tục mua sắm",
+      "qty": "SL",
+      "free": "Miễn phí"
+    },
     "title": "Đặt hàng",
     "shipping_details": "Chi tiết giao hàng",
     "order_summary": "Tóm tắt đơn hàng",
     "validate_order": "Xác nhận đặt hàng",
+    "processing": "Đang xử lý...",
     "payment_method": "Phương thức thanh toán",
-    "cod": "Thanh toán khi nhận hàng (COD)",
+    "cod": "Thanh toán khi nhận hàng",
+    "cod_desc": "Thanh toán khi nhận hàng",
     "vnpay": "VNPay",
+    "vnpay_desc": "Thanh toán trực tuyến an toàn",
     "to_pay": "Cần thanh toán :",
     "name": "Tên:",
     "surname": "Họ:",
@@ -71,10 +135,6 @@
       "title": "Thanh toán Thất bại",
       "message": "Chúng tôi không thể xử lý thanh toán của bạn. Các sản phẩm vẫn còn trong giỏ hàng. Vui lòng thử lại.",
       "button": "Trở về Trang Thanh toán"
-    },
-    "finalize": {
-      "title": "Cảm ơn bạn đã đặt hàng!",
-      "message": "Số đơn hàng của bạn là:"
     },
     "status": {
       "pending": "Chờ xác nhận",
@@ -286,7 +346,14 @@
     "unpaid": "Chưa thanh toán",
     "paid": "Đã thanh toán",
     "failed": "Thanh toán thất bại",
-    "refunded": "Đã hoàn tiền"
+    "refunded": "Đã hoàn tiền",
+    "status": {
+      "pending": "Chờ thanh toán",
+      "paid": "Đã thanh toán",
+      "failed": "Thất bại",
+      "refunded": "Đã hoàn tiền",
+      "unpaid": "Chưa thanh toán"
+    }
   },
   "contact": {
     "title": "Liên hệ",

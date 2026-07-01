@@ -41,7 +41,7 @@ public class PaymentService {
         // Typically vnp_TxnRef is the order ID
         String txnRef = requestParams.get("vnp_TxnRef");
         if (txnRef == null) {
-            return new PaymentVerificationResult(false, null, "Missing transaction reference");
+            return new PaymentVerificationResult(false, null, "Missing transaction reference", null);
         }
 
         Long orderId = Long.parseLong(txnRef);
@@ -50,6 +50,9 @@ public class PaymentService {
 
         PaymentStrategy strategy = paymentStrategyFactory.getStrategy(order.getPaymentMethod());
         PaymentVerificationResult result = strategy.verifyPayment(requestParams);
+        
+        // Attach the orderId to the result so the controller can use it
+        result.setOrderId(orderId);
 
         if (result.isSuccess()) {
             if (order.getPaymentStatus() != PaymentStatus.PAID) {

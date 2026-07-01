@@ -1,0 +1,27 @@
+.footer-wrapper-social {
+    .social-icons {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin-top: 12px;
+
+        .social-icon-link {
+            color: #1f1f1f;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-flex;
+            
+            &:hover {
+                color: #555;
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-wrapper-social {
+        .social-icons {
+            justify-content: flex-start;
+        }
+    }
+}

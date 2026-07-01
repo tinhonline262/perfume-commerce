@@ -1,26 +1,19 @@
-import React, { FC, ReactElement, useEffect } from "react";
+import React, { FC, ReactElement, useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Alert, Col, Divider, Form, Row, Space } from "antd";
-import { LockOutlined, LoginOutlined, MailOutlined } from "@ant-design/icons";
+import { Alert, Form, Button, Checkbox, Typography } from "antd";
+import { LockOutlined, MailOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 
-import googleLogo from "../../img/google.png";
-import facebookLogo from "../../img/facebook.png";
-import githubLogo from "../../img/github.png";
 import { selectErrorMessage } from "../../redux-toolkit/auth/auth-selector";
 import { resetAuthState, setAuthLoadingState } from "../../redux-toolkit/auth/auth-slice";
 import { activateAccount, login } from "../../redux-toolkit/auth/auth-thunks";
 import { selectSuccessMessage } from "../../redux-toolkit/user/user-selector";
 import { selectIsAuthLoading } from "../../redux-toolkit/auth/auth-selector";
-import { FORGOT } from "../../constants/routeConstants";
+import { FORGOT, REGISTRATION } from "../../constants/routeConstants";
 import { LoadingStatus } from "../../types/types";
-import SocialButton from "./SocialButton/SocialButton";
-import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import ContentTitle from "../../components/ContentTitle/ContentTitle";
 import FormInput from "../../components/FormInput/FormInput";
-import IconButton from "../../components/IconButton/IconButton";
-import "./Login.css";
+import AuthLayout from "../../components/AuthLayout/AuthLayout";
 
 const Login: FC = (): ReactElement => {
     const dispatch = useDispatch();
@@ -49,46 +42,57 @@ const Login: FC = (): ReactElement => {
     };
 
     return (
-        <ContentWrapper narrow>
-            <ContentTitle icon={<LoginOutlined />} title={t('nav.sign_in')} />
-            <Row gutter={32}>
-                <Col xs={24} md={12}>
-                    <Form onFinish={onClickSignIn}>
-                        <Divider />
-                        {errorMessage && <Alert type="error" message={errorMessage} />}
-                        {successMessage && <Alert type="success" message={successMessage} />}
-                        <FormInput
-                            title={t('auth.email') + ":"}
-                            icon={<MailOutlined />}
-                            titleSpan={6}
-                            wrapperSpan={18}
-                            name={"email"}
-                            placeholder={t('auth.placeholders.email')}
-                        />
-                        <FormInput
-                            title={t('auth.password') + ":"}
-                            icon={<LockOutlined />}
-                            titleSpan={6}
-                            wrapperSpan={18}
-                            name={"password"}
-                            placeholder={t('auth.placeholders.password')}
-                            inputPassword
-                        />
-                        <Space align={"baseline"} size={13}>
-                            <IconButton title={t('auth.sign_in')} icon={<LoginOutlined />} loading={isLoading} disabled={isLoading} />
-                            <Link to={FORGOT}>{t('auth.forgot_password')}</Link>
-                        </Space>
-                    </Form>
-                </Col>
-                <Col xs={24} md={12}>
-                    <div className={"social-login-wrapper"}>
-                        <SocialButton socialNetwork={"google"} image={googleLogo} />
-                        <SocialButton socialNetwork={"facebook"} image={facebookLogo} />
-                        <SocialButton socialNetwork={"github"} image={githubLogo} />
-                    </div>
-                </Col>
-            </Row>
-        </ContentWrapper>
+        <AuthLayout
+            title={t('nav.sign_in')}
+            subtitle={t('auth.login_description', 'Chào mừng bạn quay trở lại')}
+        >
+            <Form onFinish={onClickSignIn} layout="vertical" className="auth-form">
+                {errorMessage && <Alert type="error" message={errorMessage} style={{ marginBottom: "var(--space-md)" }} />}
+                {successMessage && <Alert type="success" message={successMessage} style={{ marginBottom: "var(--space-md)" }} />}
+                
+                <FormInput
+                    title={t('auth.email')}
+                    icon={<MailOutlined />}
+                    name={"email"}
+                    placeholder={t('auth.placeholders.email')}
+                />
+                
+                <FormInput
+                    title={t('auth.password')}
+                    icon={<LockOutlined />}
+                    name={"password"}
+                    placeholder={t('auth.placeholders.password')}
+                    inputPassword
+                />
+                
+                <div className="auth-actions">
+                    <Form.Item name="remember" valuePropName="checked" noStyle>
+                        <Checkbox>{t('auth.remember_me', 'Nhớ mật khẩu')}</Checkbox>
+                    </Form.Item>
+                    <Link to={FORGOT} className="forgot-password-link">
+                        {t('auth.forgot_password')}
+                    </Link>
+                </div>
+                
+                <Button 
+                    type="primary" 
+                    htmlType="submit" 
+                    className="auth-submit-btn"
+                    loading={isLoading}
+                    disabled={isLoading}
+                    size="large"
+                    block
+                >
+                    {t('auth.sign_in')}
+                </Button>
+                
+                <div className="auth-footer">
+                    <Typography.Text>
+                        {t('auth.dont_have_account', 'Chưa có tài khoản?')} <Link to={REGISTRATION}>{t('auth.create_account')}</Link>
+                    </Typography.Text>
+                </div>
+            </Form>
+        </AuthLayout>
     );
 };
 

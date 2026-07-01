@@ -76,7 +76,8 @@ describe("auth slice tests", () => {
         expect(state.loadingState).toEqual(LoadingStatus.LOADING);
 
         mock.onPost(API_BASE_URL + REGISTRATION).reply(200);
-        const result = await store.dispatch(registration(userRegistrationData));
+        const mockHistory = { push: jest.fn() } as unknown as History;
+        const result = await store.dispatch(registration({ userRegistrationData, history: mockHistory }));
 
         state = store.getState().auth;
         expect(result.type).toBe("auth/registration/fulfilled");
@@ -89,7 +90,8 @@ describe("auth slice tests", () => {
         expect(state.loadingState).toEqual(LoadingStatus.LOADING);
 
         mock.onPost(API_BASE_URL + REGISTRATION).reply(400, authErrorsData);
-        const result = await store.dispatch(registration(userRegistrationData));
+        const mockHistory = { push: jest.fn() } as unknown as History;
+        const result = await store.dispatch(registration({ userRegistrationData, history: mockHistory }));
 
         state = store.getState().auth;
         expect(result.type).toBe("auth/registration/rejected");

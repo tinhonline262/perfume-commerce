@@ -23,11 +23,12 @@ export const login = createAsyncThunk<
     }
 });
 
-export const registration = createAsyncThunk<{}, UserRegistration, { rejectValue: AuthErrors }>(
+export const registration = createAsyncThunk<{}, { userRegistrationData: UserRegistration; history: History<LocationState> }, { rejectValue: AuthErrors }>(
     "auth/registration",
-    async (userRegistrationData, thunkApi) => {
+    async ({ userRegistrationData, history }, thunkApi) => {
         try {
             await RequestService.post(REGISTRATION, userRegistrationData);
+            history.push("/registration/pending");
         } catch (error) {
             return thunkApi.rejectWithValue(error.response.data);
         }

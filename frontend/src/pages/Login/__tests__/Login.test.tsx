@@ -8,7 +8,6 @@ import { createMockRootState, mockDispatch, mountWithStore } from "../../../util
 import { LoadingStatus } from "../../../types/types";
 import ContentTitle from "../../../components/ContentTitle/ContentTitle";
 import IconButton from "../../../components/IconButton/IconButton";
-import SocialButton from "../SocialButton/SocialButton";
 import { FORGOT } from "../../../constants/routeConstants";
 import Login from "../Login";
 
@@ -28,7 +27,6 @@ describe("Login", () => {
         expect(mockDispatchFn).nthCalledWith(1, expect.any(Function));
         expect(wrapper.find(ContentTitle).at(0).prop("title")).toBe("SIGN IN");
         expect(wrapper.find(IconButton).at(0).prop("title")).toBe("Sign in");
-        expect(wrapper.find(SocialButton).length).toEqual(3);
     });
 
     it("should render error message", () => {

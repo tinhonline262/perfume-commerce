@@ -17,16 +17,17 @@ import {
     OAUTH2_REDIRECT,
     ORDER,
     ORDER_FINALIZE,
-    ORDER_SUCCESS,
     ORDER_FAILED,
     PRODUCT,
     REGISTRATION,
+    REGISTRATION_PENDING,
     RESET
 } from "./constants/routeConstants";
 import { fetchCart } from "./redux-toolkit/cart/cart-thunks";
 import { fetchUserInfo } from "./redux-toolkit/user/user-thunks";
 import Login from "./pages/Login/Login";
 import Registration from "./pages/Registration/Registration";
+import RegistrationPending from "./pages/Registration/RegistrationPending";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import Menu from "./pages/Menu/Menu";
 import Tracking from "./pages/Tracking/Tracking";
@@ -38,7 +39,6 @@ import Product from "./pages/Product/Product";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
 import Account from "./pages/Account/Account";
 import OrderFinalize from "./pages/OrderFinalize/OrderFinalize";
-import OrderSuccess from "./pages/OrderSuccess/OrderSuccess";
 import OrderFailed from "./pages/OrderFailed/OrderFailed";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -49,9 +49,15 @@ const App: FC = (): ReactElement => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const perfumesFromLocalStorage: Map<number, number> = new Map(
-            JSON.parse(localStorage.getItem("perfumes") as string)
-        );
+        const perfumesString = localStorage.getItem("perfumes");
+        let perfumesFromLocalStorage: Map<number, number> = new Map();
+        if (perfumesString) {
+            try {
+                perfumesFromLocalStorage = new Map(JSON.parse(perfumesString));
+            } catch (e) {
+                console.error("Failed to parse perfumes from local storage", e);
+            }
+        }
         dispatch(fetchCart(Array.from(perfumesFromLocalStorage.keys())));
 
         if (localStorage.getItem("token")) {
@@ -66,6 +72,7 @@ const App: FC = (): ReactElement => {
                 <Route exact path={BASE} component={Home} />
                 <Route exact path={LOGIN} component={Login} />
                 <Route exact path={REGISTRATION} component={Registration} />
+                <Route exact path={REGISTRATION_PENDING} component={RegistrationPending} />
                 <Route exact path={FORGOT} component={ForgotPassword} />
                 <Route exact path={`${RESET}/:code`} component={ResetPassword} />
                 <Route exact path={`${ACTIVATE}/:code`} component={Login} />
@@ -76,7 +83,6 @@ const App: FC = (): ReactElement => {
                 <Route exact path={CART} component={Cart} />
                 <Route exact path={ORDER} component={Order} />
                 <Route exact path={ORDER_FINALIZE} component={OrderFinalize} />
-                <Route exact path={ORDER_SUCCESS} component={OrderSuccess} />
                 <Route exact path={ORDER_FAILED} component={OrderFailed} />
                 <Route path={OAUTH2_REDIRECT} component={OAuth2RedirectHandler} />
                 <Route

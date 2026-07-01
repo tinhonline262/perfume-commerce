@@ -35,16 +35,80 @@
     "quantity": "Quantity",
     "empty_title": "Your cart is empty",
     "empty_description": "You don't have any items in your cart yet. Let's explore our perfume collection.",
-    "continueShopping": "Continue Shopping"
+    "continueShopping": "Continue Shopping",
+    "summary": "Summary",
+    "subtotal": "Subtotal",
+    "estimated_shipping": "Estimated Shipping",
+    "free": "Free",
+    "proceed_to_checkout": "Proceed to Checkout",
+    "free_shipping_notice": "Free shipping on all orders",
+    "remove": "Remove",
+    "items": "items",
+    "item": "item"
   },
-  "order": {
+        "tracking": {
+            "title": "Track Your Order",
+            "subtitle": "Enter your order ID to check the latest shipping status.",
+            "searchPlaceholder": "Order ID (e.g. #1024)",
+            "searchButton": "Track Order",
+            "order": "Order",
+            "orderNumber": "Order #",
+            "customer": "Customer",
+            "date": "Date",
+            "paymentMethod": "Payment Method",
+            "paymentStatus": "Payment Status",
+            "items": "Items in your order",
+            "price": "Price",
+            "quantity": "Qty",
+            "subtotal": "Subtotal",
+            "shipping": "Shipping",
+            "discount": "Discount",
+            "total": "Total",
+            "free": "Free",
+            "notFound": "Order not found.",
+            "notFoundTitle": "Order not found",
+            "notFoundDesc": "Please check your Order ID and try again.",
+            "loading": "Loading...",
+            "trackAnother": "Track another order",
+            "orderCancelledDesc": "This order has been cancelled.",
+            "status": {
+                "cancelled": "Cancelled",
+                "delivered": "Delivered",
+                "pending": "Order Confirmed",
+                "preparing": "Preparing",
+                "readyToShip": "Ready to Ship",
+                "shipping": "Shipping"
+            }
+        },
+        "order": {
+    "finalize": {
+      "title": "Order Confirmed",
+      "subtitle": "Thank you for your purchase!",
+      "description": "We've received your order successfully. A confirmation email has been sent to your inbox.",
+      "orderNumber": "Order Number",
+      "confirmationEmail": "Confirmation Email",
+      "deliveryEstimate": "Estimated Delivery",
+      "deliveryTime": "3–5 business days",
+      "summary": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "discount": "Discount",
+      "total": "Total",
+      "trackOrder": "Track Order",
+      "continueShopping": "Continue Shopping",
+      "qty": "Qty",
+      "free": "Free"
+    },
     "title": "Ordering",
     "shipping_details": "Shipping Details",
     "order_summary": "Order Summary",
-    "validate_order": "Validate order",
+    "validate_order": "Place Order",
+    "processing": "Processing...",
     "payment_method": "Payment Method",
-    "cod": "Cash on Delivery (COD)",
+    "cod": "Cash on Delivery",
+    "cod_desc": "Pay when you receive",
     "vnpay": "VNPay",
+    "vnpay_desc": "Secure online payment",
     "to_pay": "To pay :",
     "name": "Name:",
     "surname": "Surname:",
@@ -71,10 +135,6 @@
       "title": "Payment Failed",
       "message": "We could not process your payment. Your items are still in your cart. Please try again.",
       "button": "Return to Checkout"
-    },
-    "finalize": {
-      "title": "Thank you for the order!",
-      "message": "Your order number is:"
     },
     "status": {
       "pending": "Pending",
@@ -286,7 +346,14 @@
     "unpaid": "Unpaid",
     "paid": "Paid",
     "failed": "Payment Failed",
-    "refunded": "Refunded"
+    "refunded": "Refunded",
+    "status": {
+      "pending": "Pending",
+      "paid": "Paid",
+      "failed": "Payment Failed",
+      "refunded": "Refunded",
+      "unpaid": "Unpaid"
+    }
   },
   "contact": {
     "title": "Contact Us",

@@ -1,20 +1,22 @@
 import React, { FC, ReactElement, ReactNode } from "react";
 import { Form, Input, Typography } from "antd";
 import { Rule } from "antd/lib/form";
+import PasswordInput from "../PasswordInput/PasswordInput";
 
 import "./FormInput.css";
 
 type PropsType = {
     title: string;
     icon?: ReactNode;
-    titleSpan: number;
-    wrapperSpan: number;
+    titleSpan?: number;
+    wrapperSpan?: number;
     name: string;
     error?: string;
     placeholder?: string;
     disabled?: boolean;
     rule?: Rule[];
     inputPassword?: boolean;
+    formItem?: boolean;
 };
 
 const FormInput: FC<PropsType> = ({
@@ -46,7 +48,7 @@ const FormInput: FC<PropsType> = ({
             <div className="form-item-control">
                 <Form.Item name={name} help={error} validateStatus={error ? "error" : ""} rules={rule} style={{ marginBottom: 0 }}>
                     {inputPassword ? (
-                        <Input.Password disabled={disabled} placeholder={placeholder} />
+                        <PasswordInput disabled={disabled} placeholder={placeholder} error={!!error} />
                     ) : (
                         <Input disabled={disabled} placeholder={placeholder} />
                     )}

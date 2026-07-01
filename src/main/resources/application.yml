@@ -19,7 +19,7 @@ spring:
   mail:
     host: ${MAIL_HOST:smtp.gmail.com}
     username: ${MAIL_USERNAME:mentorbookingnotification@gmail.com}
-    password: ${MAIL_PASSWORD:idejizktdncupvmd}
+    password: ${MAIL_PASSWORD:pktoiinvzdwsepuv}
     port: ${MAIL_PORT:465}
     protocol: ${MAIL_PROTOCOL:smtps}
     properties:

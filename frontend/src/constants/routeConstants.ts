@@ -1,6 +1,7 @@
 export const BASE = "/";
 export const LOGIN = "/login";
 export const REGISTRATION = "/registration";
+export const REGISTRATION_PENDING = "/registration/pending";
 export const FORGOT = "/forgot";
 export const RESET = "/reset";
 export const ACTIVATE = "/activate";
@@ -10,7 +11,6 @@ export const CONTACTS = "/contacts";
 export const CART = "/cart";
 export const ORDER = "/order";
 export const ORDER_FINALIZE = "/order/finalize";
-export const ORDER_SUCCESS = "/order/success";
 export const ORDER_FAILED = "/order/failed";
 export const OAUTH2_REDIRECT = "/oauth2/redirect";
 

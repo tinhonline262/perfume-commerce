@@ -10,7 +10,14 @@ export const useCart = (perfumeId: number): UseCart => {
 
     const addToCart = (): void => {
         let data: string | null = localStorage.getItem("perfumes");
-        let cart: Map<number, any> = data ? new Map(JSON.parse(data as string)) : new Map();
+        let cart: Map<number, any> = new Map();
+        if (data) {
+            try {
+                cart = new Map(JSON.parse(data));
+            } catch (e) {
+                console.error("error parsing cart", e);
+            }
+        }
 
         if (cart.has(perfumeId as number)) {
             cart.set(perfumeId as number, cart.get(perfumeId as number) + 1);

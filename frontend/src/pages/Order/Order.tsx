@@ -1,22 +1,22 @@
-import React, {FC, ReactElement, useEffect, useState} from "react";
+import React, { FC, ReactElement, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { CheckCircleOutlined, ShoppingOutlined } from "@ant-design/icons";
-import { Button, Col, Form, Row, Typography, Radio } from "antd";
+import { Form, Radio } from "antd";
 import { useTranslation } from "react-i18next";
+import { PackageCheck, CreditCard, Banknote, ShieldCheck } from "lucide-react";
 
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import ContentTitle from "../../components/ContentTitle/ContentTitle";
 import FormInput from "../../components/FormInput/FormInput";
 import { selectUserFromUserState } from "../../redux-toolkit/user/user-selector";
-import {selectCartItems, selectTotalPrice} from "../../redux-toolkit/cart/cart-selector";
+import { selectCartItems, selectTotalPrice } from "../../redux-toolkit/cart/cart-selector";
 import { selectIsOrderLoading, selectOrderErrors } from "../../redux-toolkit/order/order-selector";
 import { resetOrderState, setOrderLoadingState } from "../../redux-toolkit/order/order-slice";
 import { LoadingStatus } from "../../types/types";
 import { addOrder } from "../../redux-toolkit/order/order-thunks";
-import {resetCartState} from "../../redux-toolkit/cart/cart-slice";
-import {fetchCart} from "../../redux-toolkit/cart/cart-thunks";
-import OrderItem from "./OrderItem/OrderItem";
+import { calculateCartPrice } from "../../redux-toolkit/cart/cart-slice";
+import { fetchCart } from "../../redux-toolkit/cart/cart-thunks";
+import { formatPrice } from "../../utils/formatPrice";
+import "./Order.css";
 
 interface OrderFormData {
     firstName: string;
@@ -39,16 +39,28 @@ const Order: FC = (): ReactElement => {
     const totalPrice = useSelector(selectTotalPrice);
     const errors = useSelector(selectOrderErrors);
     const isOrderLoading = useSelector(selectIsOrderLoading);
+    
     const [perfumesFromLocalStorage, setPerfumesFromLocalStorage] = useState<Map<number, number>>(new Map());
     const [paymentMethod, setPaymentMethod] = useState<string>("COD");
 
     useEffect(() => {
-        const perfumesFromLocalStorage: Map<number, number> = new Map(
-            JSON.parse(localStorage.getItem("perfumes") as string)
-        );
-        setPerfumesFromLocalStorage(perfumesFromLocalStorage);
+        dispatch(calculateCartPrice(perfumes));
+    }, [perfumes, dispatch]);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        const perfumesString = localStorage.getItem("perfumes");
+        let perfumesMap: Map<number, number> = new Map();
+        if (perfumesString) {
+            try {
+                perfumesMap = new Map(JSON.parse(perfumesString));
+            } catch (e) {
+                console.error("Failed to parse perfumes from local storage", e);
+            }
+        }
+        setPerfumesFromLocalStorage(perfumesMap);
         dispatch(setOrderLoadingState(LoadingStatus.LOADED));
-        dispatch(fetchCart(Array.from(perfumesFromLocalStorage.keys())));
+        dispatch(fetchCart(Array.from(perfumesMap.keys())));
 
         if (usersData) {
             form.setFieldsValue(usersData);
@@ -58,145 +70,195 @@ const Order: FC = (): ReactElement => {
         return () => {
             dispatch(resetOrderState());
         };
-    }, []);
+    }, [dispatch, form, usersData]);
 
     const onFormSubmit = (order: OrderFormData): void => {
         let perfumesId = {};
         const perfumesString = localStorage.getItem("perfumes");
         if (perfumesString) {
-            const perfumesIdMap = new Map(JSON.parse(perfumesString));
+            let perfumesIdMap = new Map();
+            try {
+                perfumesIdMap = new Map(JSON.parse(perfumesString));
+            } catch(e) {
+                console.error("error", e);
+            }
             perfumesId = Object.fromEntries(perfumesIdMap);
         }
         
-        // Pass paymentMethod from state since order param might not have the updated value from Form.Item correctly mapped if it doesn't trigger onFinish
         dispatch(addOrder({ order: { ...order, perfumesId, totalPrice, paymentMethod }, history }));
-        
         localStorage.removeItem("perfumes");
     };
 
     return (
         <ContentWrapper>
-            <div style={{ textAlign: "center" }}>
-                <ContentTitle icon={<ShoppingOutlined />} title={t('order.title')} />
-            </div>
-            <Form onFinish={onFormSubmit} form={form} initialValues={{ paymentMethod: "COD" }}>
-                <Row gutter={32}>
-                    <Col xs={24} md={12}>
-                        <div style={{ marginBottom: 24 }}>
-                            <Typography.Title level={4} style={{ marginBottom: 24, textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                                {t('order.shipping_details')}
-                            </Typography.Title>
-                            <FormInput
-                                title={t('order.name')}
-                                titleSpan={5}
-                                wrapperSpan={19}
-                                name={"firstName"}
-                                error={errors.firstNameError ? t(`errors.${errors.firstNameError}`) : undefined}
-                                disabled={isOrderLoading}
-                                placeholder={t('order.placeholders.first_name')}
-                            />
-                            <FormInput
-                                title={t('order.surname')}
-                                titleSpan={5}
-                                wrapperSpan={19}
-                                name={"lastName"}
-                                error={errors.lastNameError ? t(`errors.${errors.lastNameError}`) : undefined}
-                                disabled={isOrderLoading}
-                                placeholder={t('order.placeholders.last_name')}
-                            />
-                            <FormInput
-                                title={t('order.city')}
-                                titleSpan={5}
-                                wrapperSpan={19}
-                                name={"city"}
-                                error={errors.cityError ? t(`errors.${errors.cityError}`) : undefined}
-                                disabled={isOrderLoading}
-                                placeholder={t('order.placeholders.city')}
-                            />
-                            <FormInput
-                                title={t('order.address')}
-                                titleSpan={5}
-                                wrapperSpan={19}
-                                name={"address"}
-                                error={errors.addressError ? t(`errors.${errors.addressError}`) : undefined}
-                                disabled={isOrderLoading}
-                                placeholder={t('order.placeholders.address')}
-                            />
-                            <FormInput
-                                title={t('order.index')}
-                                titleSpan={5}
-                                wrapperSpan={19}
-                                name={"postIndex"}
-                                error={errors.postIndexError ? t(`errors.${errors.postIndexError}`) : undefined}
-                                disabled={isOrderLoading}
-                                placeholder={t('order.placeholders.index')}
-                            />
-                            <FormInput
-                                title={t('order.mobile')}
-                                titleSpan={5}
-                                wrapperSpan={19}
-                                name={"phoneNumber"}
-                                error={errors.phoneNumberError ? t(`errors.${errors.phoneNumberError}`) : undefined}
-                                disabled={isOrderLoading}
-                                placeholder={t('order.placeholders.mobile')}
-                            />
-                            <FormInput
-                                title={t('order.email')}
-                                titleSpan={5}
-                                wrapperSpan={19}
-                                name={"email"}
-                                error={errors.emailError ? t(`errors.${errors.emailError}`) : undefined}
-                                disabled={isOrderLoading}
-                                placeholder={t('order.placeholders.email')}
-                            />
-                        </div>
-                    </Col>
-                    <Col xs={24} md={12}>
-                        <div style={{ padding: "0 16px" }}>
-                            <Typography.Title level={4} style={{ marginBottom: 24, textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                                {t('order.order_summary')}
-                            </Typography.Title>
-                            <div style={{ maxHeight: "380px", overflowY: "auto", marginBottom: 24, paddingRight: 8 }}>
-                                {perfumes.map((perfume) => (
-                                    <OrderItem
-                                        key={perfume.id}
-                                        perfume={perfume}
-                                        quantity={perfumesFromLocalStorage.get(perfume.id)}
+            <div className="checkout-container">
+                <div className="checkout-header">
+                    <h1 className="checkout-title">{t('cart.checkout')}</h1>
+                </div>
+
+                <Form onFinish={onFormSubmit} form={form} initialValues={{ paymentMethod: "COD" }} layout="vertical">
+                    <div className="checkout-layout">
+                        <div className="checkout-form-section">
+                            <h2 className="checkout-section-title">{t('order.shipping_details')}</h2>
+                            
+                            <div className="checkout-form-grid">
+                                <div className="checkout-form-full">
+                                    <FormInput
+                                        title={t('order.email')}
+                                        name="email"
+                                        error={errors.emailError ? t(`errors.${errors.emailError}`) : undefined}
+                                        disabled={isOrderLoading}
+                                        placeholder={t('order.placeholders.email')}
                                     />
-                                ))}
-                            </div>
-                            <div style={{ marginBottom: 24 }}>
-                                <Typography.Title level={5} style={{ marginBottom: 12 }}>{t('order.payment_method')}</Typography.Title>
-                                <Form.Item name="paymentMethod">
-                                    <Radio.Group onChange={(e) => setPaymentMethod(e.target.value)}>
-                                        <Radio value="COD">{t('order.cod')}</Radio>
-                                        <Radio value="VNPAY">{t('order.vnpay')}</Radio>
-                                    </Radio.Group>
-                                </Form.Item>
-                            </div>
-                            <div style={{ borderTop: "1px solid var(--color-border)", paddingTop: 24 }}>
-                                <Row justify="space-between" align="middle" style={{ marginBottom: 24 }}>
-                                    <Typography.Title level={3} style={{ margin: 0 }}>{t('order.to_pay')}</Typography.Title>
-                                    <Typography.Title level={3} style={{ margin: 0, color: "var(--color-primary)" }}>
-                                        {totalPrice} VND
-                                    </Typography.Title>
-                                </Row>
-                                <Button
-                                    htmlType={"submit"}
-                                    loading={isOrderLoading}
-                                    type="primary"
-                                    size="large"
-                                    block
-                                    icon={<CheckCircleOutlined />}
-                                    style={{ height: "48px" }}
-                                >
-                                    {t('order.validate_order')}
-                                </Button>
+                                </div>
+                                
+                                <div>
+                                    <FormInput
+                                        title={t('order.name')}
+                                        name="firstName"
+                                        error={errors.firstNameError ? t(`errors.${errors.firstNameError}`) : undefined}
+                                        disabled={isOrderLoading}
+                                        placeholder={t('order.placeholders.first_name')}
+                                    />
+                                </div>
+                                <div>
+                                    <FormInput
+                                        title={t('order.surname')}
+                                        name="lastName"
+                                        error={errors.lastNameError ? t(`errors.${errors.lastNameError}`) : undefined}
+                                        disabled={isOrderLoading}
+                                        placeholder={t('order.placeholders.last_name')}
+                                    />
+                                </div>
+
+                                <div className="checkout-form-full">
+                                    <FormInput
+                                        title={t('order.address')}
+                                        name="address"
+                                        error={errors.addressError ? t(`errors.${errors.addressError}`) : undefined}
+                                        disabled={isOrderLoading}
+                                        placeholder={t('order.placeholders.address')}
+                                    />
+                                </div>
+
+                                <div>
+                                    <FormInput
+                                        title={t('order.city')}
+                                        name="city"
+                                        error={errors.cityError ? t(`errors.${errors.cityError}`) : undefined}
+                                        disabled={isOrderLoading}
+                                        placeholder={t('order.placeholders.city')}
+                                    />
+                                </div>
+                                <div>
+                                    <FormInput
+                                        title={t('order.index')}
+                                        name="postIndex"
+                                        error={errors.postIndexError ? t(`errors.${errors.postIndexError}`) : undefined}
+                                        disabled={isOrderLoading}
+                                        placeholder={t('order.placeholders.index')}
+                                    />
+                                </div>
+
+                                <div className="checkout-form-full">
+                                    <FormInput
+                                        title={t('order.mobile')}
+                                        name="phoneNumber"
+                                        error={errors.phoneNumberError ? t(`errors.${errors.phoneNumberError}`) : undefined}
+                                        disabled={isOrderLoading}
+                                        placeholder={t('order.placeholders.mobile')}
+                                    />
+                                </div>
                             </div>
                         </div>
-                    </Col>
-                </Row>
-            </Form>
+
+                        <div className="checkout-summary-section">
+                            <div className="checkout-summary-card">
+                                <h2 className="checkout-section-title" style={{ borderBottom: 'none', marginBottom: '16px' }}>
+                                    {t('order.order_summary')}
+                                </h2>
+                                
+                                <div className="checkout-items-list">
+                                    {perfumes.map((perfume) => (
+                                        <div className="checkout-item" key={perfume.id}>
+                                            <div className="checkout-item-image">
+                                                <img src={perfume.filename} alt={perfume.perfumeTitle} />
+                                                <span className="checkout-item-qty">
+                                                    {perfumesFromLocalStorage.get(perfume.id) || 1}
+                                                </span>
+                                            </div>
+                                            <div className="checkout-item-info">
+                                                <h4 className="checkout-item-title">{perfume.perfumer} - {perfume.perfumeTitle}</h4>
+                                                <span className="checkout-item-volume">{perfume.volume} ml</span>
+                                            </div>
+                                            <div className="checkout-item-price">
+                                                {formatPrice(perfume.price * (perfumesFromLocalStorage.get(perfume.id) || 1))} {t('common.currency', 'VND')}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="checkout-totals">
+                                    <div className="checkout-total-row">
+                                        <span>{t('cart.subtotal')}</span>
+                                        <span>{formatPrice(totalPrice)} {t('common.currency', 'VND')}</span>
+                                    </div>
+                                    <div className="checkout-total-row">
+                                        <span>{t('cart.estimated_shipping')}</span>
+                                        <span>{t('cart.free')}</span>
+                                    </div>
+                                    
+                                    <div className="checkout-payment-methods">
+                                        <h3 style={{ fontSize: '14px', fontWeight: 500, marginBottom: '12px', color: 'var(--color-text-primary)' }}>
+                                            {t('order.payment_method')}
+                                        </h3>
+                                        <Form.Item name="paymentMethod" style={{ marginBottom: 0 }}>
+                                            <Radio.Group onChange={(e) => setPaymentMethod(e.target.value)} className="payment-radio-group">
+                                                <Radio value="COD" className="payment-method-card">
+                                                    <div className="payment-method-content">
+                                                        <Banknote size={20} className="payment-method-icon" />
+                                                        <div className="payment-method-details">
+                                                            <span className="payment-method-title">{t('order.cod')}</span>
+                                                            <span className="payment-method-desc">{t('order.cod_desc', 'Pay when you receive')}</span>
+                                                        </div>
+                                                    </div>
+                                                </Radio>
+                                                <Radio value="VNPAY" className="payment-method-card">
+                                                    <div className="payment-method-content">
+                                                        <CreditCard size={20} className="payment-method-icon" />
+                                                        <div className="payment-method-details">
+                                                            <span className="payment-method-title">{t('order.vnpay')}</span>
+                                                            <span className="payment-method-desc">{t('order.vnpay_desc', 'Secure online payment')}</span>
+                                                        </div>
+                                                    </div>
+                                                </Radio>
+                                            </Radio.Group>
+                                        </Form.Item>
+                                    </div>
+
+                                    <div className="checkout-total-final">
+                                        <span>{t('cart.total')}</span>
+                                        <span>{formatPrice(totalPrice)} {t('common.currency', 'VND')}</span>
+                                    </div>
+
+                                    <button 
+                                        type="submit" 
+                                        className="checkout-submit-btn"
+                                        disabled={isOrderLoading}
+                                    >
+                                        {isOrderLoading ? t('order.processing', 'Processing...') : (
+                                            <>
+                                                <ShieldCheck size={20} />
+                                                {t('order.validate_order')}
+                                            </>
+                                        )}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Form>
+            </div>
         </ContentWrapper>
     );
 };

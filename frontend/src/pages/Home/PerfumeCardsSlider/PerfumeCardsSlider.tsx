@@ -1,6 +1,7 @@
 import React, { FC, ReactElement, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Carousel, Typography } from "antd";
+import { useTranslation } from "react-i18next";
 
 import { selectPerfumes } from "../../../redux-toolkit/perfumes/perfumes-selector";
 import { fetchPerfumesByIds } from "../../../redux-toolkit/perfumes/perfumes-thunks";
@@ -13,6 +14,7 @@ export const perfumesIds = [26, 43, 46, 106, 34, 76, 82, 85, 27, 39, 79, 86];
 const PerfumeCardsSlider: FC = (): ReactElement => {
     const dispatch = useDispatch();
     const perfumes = useSelector(selectPerfumes);
+    const { t } = useTranslation();
 
     useEffect(() => {
         // GraphQL example
