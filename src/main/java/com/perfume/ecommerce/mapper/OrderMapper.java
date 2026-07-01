@@ -5,13 +5,17 @@ import com.perfume.ecommerce.dto.HeaderResponse;
 import com.perfume.ecommerce.dto.order.OrderItemResponse;
 import com.perfume.ecommerce.dto.order.OrderRequest;
 import com.perfume.ecommerce.dto.order.OrderResponse;
+import com.perfume.ecommerce.dto.order.UpdateOrderStatusRequest;
 import com.perfume.ecommerce.enums.PaymentMethod;
+import com.perfume.ecommerce.enums.PaymentStatus;
+import com.perfume.ecommerce.exception.ApiRequestException;
 import com.perfume.ecommerce.exception.InputFieldException;
 import com.perfume.ecommerce.service.OrderService;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
 
@@ -60,5 +64,16 @@ public class OrderMapper {
         }
         Order order = orderService.postOrder(orderEntity, orderRequest.getPerfumesId());
         return commonMapper.convertToResponse(order, OrderResponse.class);
+    }
+
+    public OrderResponse updateOrderStatus(Long orderId, UpdateOrderStatusRequest request, Long adminId) {
+        com.perfume.ecommerce.enums.OrderStatus newStatus;
+        try {
+            newStatus = com.perfume.ecommerce.enums.OrderStatus.valueOf(request.getStatus().toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new ApiRequestException("Invalid status value: " + request.getStatus(), HttpStatus.BAD_REQUEST);
+        }
+        Order updated = orderService.updateOrderStatus(orderId, newStatus, adminId);
+        return commonMapper.convertToResponse(updated, OrderResponse.class);
     }
 }

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { LoadingStatus, OrderResponse, OrderError, OrderItemResponse } from "../../types/types";
-import { addOrder, fetchOrderById, fetchOrderItemsByOrderId } from "./order-thunks";
+import { addOrder, fetchOrderById, fetchOrderItemsByOrderId, updateOrderStatus } from "./order-thunks";
 
 export interface OrderState {
     order: Partial<OrderResponse>;
@@ -9,6 +9,8 @@ export interface OrderState {
     errors: Partial<OrderError>;
     errorMessage: string;
     loadingState: LoadingStatus;
+    statusUpdateLoading: boolean;
+    statusUpdateError: string;
 }
 
 export const initialState: OrderState = {
@@ -16,7 +18,9 @@ export const initialState: OrderState = {
     orderItems: [],
     errors: {},
     errorMessage: "",
-    loadingState: LoadingStatus.LOADING
+    loadingState: LoadingStatus.LOADING,
+    statusUpdateLoading: false,
+    statusUpdateError: ""
 };
 
 export const orderSlice = createSlice({
@@ -53,6 +57,18 @@ export const orderSlice = createSlice({
         builder.addCase(addOrder.rejected, (state, action) => {
             state.errors = action.payload!;
             state.loadingState = LoadingStatus.ERROR;
+        });
+        builder.addCase(updateOrderStatus.pending, (state) => {
+            state.statusUpdateLoading = true;
+            state.statusUpdateError = "";
+        });
+        builder.addCase(updateOrderStatus.fulfilled, (state, action) => {
+            state.statusUpdateLoading = false;
+            state.order = action.payload;
+        });
+        builder.addCase(updateOrderStatus.rejected, (state, action) => {
+            state.statusUpdateLoading = false;
+            state.statusUpdateError = action.payload || "Failed to update status";
         });
     }
 });

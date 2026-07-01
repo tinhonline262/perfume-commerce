@@ -7,6 +7,7 @@ import com.perfume.ecommerce.enums.PaymentStatus;
 import com.perfume.ecommerce.exception.ApiRequestException;
 import com.perfume.ecommerce.repository.OrderRepository;
 import com.perfume.ecommerce.service.email.MailSender;
+import com.perfume.ecommerce.service.impl.OrderServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ public class PaymentService {
     private final PaymentStrategyFactory paymentStrategyFactory;
     private final OrderRepository orderRepository;
     private final MailSender mailSender;
+    private final OrderServiceImpl orderService;
 
     @Transactional
     public String createPaymentUrl(Long orderId, PaymentMethod paymentMethod, String clientIp) {
@@ -50,13 +52,17 @@ public class PaymentService {
         PaymentVerificationResult result = strategy.verifyPayment(requestParams);
 
         if (result.isSuccess()) {
-            order.setPaymentStatus(PaymentStatus.SUCCESS);
-            orderRepository.save(order);
-            
-            // Send email only on success
-            sendOrderEmail(order);
+            if (order.getPaymentStatus() != PaymentStatus.PAID) {
+                order.setPaymentStatus(PaymentStatus.PAID);
+                orderRepository.save(order);
+                orderService.reserveInventory(order.getOrderItems(), null);
+                
+                // Send email only on success
+                sendOrderEmail(order);
+            }
         } else {
-            order.setPaymentStatus(PaymentStatus.FAILED);
+            // Failed payment -> still UNPAID
+            order.setPaymentStatus(PaymentStatus.UNPAID);
             orderRepository.save(order);
         }
 

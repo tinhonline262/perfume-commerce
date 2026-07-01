@@ -3,7 +3,7 @@ import { History, LocationState } from "history";
 
 import { OrderError, OrderItemResponse, OrderRequest, OrderResponse } from "../../types/types";
 import RequestService from "../../utils/request-service";
-import { ORDER } from "../../constants/urlConstants";
+import { ADMIN_ORDER, ORDER } from "../../constants/urlConstants";
 import { ORDER_FINALIZE } from "../../constants/routeConstants";
 
 export const fetchOrderById = createAsyncThunk<OrderResponse, string, { rejectValue: string }>(
@@ -47,3 +47,19 @@ export const addOrder = createAsyncThunk<
         return thunkApi.rejectWithValue(error.response.data);
     }
 });
+
+export const updateOrderStatus = createAsyncThunk<
+    OrderResponse,
+    { orderId: number; status: string },
+    { rejectValue: string }
+>("order/updateOrderStatus", async ({ orderId, status }, thunkApi) => {
+    try {
+        const response = await RequestService.put(`${ADMIN_ORDER}/${orderId}/status`, { status }, true);
+        return response.data;
+    } catch (error) {
+        return thunkApi.rejectWithValue(
+            error.response?.data?.message || error.response?.data || "Failed to update order status"
+        );
+    }
+});
+

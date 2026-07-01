@@ -20,4 +20,5 @@ public class OrderResponse {
     private Integer postIndex;
     private String paymentMethod;
     private String paymentStatus;
+    private String orderStatus;
 }

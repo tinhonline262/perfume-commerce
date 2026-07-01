@@ -8,6 +8,8 @@ export interface PerfumeResponse {
     reviewsCount: number;
     volume: string;
     inventory: number;
+    soldQuantity: number;
+    lowStockThreshold: number;
 }
 
 export interface FullPerfumeResponse extends PerfumeResponse {
@@ -88,6 +90,7 @@ export interface OrderResponse {
     postIndex: number;
     paymentMethod: string;
     paymentStatus: string;
+    orderStatus: string;
 }
 
 export interface OrderItemResponse {

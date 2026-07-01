@@ -64,6 +64,12 @@ public class Perfume {
     private Double perfumeRating;
     @Column(name = "inventory")
     private Integer inventory = 100;
+    
+    @Column(name = "sold_quantity")
+    private Integer soldQuantity = 0;
+    
+    @Column(name = "low_stock_threshold")
+    private Integer lowStockThreshold = 10;
 
     @OneToMany
     @ToString.Exclude

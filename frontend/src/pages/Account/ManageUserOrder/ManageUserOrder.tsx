@@ -1,23 +1,39 @@
 import React, { FC, ReactElement, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Card, Col, Row, Table } from "antd";
-import { InfoCircleOutlined, ShoppingOutlined } from "@ant-design/icons";
+import { Col, Row, Table, Select, message, Tag, Space, Typography } from "antd";
+import { InfoCircleOutlined, ShoppingOutlined, SwapOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 
 import {
     selectIsOrderLoaded,
     selectIsOrderLoading,
     selectOrder,
-    selectOrderItems
+    selectOrderItems,
+    selectStatusUpdateLoading
 } from "../../../redux-toolkit/order/order-selector";
-import { fetchOrderById, fetchOrderItemsByOrderId } from "../../../redux-toolkit/order/order-thunks";
+import { fetchOrderById, fetchOrderItemsByOrderId, updateOrderStatus } from "../../../redux-toolkit/order/order-thunks";
 import { resetOrderState } from "../../../redux-toolkit/order/order-slice";
 import ContentTitle from "../../../components/ContentTitle/ContentTitle";
 import Spinner from "../../../components/Spinner/Spinner";
 import AccountDataItem from "../../../components/AccountDataItem/AccountDataItem";
 import { OrderItemResponse } from "../../../types/types";
+import { selectUserFromUserState } from "../../../redux-toolkit/user/user-selector";
+import { UserRoles } from "../../../types/types";
+import { OrderStatusBadge, PaymentStatusBadge, getOrderStatusLabel, getOrderStatusColor } from "../../../utils/statusUtils";
 import "./ManageUserOrder.css";
+
+const { Option } = Select;
+const { Text } = Typography;
+
+const TERMINAL_STATUSES = ["DELIVERED", "CANCELLED"];
+
+const NEXT_STATUSES: Record<string, string[]> = {
+    PENDING:       ["PREPARING", "CANCELLED"],
+    PREPARING:     ["READY_TO_SHIP", "CANCELLED"],
+    READY_TO_SHIP: ["SHIPPING", "CANCELLED"],
+    SHIPPING:      ["DELIVERED"]
+};
 
 const ManageUserOrder: FC = (): ReactElement => {
     const dispatch = useDispatch();
@@ -27,7 +43,11 @@ const ManageUserOrder: FC = (): ReactElement => {
     const orderItems = useSelector(selectOrderItems);
     const isOrderLoading = useSelector(selectIsOrderLoading);
     const isOrderLoaded = useSelector(selectIsOrderLoaded);
-    const { id, email, firstName, lastName, totalPrice, postIndex, phoneNumber, date, city, address, paymentStatus } = order;
+    const isStatusUpdating = useSelector(selectStatusUpdateLoading);
+    const currentUser = useSelector(selectUserFromUserState);
+    const isAdmin = currentUser?.roles?.includes(UserRoles.ADMIN);
+
+    const { id, email, firstName, lastName, totalPrice, postIndex, phoneNumber, date, city, address, paymentStatus, orderStatus } = order;
 
     useEffect(() => {
         dispatch(fetchOrderById(params.id));
@@ -42,6 +62,19 @@ const ManageUserOrder: FC = (): ReactElement => {
             dispatch(fetchOrderItemsByOrderId(params.id));
         }
     }, [isOrderLoaded]);
+
+    const handleStatusChange = async (newStatus: string) => {
+        const result = await dispatch(updateOrderStatus({ orderId: id!, status: newStatus }) as any);
+        if (updateOrderStatus.fulfilled.match(result)) {
+            message.success(`Order status updated to ${newStatus}`);
+        } else {
+            message.error(result.payload || "Failed to update order status");
+        }
+    };
+
+    const currentStatus = orderStatus || "";
+    const isTerminal = TERMINAL_STATUSES.includes(currentStatus);
+    const nextStatuses = NEXT_STATUSES[currentStatus] || [];
 
     return (
         <div className="account-section-card">
@@ -70,7 +103,51 @@ const ManageUserOrder: FC = (): ReactElement => {
                                         <ContentTitle title={t('account.order_info', 'Order information')} titleLevel={5} />
                                         <AccountDataItem title={t('account.order_id')} text={id} />
                                         <AccountDataItem title={t('account.order_date')} text={date} />
-                                        <AccountDataItem title={t('account.order_status')} text={paymentStatus || "N/A"} />
+
+                                        {/* Status display */}
+                                        <div style={{ marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
+                                            <Text strong>{t('account.order_status', 'Order Status')}:</Text>
+                                            <OrderStatusBadge status={currentStatus} />
+                                        </div>
+
+                                        <div style={{ marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
+                                            <Text strong>{t('account.payment_status', 'Payment Status')}:</Text>
+                                            <PaymentStatusBadge status={paymentStatus} />
+                                        </div>
+
+                                        {/* Admin status update controls */}
+                                        {isAdmin && !isTerminal && nextStatuses.length > 0 && (
+                                            <div style={{ marginBottom: 16 }}>
+                                                <Space align="center">
+                                                    <SwapOutlined style={{ color: "#1890ff" }} />
+                                                    <Text strong>Update status:</Text>
+                                                    <Select
+                                                        placeholder="Change status"
+                                                        style={{ minWidth: 160 }}
+                                                        loading={isStatusUpdating}
+                                                        disabled={isStatusUpdating}
+                                                        onChange={handleStatusChange}
+                                                    >
+                                                        {nextStatuses.map((s) => (
+                                                            <Option key={s} value={s}>
+                                                                <span style={{ color: getOrderStatusColor(s) }}>
+                                                                    {getOrderStatusLabel(s, t)}
+                                                                </span>
+                                                            </Option>
+                                                        ))}
+                                                    </Select>
+                                                </Space>
+                                            </div>
+                                        )}
+
+                                        {isAdmin && isTerminal && (
+                                            <div style={{ marginBottom: 16 }}>
+                                                <Text type="secondary" style={{ fontSize: 12 }}>
+                                                    This order is in a terminal state and cannot be updated.
+                                                </Text>
+                                            </div>
+                                        )}
+
                                         <ContentTitle title={`${t('order.order_summary')}: ${totalPrice} VND`} titleLevel={4} />
                                     </Col>
                                 </Row>

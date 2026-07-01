@@ -10,6 +10,9 @@ public interface PerfumeProjection {
     String getFilename();
     Double getPerfumeRating();
     String getVolume();
+    Integer getInventory();
+    Integer getSoldQuantity();
+    Integer getLowStockThreshold();
     
     @Value("#{target.reviews.size()}")
     Integer getReviewsCount();

@@ -56,4 +56,10 @@ public interface PerfumeRepository extends JpaRepository<Perfume, Long> {
             "WHERE UPPER(perfume.country) LIKE UPPER(CONCAT('%',:text,'%')) " +
             "ORDER BY perfume.price DESC")
     Page<PerfumeProjection> findByManufacturerCountry(String text, Pageable pageable);
+
+    @Query("SELECT perfume FROM Perfume perfume ORDER BY perfume.soldQuantity DESC")
+    Page<PerfumeProjection> findTopSelling(Pageable pageable);
+
+    @Query("SELECT COUNT(p) FROM Perfume p WHERE p.inventory <= p.lowStockThreshold")
+    Long countLowStockProducts();
 }

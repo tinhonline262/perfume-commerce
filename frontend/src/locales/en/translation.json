@@ -18,7 +18,13 @@
     "contact_us": "Contact Us",
     "faq": "FAQ",
     "shipping_returns": "Shipping & Returns",
-    "rights_reserved": "© 2026 The Aura Perfume. All Rights Reserved."
+    "rights_reserved": "\u00a9 2026 The Aura Perfume. All Rights Reserved.",
+    "brandTitle": "The Aura Perfume",
+    "brandTagline": "Your Aura, Your Legacy",
+    "brandDescription": "Curated fragrance, warm materials and quiet packaging for daily rituals.",
+    "support": "Support: (066) 696-66-23",
+    "openHours": "Open daily from 08:00 to 20:00",
+    "followUs": "Follow Us"
   },
   "cart": {
     "title": "Cart",
@@ -26,7 +32,10 @@
     "checkout": "Checkout",
     "total": "Total",
     "delete": "Delete",
-    "quantity": "Quantity"
+    "quantity": "Quantity",
+    "empty_title": "Your cart is empty",
+    "empty_description": "You don't have any items in your cart yet. Let's explore our perfume collection.",
+    "continueShopping": "Continue Shopping"
   },
   "order": {
     "title": "Ordering",
@@ -45,27 +54,35 @@
     "mobile": "Mobile:",
     "email": "Email:",
     "placeholders": {
-        "first_name": "Enter the first name",
-        "last_name": "Enter the last name",
-        "city": "Enter the city",
-        "address": "Enter the address",
-        "index": "Enter the index",
-        "mobile": "(___)-___-____",
-        "email": "example@gmail.com"
+      "first_name": "Enter the first name",
+      "last_name": "Enter the last name",
+      "city": "Enter the city",
+      "address": "Enter the address",
+      "index": "Enter the index",
+      "mobile": "(___)-___-____",
+      "email": "example@gmail.com"
     },
     "success": {
-        "title": "Payment Successful!",
-        "message": "Thank you for your purchase. Your order has been placed successfully and is being processed.",
-        "button": "Return to Home"
+      "title": "Payment Successful!",
+      "message": "Thank you for your purchase. Your order has been placed successfully and is being processed.",
+      "button": "Return to Home"
     },
     "failed": {
-        "title": "Payment Failed",
-        "message": "We could not process your payment. Your items are still in your cart. Please try again.",
-        "button": "Return to Checkout"
+      "title": "Payment Failed",
+      "message": "We could not process your payment. Your items are still in your cart. Please try again.",
+      "button": "Return to Checkout"
     },
     "finalize": {
-        "title": "Thank you for the order!",
-        "message": "Your order number is:"
+      "title": "Thank you for the order!",
+      "message": "Your order number is:"
+    },
+    "status": {
+      "pending": "Pending",
+      "preparing": "Preparing",
+      "readyToShip": "Ready to Ship",
+      "shipping": "Shipping",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
     }
   },
   "home": {
@@ -73,27 +90,65 @@
     "new_arrivals": "NEW ARRIVALS",
     "brands": "BRANDS",
     "featured_maisons": "Featured maisons",
+    "personally_recommended": "PERSONALLY RECOMMENDED",
+    "best_sellers": "Best sellers",
+    "balanced_signatures": "Balanced signatures chosen for texture, longevity and daily wear.",
     "discovery": "Discovery",
     "build_wardrobe": "Build a compact fragrance wardrobe.",
     "collection": "Collection",
+    "hero": {
+      "slider1": {
+        "eyebrow": "Timeless elegance",
+        "title": "Luxury fragrance",
+        "description": "Discover timeless scents crafted with calm materials, warm woods and modern restraint.",
+        "note": "Amber, iris, cedar"
+      },
+      "slider2": {
+        "eyebrow": "Evening ritual",
+        "title": "Scents that speak quietly",
+        "description": "A considered edit of warm signatures, bright citrus and smoked vanilla for daily wear.",
+        "note": "Citrus, tonka, leather"
+      },
+      "slider3": {
+        "eyebrow": "Maison selection",
+        "title": "A restrained fragrance wardrobe",
+        "description": "Choose focused compositions from established houses, selected for balance and longevity.",
+        "note": "Sandalwood, musk, cardamom"
+      },
+      "slider4": {
+        "eyebrow": "Soft projection",
+        "title": "Polished notes for every day",
+        "description": "Clean florals and low-lit woods arranged for offices, dinners and slow weekends.",
+        "note": "Rose, pear, cashmere"
+      },
+      "slider5": {
+        "eyebrow": "Quiet opulence",
+        "title": "Bottle, formula, memory",
+        "description": "Perfumes chosen for material quality, precise drydown and understated presentation.",
+        "note": "Vanilla, resin, suede"
+      },
+      "primaryButton": "Shop now",
+      "secondaryButton": "Discover More",
+      "cardFooterLabel": "Olfactive notes"
+    },
     "themes": {
-        "female": {
-            "title": "Soft floral compositions",
-            "text": "Powdered iris, rose petals and clean musk with a restrained trail."
-        },
-        "male": {
-            "title": "Warm woods and mineral amber",
-            "text": "Cedar, vetiver and leather notes selected for quiet evening wear."
-        },
-        "summer": "Summer",
-        "summer_desc": "Welcome summer",
-        "spring": "Spring",
-        "spring_desc": "Spring mood",
-        "autumn": "Autumn",
-        "autumn_desc": "Autumn scent",
-        "winter": "Winter",
-        "winter_desc": "Winter mood",
-        "view": "VIEW"
+      "female": {
+        "title": "Soft floral compositions",
+        "text": "Powdered iris, rose petals and clean musk with a restrained trail."
+      },
+      "male": {
+        "title": "Warm woods and mineral amber",
+        "text": "Cedar, vetiver and leather notes selected for quiet evening wear."
+      },
+      "summer": "Summer",
+      "summer_desc": "Welcome summer",
+      "spring": "Spring",
+      "spring_desc": "Spring mood",
+      "autumn": "Autumn",
+      "autumn_desc": "Autumn scent",
+      "winter": "Winter",
+      "winter_desc": "Winter mood",
+      "view": "VIEW"
     }
   },
   "product": {
@@ -148,10 +203,10 @@
     "new_password": "New Password",
     "save_password": "Save Password",
     "placeholders": {
-        "email": "E-Mail",
-        "password": "Password",
-        "first_name": "First name",
-        "last_name": "Last name"
+      "email": "E-Mail",
+      "password": "Password",
+      "first_name": "First name",
+      "last_name": "Last name"
     }
   },
   "account": {
@@ -176,34 +231,34 @@
     "details": "Details",
     "customer": "Customer",
     "admin": {
-        "add_perfume": "Add perfume",
-        "perfumes_list": "Perfumes list",
-        "orders_list": "Orders list",
-        "users_list": "Users list",
-        "manage_users": "Manage users",
-        "edit_perfume": "Edit perfume",
-        "delete": "Delete",
-        "role": "Role",
-        "provider": "Provider",
-        "perfume_added": "Perfume added",
-        "perfume_added_desc": "Perfume successfully added!",
-        "perfume_title": "Perfume title",
-        "perfume_title_placeholder": "Enter the perfume title",
-        "year_placeholder": "Enter the release year",
-        "middle_notes_placeholder": "Enter the heart notes",
-        "price_placeholder": "Enter the price",
-        "brand_placeholder": "Enter the brand",
-        "country_placeholder": "Enter the manufacturer country",
-        "volume_placeholder": "Enter the volume",
-        "top_notes_placeholder": "Enter the top notes",
-        "base_notes_placeholder": "Enter the base notes",
-        "upload": "Click to Upload",
-        "perfume_deleted": "Perfume deleted",
-        "perfume_deleted_desc": "Perfume successfully deleted!",
-        "perfume_edited": "Perfume edited",
-        "perfume_edited_desc": "Perfume successfully edited!",
-        "delete_title": "Delete perfume",
-        "confirm_delete": "Are you sure too delete?"
+      "add_perfume": "Add perfume",
+      "perfumes_list": "Perfumes list",
+      "orders_list": "Orders list",
+      "users_list": "Users list",
+      "manage_users": "Manage users",
+      "edit_perfume": "Edit perfume",
+      "delete": "Delete",
+      "role": "Role",
+      "provider": "Provider",
+      "perfume_added": "Perfume added",
+      "perfume_added_desc": "Perfume successfully added!",
+      "perfume_title": "Perfume title",
+      "perfume_title_placeholder": "Enter the perfume title",
+      "year_placeholder": "Enter the release year",
+      "middle_notes_placeholder": "Enter the heart notes",
+      "price_placeholder": "Enter the price",
+      "brand_placeholder": "Enter the brand",
+      "country_placeholder": "Enter the manufacturer country",
+      "volume_placeholder": "Enter the volume",
+      "top_notes_placeholder": "Enter the top notes",
+      "base_notes_placeholder": "Enter the base notes",
+      "upload": "Click to Upload",
+      "perfume_deleted": "Perfume deleted",
+      "perfume_deleted_desc": "Perfume successfully deleted!",
+      "perfume_edited": "Perfume edited",
+      "perfume_edited_desc": "Perfume successfully edited!",
+      "delete_title": "Delete perfume",
+      "confirm_delete": "Are you sure too delete?"
     },
     "no_orders": "You have no orders",
     "customer_info": "Customer information",
@@ -216,7 +271,7 @@
     "working_time": "Working time",
     "delivery": "Delivery",
     "delivery_desc": "Delivery of orders come through courier service.",
-    "time": "Từ 08:00 đến 20:00 \nKHÔNG NGHỈ TRƯA và cuối tuần"
+    "time": "T\u1eeb 08:00 \u0111\u1ebfn 20:00 \nKH\u00d4NG NGH\u1ec8 TR\u01afA v\u00e0 cu\u1ed1i tu\u1ea7n"
   },
   "errors": {
     "Fill in the input field": "Fill in the input field",
@@ -226,5 +281,32 @@
     "Empty post index": "Empty post index",
     "Post index must contain 5 digits": "Post index must contain 5 digits",
     "Passwords do not match.": "Passwords do not match."
+  },
+  "payment": {
+    "unpaid": "Unpaid",
+    "paid": "Paid",
+    "failed": "Payment Failed",
+    "refunded": "Refunded"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you. Please reach out with any questions.",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "businessHours": "Business Hours",
+    "shipping": "Shipping Information",
+    "socialMedia": "Follow Us",
+    "form": {
+      "title": "Send us a Message",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Your message has been sent successfully!",
+      "error": "Failed to send message. Please try again later."
+    }
   }
 }

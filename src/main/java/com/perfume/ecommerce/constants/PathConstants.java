@@ -40,6 +40,7 @@ public class PathConstants {
 
     public static final String ORDER_ID = "/{orderId}";
     public static final String ORDER_ID_ITEMS = ORDER_ID + "/items";
+    public static final String ORDER_ID_STATUS = ORDER_ID + "/status";
 
     public static final String PERFUME_ID = "/{perfumeId}";
     public static final String IDS = "/ids";

@@ -143,6 +143,7 @@ public class PerfumeServiceImplTest {
         perfume.setPerfumer(PERFUMER_CHANEL);
         perfume.setFilename(multipartFile.getOriginalFilename());
 
+        when(perfumeRepository.findById(1L)).thenReturn(java.util.Optional.of(perfume));
         when(imageStorageService.store(multipartFile)).thenReturn(multipartFile.getOriginalFilename());
         when(perfumeRepository.save(perfume)).thenReturn(perfume);
         perfumeService.savePerfume(perfume, multipartFile);

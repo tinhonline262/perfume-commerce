@@ -61,10 +61,17 @@ const Order: FC = (): ReactElement => {
     }, []);
 
     const onFormSubmit = (order: OrderFormData): void => {
-        const perfumesId = Object.fromEntries(new Map(JSON.parse(localStorage.getItem("perfumes") as string)));
+        let perfumesId = {};
+        const perfumesString = localStorage.getItem("perfumes");
+        if (perfumesString) {
+            const perfumesIdMap = new Map(JSON.parse(perfumesString));
+            perfumesId = Object.fromEntries(perfumesIdMap);
+        }
         
         // Pass paymentMethod from state since order param might not have the updated value from Form.Item correctly mapped if it doesn't trigger onFinish
         dispatch(addOrder({ order: { ...order, perfumesId, totalPrice, paymentMethod }, history }));
+        
+        localStorage.removeItem("perfumes");
     };
 
     return (

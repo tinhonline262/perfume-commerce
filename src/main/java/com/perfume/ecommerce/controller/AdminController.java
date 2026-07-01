@@ -3,6 +3,7 @@ package com.perfume.ecommerce.controller;
 import com.perfume.ecommerce.dto.GraphQLRequest;
 import com.perfume.ecommerce.dto.HeaderResponse;
 import com.perfume.ecommerce.dto.order.OrderResponse;
+import com.perfume.ecommerce.dto.order.UpdateOrderStatusRequest;
 import com.perfume.ecommerce.dto.perfume.PerfumeRequest;
 import com.perfume.ecommerce.dto.perfume.FullPerfumeResponse;
 import com.perfume.ecommerce.dto.user.BaseUserResponse;
@@ -10,6 +11,7 @@ import com.perfume.ecommerce.dto.user.UserResponse;
 import com.perfume.ecommerce.mapper.OrderMapper;
 import com.perfume.ecommerce.mapper.PerfumeMapper;
 import com.perfume.ecommerce.mapper.UserMapper;
+import com.perfume.ecommerce.security.UserPrincipal;
 import com.perfume.ecommerce.service.graphql.GraphQLProvider;
 import com.perfume.ecommerce.service.DashboardService;
 import graphql.ExecutionResult;
@@ -19,12 +21,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 
 import static com.perfume.ecommerce.constants.PathConstants.*;
 
@@ -66,10 +70,19 @@ public class AdminController {
     }
 
     @GetMapping(ORDER_BY_EMAIL)
-    public ResponseEntity<List<OrderResponse>> getUserOrdersByEmail(@PathVariable String userEmail, 
+    public ResponseEntity<List<OrderResponse>> getUserOrdersByEmail(@PathVariable String userEmail,
                                                                     @PageableDefault(size = 10) Pageable pageable) {
         HeaderResponse<OrderResponse> response = orderMapper.getUserOrders(userEmail, pageable);
         return ResponseEntity.ok().headers(response.getHeaders()).body(response.getItems());
+    }
+
+    @PutMapping(ORDER + ORDER_ID_STATUS)
+    public ResponseEntity<OrderResponse> updateOrderStatus(@PathVariable Long orderId,
+                                                           @Valid @RequestBody UpdateOrderStatusRequest request,
+                                                           BindingResult bindingResult,
+                                                           @AuthenticationPrincipal UserPrincipal adminUser) {
+        Long adminId = adminUser != null ? adminUser.getId() : null;
+        return ResponseEntity.ok(orderMapper.updateOrderStatus(orderId, request, adminId));
     }
 
     @DeleteMapping(ORDER_DELETE)
@@ -104,18 +117,18 @@ public class AdminController {
     }
 
     @PostMapping(GRAPHQL_ORDER)
+    public ResponseEntity<ExecutionResult> getUserOrdersByEmailQuery(@RequestBody GraphQLRequest request) {
+        return ResponseEntity.ok(graphQLProvider.getGraphQL().execute(request.getQuery()));
+    }
+
     @GetMapping("/statistics")
-    public ResponseEntity<java.util.Map<String, Object>> getStatistics() {
+    public ResponseEntity<Map<String, Object>> getStatistics() {
         return ResponseEntity.ok(dashboardService.getStatistics());
     }
 
     @PostMapping("/email/promotional")
-    public ResponseEntity<String> sendPromotionalEmail(@RequestBody java.util.Map<String, String> request) {
+    public ResponseEntity<String> sendPromotionalEmail(@RequestBody Map<String, String> request) {
         dashboardService.sendPromotionalEmail(request.get("subject"), request.get("message"));
         return ResponseEntity.ok("Emails sent successfully");
-    }
-
-    public ResponseEntity<ExecutionResult> getUserOrdersByEmailQuery(@RequestBody GraphQLRequest request) {
-        return ResponseEntity.ok(graphQLProvider.getGraphQL().execute(request.getQuery()));
     }
 }

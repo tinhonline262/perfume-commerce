@@ -28,7 +28,7 @@ public class VnPayStrategy implements PaymentStrategy {
         String vnp_TmnCode = vnPayProperties.getTmnCode();
 
         // Convert USD to VND (Assume 1 USD = 25000 VND for simplicity, or inject an exchange rate service)
-        double exchangeRate = 25000.0;
+        double exchangeRate = 1;
         double amountInVnd = order.getTotalPrice() * exchangeRate;
         // VNPay requires the amount in VND multiplied by 100
         long amount = (long) (amountInVnd * 100);

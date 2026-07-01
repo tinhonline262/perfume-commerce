@@ -27,11 +27,11 @@ const PerfumeCardsSlider: FC = (): ReactElement => {
     return (
         <section className={"perfume-cards-slider reveal-on-scroll"}>
             <div className="perfume-cards-slider-heading">
-                <span>PERSONALLY RECOMMENDED</span>
-                <Typography.Title level={2} className={"perfume-cards-slider-title"}>
-                    Best sellers
+                <span>{t("home.personally_recommended")}</span>
+                <Typography.Title level={2} className="perfume-cards-slider-title">
+                    {t("home.best_sellers")}
                 </Typography.Title>
-                <p>Balanced signatures chosen for texture, longevity and daily wear.</p>
+                <p>{t("home.balanced_signatures")}</p>
             </div>
             <Carousel>
                 <PerfumeCardsSliderItem perfumes={perfumes.slice(0, 4)} />

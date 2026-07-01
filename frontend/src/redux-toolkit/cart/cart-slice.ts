@@ -55,15 +55,17 @@ export const { calculateCartPrice, removePerfumeById, setCartItemsCount, resetCa
 export default cartSlice.reducer;
 
 const calculatePrice = (perfumes: Array<PerfumeResponse>): number => {
-    const perfumesFromLocalStorage: Map<number, number> = new Map(JSON.parse(<string>localStorage.getItem("perfumes")));
+    const perfumesString = localStorage.getItem("perfumes");
     let total = 0;
+    if (perfumesString) {
+        const perfumesFromLocalStorage: Map<number, number> = new Map(JSON.parse(perfumesString));
+        perfumesFromLocalStorage.forEach((value, key) => {
+            const perfume = perfumes.find((perfume) => perfume.id === key);
 
-    perfumesFromLocalStorage.forEach((value, key) => {
-        const perfume = perfumes.find((perfume) => perfume.id === key);
-
-        if (perfume) {
-            total += perfume.price * value;
-        }
-    });
+            if (perfume) {
+                total += perfume.price * value;
+            }
+        });
+    }
     return total;
 };

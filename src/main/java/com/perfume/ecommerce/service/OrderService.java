@@ -2,6 +2,7 @@ package com.perfume.ecommerce.service;
 
 import com.perfume.ecommerce.domain.Order;
 import com.perfume.ecommerce.domain.OrderItem;
+import com.perfume.ecommerce.enums.PaymentStatus;
 import graphql.schema.DataFetcher;
 
 import java.util.List;
@@ -21,6 +22,8 @@ public interface OrderService {
     Page<Order> getUserOrders(String email, Pageable pageable);
 
     Order postOrder(Order validOrder, Map<Long, Long> perfumesId);
+
+    Order updateOrderStatus(Long orderId, com.perfume.ecommerce.enums.OrderStatus newStatus, Long adminId);
 
     String deleteOrder(Long orderId);
 

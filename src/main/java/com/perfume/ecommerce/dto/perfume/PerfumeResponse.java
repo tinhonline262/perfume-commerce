@@ -15,4 +15,6 @@ public class PerfumeResponse {
     private Integer reviewsCount;
     private String volume;
     private Integer inventory;
+    private Integer soldQuantity;
+    private Integer lowStockThreshold;
 }

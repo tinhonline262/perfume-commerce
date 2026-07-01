@@ -18,7 +18,13 @@
     "contact_us": "Liên hệ",
     "faq": "Câu hỏi thường gặp",
     "shipping_returns": "Vận chuyển & Đổi trả",
-    "rights_reserved": "© 2026 The Aura Perfume. Mọi quyền được bảo lưu."
+    "rights_reserved": "© 2026 The Aura Perfume. Mọi quyền được bảo lưu.",
+    "brandTitle": "The Aura Perfume",
+    "brandTagline": "Your Aura, Your Legacy",
+    "brandDescription": "Hương thơm được tuyển chọn, vật liệu ấm áp và bao bì tĩnh lặng cho các nghi thức hàng ngày.",
+    "support": "Hỗ trợ: (066) 696-66-23",
+    "openHours": "Mở cửa hàng ngày từ 08:00 đến 20:00",
+    "followUs": "Theo dõi chúng tôi"
   },
   "cart": {
     "title": "Giỏ hàng",
@@ -26,7 +32,10 @@
     "checkout": "Thanh toán",
     "total": "Tổng cộng",
     "delete": "Xóa",
-    "quantity": "Số lượng"
+    "quantity": "Số lượng",
+    "empty_title": "Giỏ hàng của bạn đang trống",
+    "empty_description": "Bạn chưa có sản phẩm nào trong giỏ hàng. Hãy khám phá bộ sưu tập nước hoa của chúng tôi.",
+    "continueShopping": "Tiếp tục mua sắm"
   },
   "order": {
     "title": "Đặt hàng",
@@ -45,55 +54,101 @@
     "mobile": "Điện thoại:",
     "email": "Email:",
     "placeholders": {
-        "first_name": "Nhập tên",
-        "last_name": "Nhập họ",
-        "city": "Nhập thành phố",
-        "address": "Nhập địa chỉ",
-        "index": "Nhập mã bưu điện",
-        "mobile": "(___)-___-____",
-        "email": "example@gmail.com"
+      "first_name": "Nhập tên",
+      "last_name": "Nhập họ",
+      "city": "Nhập thành phố",
+      "address": "Nhập địa chỉ",
+      "index": "Nhập mã bưu điện",
+      "mobile": "(___)-___-____",
+      "email": "example@gmail.com"
     },
     "success": {
-        "title": "Thanh toán Thành công!",
-        "message": "Cảm ơn bạn đã mua hàng. Đơn hàng của bạn đã được đặt thành công và đang được xử lý.",
-        "button": "Trở về Trang chủ"
+      "title": "Thanh toán Thành công!",
+      "message": "Cảm ơn bạn đã mua hàng. Đơn hàng của bạn đã được đặt thành công và đang được xử lý.",
+      "button": "Trở về Trang chủ"
     },
     "failed": {
-        "title": "Thanh toán Thất bại",
-        "message": "Chúng tôi không thể xử lý thanh toán của bạn. Các sản phẩm vẫn còn trong giỏ hàng. Vui lòng thử lại.",
-        "button": "Trở về Trang Thanh toán"
+      "title": "Thanh toán Thất bại",
+      "message": "Chúng tôi không thể xử lý thanh toán của bạn. Các sản phẩm vẫn còn trong giỏ hàng. Vui lòng thử lại.",
+      "button": "Trở về Trang Thanh toán"
     },
     "finalize": {
-        "title": "Cảm ơn bạn đã đặt hàng!",
-        "message": "Số đơn hàng của bạn là:"
+      "title": "Cảm ơn bạn đã đặt hàng!",
+      "message": "Số đơn hàng của bạn là:"
+    },
+    "status": {
+      "pending": "Chờ xác nhận",
+      "preparing": "Đang chuẩn bị",
+      "readyToShip": "Chuẩn bị giao",
+      "shipping": "Đang giao",
+      "delivered": "Đã giao",
+      "cancelled": "Đã hủy"
     }
   },
   "home": {
     "shop_now": "Mua ngay",
-    "new_arrivals": "SẢN PHẨM MỚI",
+    "new_arrivals": "HÀNG MỚI VỀ",
     "brands": "THƯƠNG HIỆU",
-    "featured_maisons": "Nhà thiết kế nổi bật",
+    "featured_maisons": "Thương hiệu nổi bật",
+    "personally_recommended": "ĐỀ XUẤT CHO BẠN",
+    "best_sellers": "Bán chạy nhất",
+    "balanced_signatures": "Những dấu ấn cân bằng được chọn lọc vì kết cấu, độ lưu hương và để sử dụng hàng ngày.",
     "discovery": "Khám phá",
-    "build_wardrobe": "Xây dựng tủ nước hoa nhỏ gọn của bạn.",
+    "build_wardrobe": "Xây dựng tủ nước hoa nhỏ gọn.",
     "collection": "Bộ sưu tập",
+    "hero": {
+      "slider1": {
+        "eyebrow": "Sự thanh lịch vượt thời gian",
+        "title": "Nước hoa sang trọng",
+        "description": "Khám phá những mùi hương vượt thời gian được chế tác từ những chất liệu thanh bình, gỗ ấm áp và sự tiết chế hiện đại.",
+        "note": "Hổ phách, hoa diên vĩ, gỗ tuyết tùng"
+      },
+      "slider2": {
+        "eyebrow": "Nghi thức buổi tối",
+        "title": "Những mùi hương nói khẽ",
+        "description": "Một sự lựa chọn có cân nhắc của những dấu ấn ấm áp, cam quýt tươi sáng và vani hun khói cho trang phục hàng ngày.",
+        "note": "Cam quýt, đậu tonka, da thuộc"
+      },
+      "slider3": {
+        "eyebrow": "Sự lựa chọn của Maison",
+        "title": "Tủ nước hoa được tiết chế",
+        "description": "Chọn các thành phần tập trung từ các nhà sản xuất lâu đời, được lựa chọn vì sự cân bằng và tuổi thọ.",
+        "note": "Gỗ đàn hương, xạ hương, bạch đậu khấu"
+      },
+      "slider4": {
+        "eyebrow": "Sự lan tỏa nhẹ nhàng",
+        "title": "Những nốt hương tinh tế cho mỗi ngày",
+        "description": "Hoa sạch và gỗ có ánh sáng yếu được sắp xếp cho văn phòng, bữa tối và những ngày cuối tuần chậm rãi.",
+        "note": "Hoa hồng, lê, cashmere"
+      },
+      "slider5": {
+        "eyebrow": "Sự xa hoa tĩnh lặng",
+        "title": "Chai, công thức, kỷ niệm",
+        "description": "Nước hoa được chọn vì chất lượng vật liệu, quá trình bay hơi chính xác và cách trình bày tinh tế.",
+        "note": "Vani, nhựa thông, da lộn"
+      },
+      "primaryButton": "Mua ngay",
+      "secondaryButton": "Khám phá thêm",
+      "cardFooterLabel": "Ghi chú khứu giác"
+    },
     "themes": {
-        "female": {
-            "title": "Hương hoa cỏ nhẹ nhàng",
-            "text": "Hương diên vĩ phấn, cánh hoa hồng và xạ hương sạch với một chút dấu ấn tĩnh lặng."
-        },
-        "male": {
-            "title": "Hương gỗ ấm và hổ phách khoáng",
-            "text": "Tuyệt tác tuyết tùng, cỏ hương bài và da thuộc được chọn lọc cho những buổi tối tĩnh lặng."
-        },
-        "summer": "Mùa Hè",
-        "summer_desc": "Chào đón mùa hè",
-        "spring": "Mùa Xuân",
-        "spring_desc": "Sắc xuân",
-        "autumn": "Mùa Thu",
-        "autumn_desc": "Hương thu",
-        "winter": "Mùa Đông",
-        "winter_desc": "Không khí mùa đông",
-        "view": "XEM"
+      "female": {
+        "title": "Hương hoa cỏ nhẹ nhàng",
+        "text": "Hương diên vĩ phấn, cánh hoa hồng và xạ hương sạch với một chút dấu ấn tĩnh lặng."
+      },
+      "male": {
+        "title": "Hương gỗ ấm và hổ phách khoáng",
+        "text": "Tuyệt tác tuyết tùng, cỏ hương bài và da thuộc được chọn lọc cho những buổi tối tĩnh lặng."
+      },
+      "summer": "Mùa Hè",
+      "summer_desc": "Chào đón mùa hè",
+      "spring": "Mùa Xuân",
+      "spring_desc": "Sắc xuân",
+      "autumn": "Mùa Thu",
+      "autumn_desc": "Hương thu",
+      "winter": "Mùa Đông",
+      "winter_desc": "Không khí mùa đông",
+      "view": "XEM"
     }
   },
   "product": {
@@ -148,10 +203,10 @@
     "new_password": "Mật khẩu mới",
     "save_password": "Lưu mật khẩu",
     "placeholders": {
-        "email": "E-Mail",
-        "password": "Mật khẩu",
-        "first_name": "Tên",
-        "last_name": "Họ"
+      "email": "E-Mail",
+      "password": "Mật khẩu",
+      "first_name": "Tên",
+      "last_name": "Họ"
     }
   },
   "account": {
@@ -176,34 +231,34 @@
     "details": "Chi tiết",
     "customer": "Khách hàng",
     "admin": {
-        "add_perfume": "Thêm nước hoa",
-        "perfumes_list": "Danh sách nước hoa",
-        "orders_list": "Danh sách đơn hàng",
-        "users_list": "Danh sách người dùng",
-        "manage_users": "Quản lý người dùng",
-        "edit_perfume": "Sửa nước hoa",
-        "delete": "Xóa",
-        "role": "Vai trò",
-        "provider": "Nhà cung cấp",
-        "perfume_added": "Thêm nước hoa",
-        "perfume_added_desc": "Thêm nước hoa thành công!",
-        "perfume_title": "Tên nước hoa",
-        "perfume_title_placeholder": "Nhập tên nước hoa",
-        "year_placeholder": "Nhập năm phát hành",
-        "middle_notes_placeholder": "Nhập hương giữa",
-        "price_placeholder": "Nhập giá",
-        "brand_placeholder": "Nhập thương hiệu",
-        "country_placeholder": "Nhập quốc gia sản xuất",
-        "volume_placeholder": "Nhập dung tích",
-        "top_notes_placeholder": "Nhập hương đầu",
-        "base_notes_placeholder": "Nhập hương cuối",
-        "upload": "Nhấp để tải lên",
-        "perfume_deleted": "Xóa nước hoa",
-        "perfume_deleted_desc": "Xóa nước hoa thành công!",
-        "perfume_edited": "Sửa nước hoa",
-        "perfume_edited_desc": "Sửa nước hoa thành công!",
-        "delete_title": "Xóa nước hoa",
-        "confirm_delete": "Bạn có chắc chắn muốn xóa?"
+      "add_perfume": "Thêm nước hoa",
+      "perfumes_list": "Danh sách nước hoa",
+      "orders_list": "Danh sách đơn hàng",
+      "users_list": "Danh sách người dùng",
+      "manage_users": "Quản lý người dùng",
+      "edit_perfume": "Sửa nước hoa",
+      "delete": "Xóa",
+      "role": "Vai trò",
+      "provider": "Nhà cung cấp",
+      "perfume_added": "Thêm nước hoa",
+      "perfume_added_desc": "Thêm nước hoa thành công!",
+      "perfume_title": "Tên nước hoa",
+      "perfume_title_placeholder": "Nhập tên nước hoa",
+      "year_placeholder": "Nhập năm phát hành",
+      "middle_notes_placeholder": "Nhập hương giữa",
+      "price_placeholder": "Nhập giá",
+      "brand_placeholder": "Nhập thương hiệu",
+      "country_placeholder": "Nhập quốc gia sản xuất",
+      "volume_placeholder": "Nhập dung tích",
+      "top_notes_placeholder": "Nhập hương đầu",
+      "base_notes_placeholder": "Nhập hương cuối",
+      "upload": "Nhấp để tải lên",
+      "perfume_deleted": "Xóa nước hoa",
+      "perfume_deleted_desc": "Xóa nước hoa thành công!",
+      "perfume_edited": "Sửa nước hoa",
+      "perfume_edited_desc": "Sửa nước hoa thành công!",
+      "delete_title": "Xóa nước hoa",
+      "confirm_delete": "Bạn có chắc chắn muốn xóa?"
     },
     "no_orders": "Bạn chưa có đơn hàng nào",
     "customer_info": "Thông tin khách hàng",
@@ -226,5 +281,32 @@
     "Empty post index": "Mã bưu điện không được để trống",
     "Post index must contain 5 digits": "Mã bưu điện phải chứa 5 chữ số",
     "Passwords do not match.": "Mật khẩu không khớp."
+  },
+  "payment": {
+    "unpaid": "Chưa thanh toán",
+    "paid": "Đã thanh toán",
+    "failed": "Thanh toán thất bại",
+    "refunded": "Đã hoàn tiền"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "subtitle": "Chúng tôi luôn sẵn sàng lắng nghe và giải đáp mọi thắc mắc của bạn.",
+    "address": "Địa chỉ",
+    "phone": "Điện thoại",
+    "email": "Email",
+    "businessHours": "Giờ làm việc",
+    "shipping": "Thông tin giao hàng",
+    "socialMedia": "Theo dõi chúng tôi",
+    "form": {
+      "title": "Gửi tin nhắn cho chúng tôi",
+      "name": "Họ và tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "subject": "Chủ đề",
+      "message": "Nội dung tin nhắn",
+      "submit": "Gửi tin nhắn",
+      "success": "Tin nhắn của bạn đã được gửi thành công!",
+      "error": "Không thể gửi tin nhắn. Vui lòng thử lại sau."
+    }
   }
 }

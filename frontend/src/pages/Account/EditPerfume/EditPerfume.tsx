@@ -46,6 +46,7 @@ const EditPerfume: FC = (): ReactElement => {
     const errors = useSelector(selectAdminStateErrors);
     const isPerfumeEdited = useSelector(selectIsPerfumeEdited);
     const [file, setFile] = React.useState<File | null>(null);
+    const [previewImage, setPreviewImage] = React.useState<string | null>(null);
 
     useEffect(() => {
         dispatch(setAdminLoadingState(LoadingStatus.LOADED));
@@ -59,6 +60,9 @@ const EditPerfume: FC = (): ReactElement => {
     useEffect(() => {
         if (perfumeData) {
             form.setFieldsValue(perfumeData);
+            if (!previewImage && !file) {
+                setPreviewImage(perfumeData.filename);
+            }
         }
     }, [perfumeData])
 
@@ -77,22 +81,41 @@ const EditPerfume: FC = (): ReactElement => {
         const bodyFormData: FormData = new FormData();
         if (file) {
             bodyFormData.append("file", file, file.name);
+        } else {
+            // Must append an empty file part otherwise Spring won't treat it as multipart properly or uses old bindings incorrectly
+            bodyFormData.append("file", new Blob(), "");
         }
+        
+        // Pass existing filename to preserve it if not sending a new file
+        const updateData = {
+            ...data, 
+            id: perfumeData?.id,
+            filename: perfumeData?.filename
+        };
+        
         bodyFormData.append(
             "perfume",
-            new Blob([JSON.stringify({ ...data, id: perfumeData?.id })], { type: "application/json" })
+            new Blob([JSON.stringify(updateData)], { type: "application/json" })
         );
 
         dispatch(updatePerfume(bodyFormData));
     };
 
-    const handleUpload = ({ file }: UploadChangeParam<any>): void => {
-        if (file.status === "removed") {
+    const handleUpload = ({ file, fileList }: UploadChangeParam<any>): void => {
+        if (file.status === "removed" || fileList.length === 0) {
             setFile(null);
+            setPreviewImage(perfumeData?.filename || null);
             return;
         }
 
-        setFile((file.originFileObj || file) as File);
+        const originFile = (file.originFileObj || file) as File;
+        setFile(originFile);
+
+        // Create a local preview URL for the newly selected image
+        if (originFile) {
+            const previewUrl = URL.createObjectURL(originFile);
+            setPreviewImage(previewUrl);
+        }
     };
 
     return (
@@ -199,8 +222,8 @@ const EditPerfume: FC = (): ReactElement => {
                         />
                             <FormInput
                                 title={"Inventory"}
-                                titleSpan={8}
-                                wrapperSpan={16}
+                                titleSpan={6}
+                                wrapperSpan={18}
                                 name={"inventory"}
                                 error={errors.inventoryError}
                                 disabled={isLoading}
@@ -208,15 +231,32 @@ const EditPerfume: FC = (): ReactElement => {
                             />
                     </Col>
                     <Col xs={24} md={12}>
-                        <Upload name={"file"} onChange={handleUpload} beforeUpload={() => false} maxCount={1}>
-                            <Button icon={<UploadOutlined />}>{t('account.admin.upload')}</Button>
-                        </Upload>
+                        <div style={{ marginBottom: 16 }}>
+                            <Upload name={"file"} onChange={handleUpload} beforeUpload={() => false} maxCount={1} showUploadList={false}>
+                                <Button icon={<UploadOutlined />}>{t('account.admin.upload', 'Select New Image')}</Button>
+                            </Upload>
+                            {file && (
+                                <Button 
+                                    type="text" 
+                                    danger 
+                                    onClick={() => {
+                                        setFile(null);
+                                        setPreviewImage(perfumeData?.filename || null);
+                                    }}
+                                    style={{ marginLeft: 8 }}
+                                >
+                                    Cancel Selection
+                                </Button>
+                            )}
+                        </div>
                         <div className={"edit-perfume-image-wrapper"}>
-                            <img
-                                className={"edit-perfume-image"}
-                                src={perfumeData.filename}
-                                alt={perfumeData.perfumeTitle}
-                            />
+                            {(previewImage || perfumeData?.filename) && (
+                                <img
+                                    className={"edit-perfume-image"}
+                                    src={previewImage || perfumeData?.filename}
+                                    alt={perfumeData?.perfumeTitle}
+                                />
+                            )}
                         </div>
                     </Col>
                 </Row>

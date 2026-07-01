@@ -89,8 +89,36 @@ public class PerfumeServiceImpl implements PerfumeService {
     @Override
     @Transactional
     public Perfume savePerfume(Perfume perfume, MultipartFile multipartFile) {
-        perfume.setFilename(imageStorageService.store(multipartFile));
-        return perfumeRepository.save(perfume);
+        if (perfume.getId() != null) {
+            // It's an update
+            Perfume existingPerfume = perfumeRepository.findById(perfume.getId())
+                    .orElseThrow(() -> new ApiRequestException(PERFUME_NOT_FOUND, HttpStatus.NOT_FOUND));
+
+            existingPerfume.setPerfumeTitle(perfume.getPerfumeTitle());
+            existingPerfume.setPerfumer(perfume.getPerfumer());
+            existingPerfume.setYear(perfume.getYear());
+            existingPerfume.setCountry(perfume.getCountry());
+            existingPerfume.setPerfumeGender(perfume.getPerfumeGender());
+            existingPerfume.setFragranceTopNotes(perfume.getFragranceTopNotes());
+            existingPerfume.setFragranceMiddleNotes(perfume.getFragranceMiddleNotes());
+            existingPerfume.setFragranceBaseNotes(perfume.getFragranceBaseNotes());
+            existingPerfume.setPrice(perfume.getPrice());
+            existingPerfume.setVolume(perfume.getVolume());
+            existingPerfume.setType(perfume.getType());
+            existingPerfume.setInventory(perfume.getInventory());
+
+            if (multipartFile != null && !multipartFile.isEmpty()) {
+                existingPerfume.setFilename(imageStorageService.store(multipartFile));
+            } else if (perfume.getFilename() != null && !perfume.getFilename().isEmpty()) {
+                existingPerfume.setFilename(perfume.getFilename());
+            }
+
+            return perfumeRepository.save(existingPerfume);
+        } else {
+            // It's a new perfume, always set filename (could be empty or a default image from storage service)
+            perfume.setFilename(imageStorageService.store(multipartFile));
+            return perfumeRepository.save(perfume);
+        }
     }
 
     @Override

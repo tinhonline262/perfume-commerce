@@ -9,6 +9,7 @@ import {
     fetchUserOrdersByEmailQuery,
     fetchUserOrdersByQuery
 } from "./orders-thunks";
+import { updateOrderStatus } from "../order/order-thunks";
 
 export interface OrdersState {
     orders: Array<OrderResponse>;
@@ -79,8 +80,14 @@ export const ordersSlice = createSlice({
             state.orders = action.payload;
             state.loadingState = LoadingStatus.LOADED;
         });
+        // Inline update of the changed order in the list after status update
+        builder.addCase(updateOrderStatus.fulfilled, (state, action) => {
+            const updated = action.payload;
+            state.orders = state.orders.map((o) => (o.id === updated.id ? updated : o));
+        });
     }
 });
 
 export const { resetOrders } = ordersSlice.actions;
 export default ordersSlice.reducer;
+

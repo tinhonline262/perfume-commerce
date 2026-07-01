@@ -11,3 +11,6 @@ export const selectLoadingStatus = (state: RootState): LoadingStatus => selectOr
 export const selectIsOrderLoading = (state: RootState): boolean => selectLoadingStatus(state) === LoadingStatus.LOADING;
 export const selectIsOrderLoaded = (state: RootState): boolean => selectLoadingStatus(state) === LoadingStatus.LOADED;
 export const selectOrderError = (state: RootState): boolean => selectLoadingStatus(state) === LoadingStatus.ERROR;
+
+export const selectStatusUpdateLoading = (state: RootState): boolean => selectOrderState(state).statusUpdateLoading;
+export const selectStatusUpdateError = (state: RootState): string => selectOrderState(state).statusUpdateError;

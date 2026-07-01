@@ -79,9 +79,22 @@ const Cart: FC = (): ReactElement => {
                     <Row gutter={32}>
                         {perfumes.length === 0 ? (
                             <Col xs={24} sm={24}>
-                                <Typography.Title level={3} style={{ textAlign: "center" }}>
-                                    {t('cart.empty')}
-                                </Typography.Title>
+                                <div className="cart-empty-container">
+                                    <ShoppingOutlined className="cart-empty-icon" />
+                                    <Typography.Title level={3} className="cart-empty-title">
+                                        {t('cart.empty_title')}
+                                    </Typography.Title>
+                                    <Typography.Text className="cart-empty-description">
+                                        {t('cart.empty_description')}
+                                    </Typography.Text>
+                                    <div className="cart-empty-actions">
+                                        <Link to="/menu">
+                                            <Button type="primary" size="large" className="cart-empty-button">
+                                                {t('cart.continueShopping')}
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                </div>
                             </Col>
                         ) : (
                             <>

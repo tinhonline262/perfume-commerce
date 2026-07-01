@@ -4,11 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import com.perfume.ecommerce.enums.OrderStatus;
 import com.perfume.ecommerce.enums.PaymentMethod;
 import com.perfume.ecommerce.enums.PaymentStatus;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -61,6 +63,13 @@ public class Order {
     @Column(name = "payment_status")
     private PaymentStatus paymentStatus;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "order_status")
+    private OrderStatus orderStatus;
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
+
     @OneToMany(fetch = FetchType.EAGER)
     private List<OrderItem> orderItems;
 
@@ -68,7 +77,8 @@ public class Order {
         this.date = LocalDate.now();
         this.orderItems = new ArrayList<>();
         this.paymentMethod = PaymentMethod.COD;
-        this.paymentStatus = PaymentStatus.PENDING;
+        this.paymentStatus = PaymentStatus.UNPAID;
+        this.orderStatus = OrderStatus.PENDING;
     }
 
     @Override

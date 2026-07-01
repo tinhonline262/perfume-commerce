@@ -35,7 +35,7 @@ export const fetchPerfumesByIds = createAsyncThunk<Array<PerfumeResponse>, Array
 export const fetchPerfumesByFilterParams = createAsyncThunk<HeaderResponse<PerfumeResponse>, FilterParamsType>(
     "perfumes/fetchPerfumesByFilterParams",
     async (filter) => {
-        const response = await RequestService.post(`${PERFUMES_SEARCH}?page=${filter.currentPage}&size=15`, filter);
+        const response = await RequestService.post(`${PERFUMES_SEARCH_TEXT}?page=${filter.currentPage}&size=15`, filter);
         return {
             items: response.data,
             pagesCount: parseInt(response.headers["page-total-count"]),
